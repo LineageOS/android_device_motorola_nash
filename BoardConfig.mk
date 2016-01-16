@@ -84,7 +84,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_nash
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += sched_enable_hmp=1 sched_enable_power_aware=1
