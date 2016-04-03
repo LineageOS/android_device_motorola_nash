@@ -23,7 +23,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.text.TextUtils;
@@ -33,7 +33,7 @@ import java.io.File;
 import org.cyanogenmod.internal.util.FileUtils;
 import org.cyanogenmod.internal.util.ScreenType;
 
-public class TouchscreenGestureSettings extends PreferenceActivity {
+public class TouchscreenGesturePreferenceFragment extends PreferenceFragment {
     private static final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
     private SwitchPreference mFlipPref;
     private NotificationManager mNotificationManager;
@@ -46,15 +46,15 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         PreferenceCategory ambientDisplayCat = (PreferenceCategory)
                 findPreference(CATEGORY_AMBIENT_DISPLAY);
         if (ambientDisplayCat != null) {
-            ambientDisplayCat.setEnabled(CMActionsSettings.isDozeEnabled(getContentResolver()));
+            ambientDisplayCat.setEnabled(CMActionsSettings.isDozeEnabled(getActivity().getContentResolver()));
         }
-        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
         mFlipPref = (SwitchPreference) findPreference("gesture_flip_to_mute");
         mFlipPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
                 if (!mNotificationManager.isNotificationPolicyAccessGranted()) {
                     mFlipPref.setChecked(false);
-                    new AlertDialog.Builder(TouchscreenGestureSettings.this)
+                    new AlertDialog.Builder(getContext())
                         .setTitle(getString(R.string.flip_to_mute_title))
                         .setMessage(getString(R.string.dnd_access))
                         .setNegativeButton(android.R.string.cancel, null)
@@ -105,13 +105,8 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-
-        // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
-            getListView().setPadding(0, 0, 0, 0);
-        }
 
         if (mNotificationManager.isNotificationPolicyAccessGranted() && mFlipClick) {
             mFlipPref.setChecked(true);
