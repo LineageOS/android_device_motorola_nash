@@ -294,6 +294,38 @@ error:
 	return 0;
 }
 
+static unsigned get_current_active_slot(struct boot_control_module *module)
+{
+	uint32_t num_slots = 0;
+	char bootPartition[MAX_GPT_NAME_SIZE + 1];
+	unsigned i = 0;
+	if (!module) {
+		ALOGE("%s: Invalid argument", __func__);
+		goto error;
+	}
+	num_slots = get_number_slots(module);
+	if (num_slots <= 1) {
+		//Slot 0 is the only slot around.
+		return 0;
+	}
+	//Iterate through a list of partitons named as boot+suffix
+	//and see which one is currently active.
+	for (i = 0; slot_suffix_arr[i] != NULL ; i++) {
+		memset(bootPartition, '\0', sizeof(bootPartition));
+		snprintf(bootPartition, sizeof(bootPartition) - 1,
+				"boot%s",
+				slot_suffix_arr[i]);
+		if (get_partition_attribute(bootPartition,
+					ATTR_SLOT_ACTIVE) == 1)
+			return i;
+	}
+error:
+	//The HAL spec requires that we return a number between
+	//0 to num_slots - 1. Since something went wrong here we
+	//are just going to return the default slot.
+	return 0;
+}
+
 int mark_boot_successful(struct boot_control_module *module)
 {
 	unsigned cur_slot = 0;
@@ -358,7 +390,7 @@ int set_active_boot_slot(struct boot_control_module *module, unsigned slot)
 				__func__);
 		goto error;
 	}
-        current_slot = get_current_slot(module);
+	current_slot = get_current_active_slot(module);
 	if (current_slot == slot) {
 		//Nothing to do here. Just return
 		return 0;
