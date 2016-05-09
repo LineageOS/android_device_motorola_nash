@@ -38,11 +38,13 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <limits.h>
+#include <cutils/properties.h>
 #include "gpt-utils.h"
 
 #define BOOTDEV_DIR "/dev/block/bootdevice/by-name"
 #define BOOT_IMG_PTN_NAME "boot"
 #define LUN_NAME_END_LOC 14
+#define BOOT_SLOT_PROP "ro.boot.slot_suffix"
 
 const char *slot_suffix_arr[] = {
 	AB_SLOT_A_SUFFIX,
@@ -260,7 +262,7 @@ error:
 unsigned get_current_slot(struct boot_control_module *module)
 {
 	uint32_t num_slots = 0;
-	char bootPartition[MAX_GPT_NAME_SIZE + 1];
+	char bootSlotProp[PROPERTY_VALUE_MAX] = {'\0'};
 	unsigned i = 0;
 	if (!module) {
 		ALOGE("%s: Invalid argument", __func__);
@@ -271,16 +273,19 @@ unsigned get_current_slot(struct boot_control_module *module)
 		//Slot 0 is the only slot around.
 		return 0;
 	}
+	property_get(BOOT_SLOT_PROP, bootSlotProp, "N/A");
+	if (!strncmp(bootSlotProp, "N/A", strlen("N/A"))) {
+		ALOGE("%s: Unable to read boot slot property",
+				__func__);
+		goto error;
+	}
 	//Iterate through a list of partitons named as boot+suffix
 	//and see which one is currently active.
 	for (i = 0; slot_suffix_arr[i] != NULL ; i++) {
-		memset(bootPartition, '\0', sizeof(bootPartition));
-		snprintf(bootPartition, sizeof(bootPartition) - 1,
-				"boot%s",
-				slot_suffix_arr[i]);
-		if (get_partition_attribute(bootPartition,
-					ATTR_SLOT_ACTIVE) == 1)
-			return i;
+		if (!strncmp(bootSlotProp,
+					slot_suffix_arr[i],
+					strlen(slot_suffix_arr[i])))
+				return i;
 	}
 error:
 	//The HAL spec requires that we return a number between
