@@ -43,6 +43,7 @@
 #include <linux/fs.h>
 #include <limits.h>
 #include <dirent.h>
+#include <inttypes.h>
 #include <linux/kernel.h>
 #include <map>
 #include <vector>
@@ -144,7 +145,7 @@ static int blk_rw(int fd, int rw, int64_t offset, uint8_t *buf, unsigned len)
     int r;
 
     if (lseek64(fd, offset, SEEK_SET) < 0) {
-        fprintf(stderr, "block dev lseek64 %lld failed: %s\n", offset,
+        fprintf(stderr, "block dev lseek64 %" PRIi64 " failed: %s\n", offset,
                 strerror(errno));
         return -1;
     }
@@ -1154,6 +1155,7 @@ static int gpt_set_header(uint8_t *gpt_header, int fd,
                 goto error;
         }
         block_size = gpt_get_block_size(fd);
+        ALOGI("%s: Block size is : %d", __func__, block_size);
         if (block_size == 0) {
                 ALOGE("%s: Failed to get block size", __func__);
                 goto error;
@@ -1166,6 +1168,8 @@ static int gpt_set_header(uint8_t *gpt_header, int fd,
                 ALOGE("%s: Failed to get gpt header offset",__func__);
                 goto error;
         }
+        ALOGI("%s: Writing back header to offset %" PRIi64, __func__,
+                gpt_header_offset);
         if (blk_rw(fd, 1, gpt_header_offset, gpt_header, block_size)) {
                 ALOGE("%s: Failed to write back GPT header", __func__);
                 goto error;
@@ -1310,10 +1314,15 @@ static int gpt_set_pentry_arr(uint8_t *hdr, int fd, uint8_t* arr)
                                 __func__);
                 goto error;
         }
+        ALOGI("%s : Block size is %d", __func__, block_size);
         pentries_start = GET_8_BYTES(hdr + PENTRIES_OFFSET) * block_size;
         pentry_size = GET_4_BYTES(hdr + PENTRY_SIZE_OFFSET);
         pentries_arr_size =
                 GET_4_BYTES(hdr + PARTITION_COUNT_OFFSET) * pentry_size;
+        ALOGI("%s: Writing partition entry array of size %d to offset %" PRIu64,
+                        __func__,
+                        pentries_arr_size,
+                        pentries_start);
         rc = blk_rw(fd, 1,
                         pentries_start,
                         arr,
@@ -1508,12 +1517,14 @@ int gpt_disk_commit(struct gpt_disk *disk)
                                 strerror(errno));
                 goto error;
         }
+        ALOGI("%s: Writing back primary GPT header", __func__);
         //Write the primary header
         if(gpt_set_header(disk->hdr, fd, PRIMARY_GPT) != 0) {
                 ALOGE("%s: Failed to update primary GPT header",
                                 __func__);
                 goto error;
         }
+        ALOGI("%s: Writing back primary partition array", __func__);
         //Write back the primary partition array
         if (gpt_set_pentry_arr(disk->hdr, fd, disk->pentry_arr)) {
                 ALOGE("%s: Failed to write primary GPT partition arr",
