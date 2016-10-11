@@ -119,8 +119,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     libbson.vendor \
     libxml2 \
-    libcamera_metadata_helper \
-    Snap
+    libcamera_metadata_helper
 
 # Codec2 modules
 PRODUCT_PACKAGES += \
@@ -423,6 +422,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
