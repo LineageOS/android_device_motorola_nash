@@ -49,12 +49,6 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         }
         final ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        if (Device.isSurnia()){
-            //Check if we have to hide the chop chop entry
-            SwitchPreference chopChopPref = (SwitchPreference) findPreference("gesture_chop_chop");
-            PreferenceCategory mCategory = (PreferenceCategory) findPreference("actions_key");
-            mCategory.removePreference(chopChopPref);
-        }
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mFlipPref = (SwitchPreference) findPreference("gesture_flip_to_mute");
         mFlipPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
