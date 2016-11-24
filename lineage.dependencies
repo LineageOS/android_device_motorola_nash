@@ -2,5 +2,9 @@
   {
     "repository": "android_kernel_motorola_msm8998",
     "target_path": "kernel/motorola/msm8998"
-  }
+  },
+  {
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+   }
 ]
