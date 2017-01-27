@@ -1,4 +1,4 @@
-ifneq ($(filter msm8996,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8996 msm8998,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_PATH := $(call my-dir)
 
 # HAL Shared library for the target. Used by libhardware.
