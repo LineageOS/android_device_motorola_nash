@@ -164,9 +164,6 @@ persist.vendor.ims.disableADBLogs=0
 persist.vendor.ims.vt.enableadb=1
 persist.vendor.ims.disableQXDMLogs=1
 
-# SDCardFS
-ro.sys.sdcardfs=true
-
 # Sensors
 ro.qti.sensors.dev_ori=false
 ro.qti.sensors.dpc=true
