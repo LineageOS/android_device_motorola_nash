@@ -26,7 +26,6 @@ import android.util.Log;
 
 import com.lineageos.settings.device.ServiceWrapper.LocalBinder;
 
-import org.lineageos.internal.util.FileUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "LineageActions";
@@ -38,18 +37,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Restore nodes to saved preference values
         for (String pref : Constants.sButtonPrefKeys) {
-             String value = "1";
-             if (!pref.equals(Constants.FP_KEYS))
-                 value = Constants.isPreferenceEnabled(context, pref) ? "1" : "0";
-             else
-                 value = Constants.GetPreference(context, pref);
-
-             String node = Constants.sBooleanNodePreferenceMap.get(pref);
-
-             if (!FileUtils.writeLine(node, value)) {
-                 Log.w(TAG, "Write " + value + " to node " + node +
-                       " failed while restoring saved preference values");
-             }
+             Constants.writePreference(context, pref);
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));
