@@ -212,8 +212,8 @@ on boot
     # load WIGIG platform driver
     insmod /vendor/lib/modules/msm_11ad_proxy.ko
 
-    # FPC home button permissions
-    chown system system /sys/homebutton/enable
+    # FPC button permissions
+    chown system system /sys/bus/spi/devices/spi8.0/key_enable
 
 # msm specific files that need to be created on /data
 on post-fs-data
