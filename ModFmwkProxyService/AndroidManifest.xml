@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" android:versionCode="105000" android:versionName="01.05.000" package="com.motorola.modservice.fmwkwrapper" >
+    <uses-permission android:name="android.permission.GRANT_RUNTIME_PERMISSIONS" />
+    <uses-permission android:name="android.permission.REVOKE_RUNTIME_PERMISSIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.motorola.mod.permission.MOD_INTERNAL" />
+    <uses-permission android:name="com.motorola.mod.permission.MOD_ACCESS_INFO" />
+    <application android:process="com.motorola.process.system" android:allowBackup="true" android:supportsRtl="true">
+        <service android:name=".FrameworkProxyService" android:permission="com.motorola.mod.permission.MOD_INTERNAL" android:enabled="true" android:exported="true" />
+        <receiver android:name=".IntentReceiver" android:permission="com.motorola.mod.permission.MOD_INTERNAL">
+            <intent-filter>
+                <action android:name="com.motorola.mod.action.SERVICE_STARTED" />
+                <action android:name="com.motorola.modservice.BATTERY_MODE" />
+                <action android:name="com.motorola.modservice.UPDATE_DISPLAY_NAME" />
+                <action android:name="com.motorola.mod.action.display.ON_INTERNAL" />
+                <action android:name="com.motorola.mod.action.display.OFF_INTERNAL" />
+                <action android:name="com.motorola.mod.action.TOGGLE_FPS_NAV" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+                <data android:scheme="package" android:path="com.motorola.modservice" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
