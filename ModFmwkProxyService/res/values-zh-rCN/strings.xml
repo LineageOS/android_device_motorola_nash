@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Mod 的内部接口</string>
+    <string name="permdesc_modinternal">允许应用程序使用内部接口管理 Mod</string>
+</resources>

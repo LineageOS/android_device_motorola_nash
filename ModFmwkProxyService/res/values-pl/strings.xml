@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Wewnętrzny interfejs Mod</string>
+    <string name="permdesc_modinternal">Zezwól aplikacjom na zarządzanie Mod, korzystając z wewnętrznego interfejsu</string>
+</resources>

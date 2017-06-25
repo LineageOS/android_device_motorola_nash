@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">ส่วนติดต่อภายในกับ Mod</string>
+    <string name="permdesc_modinternal">อนุญาตให้แอปจัดการ Mod ด้วยส่วนติดต่อภายใน</string>
+</resources>

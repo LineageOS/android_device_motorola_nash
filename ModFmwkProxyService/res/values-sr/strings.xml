@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Интерни интерфејс са Mod-ом</string>
+    <string name="permdesc_modinternal">Дозвољава апликацијама да управљају Mod-ом помоћу интерног интерфејса</string>
+</resources>

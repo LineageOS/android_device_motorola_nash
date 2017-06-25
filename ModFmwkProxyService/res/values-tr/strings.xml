@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Modla dahili arabirim</string>
+    <string name="permdesc_modinternal">Uygulamaların Modu dahili arabirimle yönetmesine izin verin</string>
+</resources>

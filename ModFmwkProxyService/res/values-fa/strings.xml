@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">رابط داخلی با مدول</string>
+    <string name="permdesc_modinternal">به برنامه‌ها اجازه دهید با رابط داخلی، مدول را مدیریت کنند</string>
+</resources>

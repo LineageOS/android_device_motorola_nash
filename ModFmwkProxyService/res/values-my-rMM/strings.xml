@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Mod နှငျ့အတူ စကျတှငျးကွားခံစနစျ</string>
+    <string name="permdesc_modinternal">စကျတှငျး ကွားခံစနစျနှငျ့အတူ Mod ကို စီမံရနျ အကျပျမြားကို ခှငျ့ပွုပါ</string>
+</resources>

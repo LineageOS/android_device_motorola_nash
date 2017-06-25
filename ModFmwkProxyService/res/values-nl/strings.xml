@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Interne interface met Mod</string>
+    <string name="permdesc_modinternal">Geef apps toestemming om Mod te beheren via een interne interface</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Mod-এর সাথে অভ্যন্তরীণ ইন্টারফেস</string>
+    <string name="permdesc_modinternal">অভ্যন্তরীণ ইন্টারফেসে মড পরিচালনা করতে অ্যাপগুলিকে অনুমতি দিন</string>
+</resources>
