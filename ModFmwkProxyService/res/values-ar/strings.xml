@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">الواجهة الداخلية مع Mod</string>
+    <string name="permdesc_modinternal">السماح للتطبيقات بإدارة Mod بالواجهة الداخلية</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Mod உடன் உள்ளக இடைமுகம்</string>
+    <string name="permdesc_modinternal">உள்ளக இடைமுகத்தைக் கொண்டு Mod-ஐ நிர்வகிக்க, பயன்பாடுகளை அனுமதிக்கிறது</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">內部介面與 MOD</string>
+    <string name="permdesc_modinternal">允許應用程式使用內部介面管理 MOD</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Mod 사용 내부 인터페이스</string>
+    <string name="permdesc_modinternal">앱에서 내부 인터페이스로 Mod 관리를 수행하도록 허용</string>
+</resources>

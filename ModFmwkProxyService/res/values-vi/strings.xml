@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_modinternal">Giao diện bên trong với Mod</string>
+    <string name="permdesc_modinternal">Cho phép ứng dụng quản lý Mod với giao diện bên trong</string>
+</resources>
