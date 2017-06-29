@@ -35,7 +35,7 @@ extern "C" {
 #endif
 #include <errno.h>
 #define LOG_TAG "bootcontrolhal"
-#include <cutils/log.h>
+#include <log/log.h>
 #include <hardware/boot_control.h>
 #include <stdio.h>
 #include <string.h>
