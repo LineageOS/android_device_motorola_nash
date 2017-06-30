@@ -204,6 +204,9 @@ persist.data.iwlan.enable=true
 persist.rmnet.data.enable=true
 persist.rmnet.mux=enabled
 
+# Time daemon
+persist.delta_time.enable=true
+
 # USB
 persist.sys.usb.config.extra=none
 
