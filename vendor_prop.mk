@@ -165,6 +165,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=10,0 \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1 \
+    persist.vendor.ims.dropset_feature=0 \
     persist.vendor.ims.disableDebugLogs=0 \
     persist.vendor.ims.disableIMSLogs=0 \
     persist.vendor.ims.disableDebugDataPathLogs=0 \
