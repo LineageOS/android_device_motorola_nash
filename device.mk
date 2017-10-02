@@ -342,6 +342,11 @@ PRODUCT_PACKAGES += \
     rcs_service_api \
     rcs_service_api.xml
 
+# WiFi Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
+
+
 # Recovery
 PRODUCT_COPY_FILES += \
     device/motorola/nash/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
