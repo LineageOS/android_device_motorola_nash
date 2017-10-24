@@ -18,11 +18,8 @@ package com.lineageos.settings.device;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.provider.Settings;
-import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v14.preference.PreferenceFragment;
-import android.support.v14.preference.SwitchPreference;
 import android.view.MenuItem;
 
 public class DozePreferenceActivity extends PreferenceActivity {
@@ -36,29 +33,17 @@ public class DozePreferenceActivity extends PreferenceActivity {
     }
 
     public static class DozePreferenceFragment extends PreferenceFragment {
-        private static final String KEY_AMBIENT_DISPLAY_ENABLE = "doze_enabled";
-
-        private SwitchPreference mAmbientDisplayPreference;
+        private static final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             addPreferencesFromResource(R.xml.doze_panel);
             boolean dozeEnabled = LineageActionsSettings.isDozeEnabled(getActivity().getContentResolver());
-            mAmbientDisplayPreference = (SwitchPreference) findPreference(KEY_AMBIENT_DISPLAY_ENABLE);
-            // Read from DOZE_ENABLED secure setting
-            mAmbientDisplayPreference.setChecked(dozeEnabled);
-            mAmbientDisplayPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    boolean enable = (boolean) newValue;
-                    return enableDoze(enable);
-                }
-            });
-        }
-
-        private boolean enableDoze(boolean enable) {
-            return Settings.Secure.putInt(getContext().getContentResolver(),
-                    Settings.Secure.DOZE_ENABLED, enable ? 1 : 0);
+            PreferenceCategory ambientDisplayCat = (PreferenceCategory)
+                    findPreference(CATEGORY_AMBIENT_DISPLAY);
+            if (ambientDisplayCat != null) {
+                ambientDisplayCat.setEnabled(dozeEnabled);
+            }
         }
     }
 
