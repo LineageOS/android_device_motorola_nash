@@ -29,7 +29,7 @@
 
 /(vendor|system/vendor)/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.nash    u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.nash    u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.nash    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@1\.1-service\.nash  u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.(laser|usb)\.sh                        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.power\.sh                             u:object_r:qti_init_shell_exec:s0
