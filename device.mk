@@ -326,10 +326,10 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.nash
+    android.hardware.power@1.2-service.nash-libperfmgr
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+    device/motorola/nash/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # QMI
 PRODUCT_PACKAGES += \
