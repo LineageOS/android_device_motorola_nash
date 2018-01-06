@@ -5,9 +5,18 @@
 # Audio
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
-audio.offload.video=true
+audio.offload.disable=false
+audio.offload.video=false
+persist.audio.calfile0=/etc/acdbdata/Bluetooth_cal.acdb
+persist.audio.calfile1=/etc/acdbdata/General_cal.acdb
+persist.audio.calfile2=/etc/acdbdata/Global_cal.acdb
+persist.audio.calfile3=/etc/acdbdata/Handset_cal.acdb
+persist.audio.calfile4=/etc/acdbdata/Hdmi_cal.acdb
+persist.audio.calfile5=/etc/acdbdata/Headset_cal.acdb
+persist.audio.calfile6=/etc/acdbdata/Speaker_cal.acdb
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.ras.enabled=false
 ro.vendor.audio.sdk.fluencetype=fluencepro
@@ -33,17 +42,14 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.fm.a2dp.conc.disabled=true
 vendor.voice.path.for.pcm.voip=true
 
-# Battery
-ro.cutoff_voltage_mv=3400
-
 # Bluetooth
 bt.max.hfpclient.connections=1
-persist.bt.a2dp.aac_disable=true
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 qcom.bluetooth.soc=cherokee
 ro.bluetooth.a4wp=false
 
 # Camera
+camera.aux.packagelist=org.codeaurora.snapcam,com.motorola.camera2,com.motorola.motocit,org.cyanogenmod.snap
 persist.camera.camera2=true
 persist.camera.expose.aux=1
 persist.camera.is_type=3
@@ -51,18 +57,20 @@ persist.camera.max.previewfps=60
 vidc.enc.dcvs.extra-buff-count=2
 
 # Display
+ro.sf.hwc_set_default_colormode=true
+debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+debug.gralloc.enable_fb_ubwc=1
 dev.pm.dyn_samplingrate=1
-sdm.debug.disable_partial_split=1
 ro.opengles.version=196610
-ro.qualcomm.cabl=2
-ro.sf.lcd_density=480
+ro.qualcomm.cabl=0
+ro.sf.lcd_density=640
 
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
 # NFC
-persist.nfc.smartcard.config=SIM1,eSE1
 ro.nfc.port=I2C
 
 # Perf
@@ -89,10 +97,26 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 persist.rmnet.data.enable=true
 rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-ro.telephony.default_network=10
+DEVICE_PROVISIONED=1
+ro.telephony.default_network=10,0
 ro.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1
+persist.vendor.ims.disableDebugLogs=0
+persist.vendor.ims.disableIMSLogs=0
+persist.vendor.ims.disableDebugDataPathLogs=0
+persist.vendor.ims.disableADBLogs=0
+persist.vendor.ims.vt.enableadb=1
+persist.vendor.ims.disableQXDMLogs=1
 
 # SDCardFS
 ro.sys.sdcardfs=true
@@ -106,6 +130,22 @@ ro.qti.sensors.mot_detect=true
 ro.qti.sensors.multishake=true
 ro.qti.sensors.sta_detect=true
 
+ro.hardware.sensors=nash
+ro.vendor.sensors.maghalcal=true
+ro.vendor.sensors.amd=false
+ro.vendor.sensors.pmd=false
+ro.vendor.sensors.rmd=false
+ro.vendor.sdk.sensors.gestures=false
+ro.vendor.sensors.facing=false
+ro.vendor.sensors.scrn_ortn=false
+ro.vendor.sensors.cmc=false
+ro.vendor.sensors.pedometer=false
+ro.sensors.tof.interval_ms=5000
+ro.vendor.sensors.dev_ori=true
+ro.vendor.sensors.sta_detect=true
+ro.vendor.sensors.mot_detect=true
+
+
 # USB
 persist.sys.usb.config.extra=none
 
@@ -114,3 +154,6 @@ ro.opa.eligible_device=true
 
 # Wifi
 wifi.interface=wlan0
+
+#Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
