@@ -7,7 +7,7 @@
 
 #<src>                                   <mnt_point>        <type> <mnt_flags and options>                          <fs_mgr_flags>
 /dev/block/bootdevice/by-name/system     /                  ext4   ro,barrier=1                                     wait,verify,slotselect
-/dev/block/bootdevice/by-name/userdata   /data              ext4   nobarrier,noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait,check,formattable,latemount,fileencryption=ice:aes-256-cts,quota
+/dev/block/bootdevice/by-name/userdata   /data              ext4   nobarrier,noatime,nosuid,nodev,data=ordered,noauto_da_alloc	wait,check,formattable,latemount,fileencryption=ice:aes-256-cts,quota,reservedsize=128M
 /devices/soc/c0a4900.sdhci/mmc_host*     auto               auto   defaults                                         wait,voldmanaged=sdcard1:auto
 /dev/block/zram0                         none               swap   defaults                                         zramsize=536870912
 /dev/block/bootdevice/by-name/misc       /misc              emmc   defaults                                         defaults
