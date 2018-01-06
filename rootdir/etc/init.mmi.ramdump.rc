@@ -101,13 +101,13 @@ on property:persist.debug.host.ramdump=0
 service mdlog_start /system/vendor/bin/diag_mdlog -f ${persist.sys.qxdm_cfg_file}
     class late_start
     user system
-    group system diag sdcard_rw sdcard_r media_rw oem_2901
+    group system diag sdcard_rw sdcard_r media_rw oem_2950
     disabled
     oneshot
 
 service mdlog_stop /system/vendor/bin/diag_mdlog -k
     class late_start
     user system
-    group system diag sdcard_rw sdcard_r media_rw oem_2901
+    group system diag sdcard_rw sdcard_r media_rw oem_2950
     disabled
     oneshot

@@ -7,12 +7,12 @@ on init
 on boot
 
    # Change ownership for vibrator
-   chown root mot_mod /sys/bus/i2c/devices/7-005a/reduce
+   chown root oem_5020 /sys/bus/i2c/devices/7-005a/reduce
 
    # Change the ownership of display TE files for tcmds
-   chown root mot_tcmd /sys/class/graphics/fb0/te_test
-   chown root mot_tcmd /sys/class/graphics/fb0/te_enable
-   chown root mot_tcmd /sys/class/graphics/fb0/frame_counter
+   chown root oem_5004 /sys/class/graphics/fb0/te_test
+   chown root oem_5004 /sys/class/graphics/fb0/te_enable
+   chown root oem_5004 /sys/class/graphics/fb0/frame_counter
 
    # in FBE mode, /data is here
    write /sys/block/sdb/queue/read_ahead_kb 512

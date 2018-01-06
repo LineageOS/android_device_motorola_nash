@@ -19,19 +19,19 @@ service diag_mdlog /vendor/bin/diag_mdlog-wrap
     class late_start
     socket mdlog_cmd stream 0660 log diag
     user log
-    group log sdcard_rw sdcard_r media_rw qcom_diag mount
+    group log sdcard_rw sdcard_r media_rw oem_2950 mount
     disabled
 
 service safe_stop_mdlog /vendor/bin/diag_mdlog-getlogs -s
     class late_start
     user log
-    group log sdcard_rw sdcard_r media_rw qcom_diag
+    group log sdcard_rw sdcard_r media_rw oem_2950
     oneshot
     disabled
 
 service mdlog-getlogs /vendor/bin/init.mmi.mdlog-getlogs.sh
     class late_start
     user log
-    group log sdcard_rw sdcard_r media_rw qcom_diag
+    group log sdcard_rw sdcard_r media_rw oem_2950
     oneshot
     disabled
