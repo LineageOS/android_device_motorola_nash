@@ -391,9 +391,12 @@ vendor/lib64/libseemore.so
 vendor/lib64/libubifocus.so
 
 # CNE
+etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
+framework/cneapiclient.jar
 framework/com.quicinc.cne.api-V1.0-java.jar
 framework/com.quicinc.cne.jar
+-priv-app/CNEService/CNEService.apk
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
@@ -845,7 +848,6 @@ framework/qti-telephony-common.jar
 framework/com.qti.dpmframework.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
