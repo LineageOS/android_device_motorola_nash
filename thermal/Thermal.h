@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef ANDROID_HARDWARE_THERMAL_V1_1_MATA_THERMAL_H
-#define ANDROID_HARDWARE_THERMAL_V1_1_MATA_THERMAL_H
+#ifndef ANDROID_HARDWARE_THERMAL_V1_1_NASH_THERMAL_H
+#define ANDROID_HARDWARE_THERMAL_V1_1_NASH_THERMAL_H
 
 #include <android/hardware/thermal/1.1/IThermal.h>
 #include <android/hardware/thermal/1.1/IThermalCallback.h>
@@ -65,4 +65,4 @@ struct Thermal : public IThermal {
 }  // namespace hardware
 }  // namespace android
 
-#endif  // ANDROID_HARDWARE_THERMAL_V1_1_MATA_THERMAL_H
+#endif  // ANDROID_HARDWARE_THERMAL_V1_1_NASH_THERMAL_H

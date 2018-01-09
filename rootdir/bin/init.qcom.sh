@@ -89,11 +89,11 @@ start_msm_irqbalance_8939()
 	fi
 }
 
-start_msm_irqbalance()
+start_msm_irqbalance660()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
-		    "317" | "324" | "325" | "326")
+		    "317" | "324" | "325" | "326" | "345" | "346")
 			start vendor.msm_irqbalance;;
 		    "318" | "327")
 			start vendor.msm_irqbl_sdm630;;
@@ -101,11 +101,39 @@ start_msm_irqbalance()
 	fi
 }
 
+start_msm_irqbalance()
+{
+	if [ -f /vendor/bin/msm_irqbalance ]; then
+		start vendor.msm_irqbalance
+	fi
+}
+
 start_copying_prebuilt_qcril_db()
 {
     if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
-        cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+        # [MOTO] - First copy db from the old N path to O path for upgrade
+        if [ -f /data/misc/radio/qcril.db ]; then
+            cp /data/misc/radio/qcril.db /data/vendor/radio/qcril.db
+            # copy the backup db from the old N path to O path for upgrade
+            if [ -f /data/misc/radio/qcril_backup.db ]; then
+                cp /data/misc/radio/qcril_backup.db /data/vendor/radio/qcril_backup.db
+            fi
+            # Now delete the old folder
+            rm -fr /data/misc/radio
+        else
+            cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+        fi
         chown -h radio.radio /data/vendor/radio/qcril.db
+    else
+        # [MOTO] if qcril.db's owner is not radio (e.g. root),
+        # reset it for the recovery
+        qcril_db_owner=`stat -c %U /data/vendor/radio/qcril.db`
+
+        echo "qcril.db's owner is $qcril_db_owner"
+        if [ $qcril_db_owner != "radio" ]; then
+            echo "reset owner to radio for qcril.db"
+            chown -h radio.radio /data/vendor/radio/qcril.db
+        fi
     fi
 }
 
@@ -205,7 +233,7 @@ case "$target" in
                   esac
                   ;;
        esac
-        start_msm_irqbalance
+        start_msm_irqbalance660
         ;;
     "apq8084")
         platformvalue=`cat /sys/devices/soc0/hw_platform`
@@ -384,11 +412,7 @@ echo 1 > /data/vendor/radio/copy_complete
 #current default minimum boot-time-default
 buildvariant=`getprop ro.build.type`
 case "$buildvariant" in
-    "userdebug" | "eng")
-        #set default loglevel to KERN_INFO
-        echo "6 6 1 7" > /proc/sys/kernel/printk
-        ;;
-    *)
+    "user")
         #set default loglevel to KERN_WARNING
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;

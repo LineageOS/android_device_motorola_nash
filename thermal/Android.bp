@@ -16,9 +16,9 @@
 cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    name: "android.hardware.thermal@1.1-service.mata",
+    name: "android.hardware.thermal@1.1-service.nash",
     proprietary: true,
-    init_rc: ["android.hardware.thermal@1.1-service.mata.rc"],
+    init_rc: ["android.hardware.thermal@1.1-service.nash.rc"],
     srcs: ["service.cpp", "Thermal.cpp", "thermal-helper.cpp"],
     shared_libs: [
         "libbase",

@@ -49,33 +49,11 @@
             , 0x41414100, 0x22C, 0x41420100, 0x5A, 0x41810000, 0x9C4, 0x41814000, 0x32" />
 
         <!--video encode 30 fps-->
-        <!-- B CPU - above_hispeed_delay of 40 ms -->
-        <!-- B CPU - above_hispeed_delay of 40 ms -->
-        <!-- B CPU - go hispeed load 95 -->
-        <!-- B CPU - hispeed freq of 806 MHz -->
-        <!-- B CPU - target load of 90 -->
-        <!-- L CPU - above_hispeed_delay of 40 ms -->
-        <!-- L CPU - go hispeed load 95 -->
-        <!-- L CPU - hispeed freq of 556 MHz- -->
-        <!-- L CPU - target load of 90 -->
-        <!-- CPUBW low power ceil mpbs of 2500 -->
-        <!-- CPUBW low power io percent of 50 -->
-        <!-- CPUBW disable hysteresis -->
-        <!-- CPUBW sample_ms of 10ms -->
-        <!-- L CPU - disable ignore_hispeed_notif -->
-        <!-- B CPU - disable ignore_hispeed_notif -->
+        <!-- Encode Thermal override -->
         <Config
             Id="0x00001203" Enable="true" Target="msm8998"
-            Resources="0x41400000, 0x4, 0x41410000, 0x5F ,0x41414000, 0x326, 0x41420000, 0x5A, 0x41400100, 0x4, 0x41410100
-            , 0x5F, 0x41414100, 0x22C, 0x41420100, 0x5A, 0x41810000 ,0x9C4, 0x41814000,
-            0x32, 0x4180C000 ,0x0, 0x41820000, 0xA, 0x41438100, 0x0, 0x41438000, 0x0" />
-
-        <!--video decode -->
-        <!-- B CPU - go hispeed load 85 -->
-        <!-- L CPU - go hispeed load 85 -->
-        <Config
-            Id="0x00001204" Enable="true" Target="msm8998"
-            Resources="0x41410000,0x55, 0x41410100, 0x55" />
+	    Resources="0x42C1C000, value=0x0" />
+	<!-- TODO: Fill with fine-tuned settings when HW/SW is more stable -->
 
         <!--sustained performance-->
         <!-- B CPU - Cluster min freq uncapped -->
@@ -97,10 +75,11 @@
         <!-- GPU - min pwrlevel 3 (freq 596 MHz)-->
         <!-- GPU - max pwrlevel 3 (freq 596 MHz)-->
         <!-- GPUBW freq 775 Mhz-->
+        <!-- VR Thermal Override -->
         <Config
             Id="0x00001207" Enable="true" Target="msm8998"
             Resources="0x40800000, 0x579, 0x40800100, 0x579, 0x40804000, 0x579, 0x40804100, 0x579,
-            0X42804000, 0x3, 0X42808000, 0x3, 0x42814000, 0x1E4F"/>
+            0X42804000, 0x3, 0X42808000, 0x3, 0x42814000, 0x1E4F, 0x42C20000, 0x0"/>
 
         <!--vr mode sustained performance-->
         <!-- B CPU - Cluster min freq ~1.2 Ghz -->
@@ -114,6 +93,13 @@
             Id="0x00001301" Enable="true" Target="msm8998"
             Resources="0x40800000, 0x4E0, 0x40800100, 0x4E0, 0x40804000, 0x4E0, 0x40804100, 0x4E0, 0X42804000, 0x5,
             0X42808000, 0x5, 0x42814000, 0x1E4F"/>
+
+        <!--audio playback performance-->
+        <!-- B CPU - Cluster min freq ~345 Mhz -->
+        <!-- L CPU - Cluster min freq ~672 Mhz -->
+        <Config
+            Id="0x0000120D" Enable="true" Target="msm8998"
+            Resources="0x40800000, 0x159, 0x40800100, 0x2A0"/>
 
         <!--qvr level cpu1 gpu1 -->
         <!-- B CPU - Cluster min freq ~1.19 Ghz -->
@@ -242,4 +228,3 @@
             0x42804000, 0x3, 0x42808000, 0x1, 0x41000000, 0x4"/>
     </Powerhint>
 </HintConfigs>
-

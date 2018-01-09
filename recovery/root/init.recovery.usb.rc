@@ -1,4 +1,4 @@
-import /init.recovery.mata.usb.rc
+import /init.recovery.nash.usb.rc
 import /init.recovery.usb.configfs.rc
 
 on post-fs-data

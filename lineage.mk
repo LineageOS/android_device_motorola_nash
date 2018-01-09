@@ -6,18 +6,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Vendor blobs
-$(call inherit-product-if-exists, vendor/essential/mata/mata-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/nash/nash-vendor.mk)
 
 # Device
-$(call inherit-product, device/essential/mata/device.mk)
+$(call inherit-product, device/motorola/nash/device.mk)
 
 # A/B updater
 AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     boot \
-    system \
-    vendor
+    system
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -46,26 +45,25 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libz
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/essential/mata/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/nash/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-$(call inherit-product, device/essential/mata/twrp/twrp.mk)
+$(call inherit-product, device/motorola/nash/twrp/twrp.mk)
 else
-TARGET_RECOVERY_FSTAB := device/essential/mata/rootdir/etc/fstab.mata
+TARGET_RECOVERY_FSTAB := device/motorola/nash/rootdir/etc/fstab.qcom
 endif
 
 # Device identifiers
-PRODUCT_DEVICE := mata
-PRODUCT_NAME := lineage_mata
-PRODUCT_BRAND := essential
-PRODUCT_MODEL := PH-1
-PRODUCT_MANUFACTURER := Essential Products
-PRODUCT_RELEASE_NAME := mata
+PRODUCT_DEVICE := nash
+PRODUCT_NAME := lineage_nash
+PRODUCT_BRAND := motorola
+PRODUCT_MODEL := Moto Z2
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := nash
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=mata \
-        BUILD_FINGERPRINT=essential/mata/mata:8.0.0/OPM1.170911.213/214:user/release-keys \
-        PRIVATE_BUILD_DESC="mata-user 8.0.0 OPM1.170911.213 214 release-keys"
+        PRODUCT_NAME=nash \
+        BUILD_FINGERPRINT=motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/release-keys

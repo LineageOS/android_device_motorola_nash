@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=mata
-VENDOR=essential
+DEVICE=nash
+VENDOR=motorola
 
 INITIAL_COPYRIGHT_YEAR=2017
 
