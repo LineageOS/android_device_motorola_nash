@@ -974,3 +974,26 @@ vendor/bin/time_daemon
 # Wi-Fi
 vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
+
+vendor/lib/libmotext_inf.so
+vendor/lib64/libmotext_inf.so
+vendor/lib/libmdmcutback.so
+vendor/lib64/libmdmcutback.so
+vendor/lib64/com.fingerprints.extension@1.0_vendor.so
+vendor/lib64/libsensorndkbridge.so
+vendor/lib/libsensorndkbridge.so
+vendor/lib64/libqmimotext.so
+vendor/lib/libqmimotext.so
+vendor/lib64/libadropbox.so
+vendor/lib64/sensors.iio.so
+vendor/lib/sensors.iio.so
+vendor/lib64/sensors.tof.so
+vendor/lib/sensors.tof.so
+lib/lib_mot_app6_metadata.so
+lib64/libiio.so
+lib/libiio.so
+lib/libmot_lux_standardization.so
+vendor/lib/lib_mot_led_calibration.so
+vendor/lib/libmot_afd.so
+vendor/lib/libmot_gpu_mapper.so
+vendor/lib/lib_motsensorlistener.so
