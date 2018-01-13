@@ -1,0 +1,9 @@
+service setup_shutdown /system/bin/setup_shutdown.sh
+    class main
+    user system
+    oneshot
+
+on post-fs-data
+
+    # OTA Package directory
+    mkdir /data/misc_ne 0770 system cache

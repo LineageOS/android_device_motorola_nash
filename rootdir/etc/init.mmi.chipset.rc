@@ -1,0 +1,50 @@
+# Moto Mods
+import /vendor/etc/init/hw/init.mods.rc
+
+# Charge only mode configuration
+import /vendor/etc/init/hw/init.mmi.charge_only.rc
+
+# Chipset-specific init settings
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group fingerp
+
+on post-fs
+    # Change permission for fingerprint sensor
+    chown system mot_tcmd /sys/devices/soc/soc:fpc_fpc1020/nav
+    chown system mot_tcmd /sys/devices/soc/soc:fpc_fpc1020/dev_enable
+    chown system mot_tcmd /sys/devices/soc/soc:fpc_fpc1020/irq
+    chown system mot_tcmd /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
+    chmod 0440 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
+    # MOT_LED_CALIBRATION
+    chown cameraserver /persist/camera/ledcal
+    restorecon_recursive   /carrier
+
+on early-init
+    setprop sys.usb.controller "a800000.dwc3"
+    setprop sys.usb.configfs 1
+
+on boot
+    # Change ownership and permission for AMPS factory testing
+    chown root mot_tcmd /sys/devices/soc/a800000.ssusb/modusb_enable
+    chmod 0660 /sys/devices/soc/a800000.ssusb/modusb_enable
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-0072/irq_enable
+    chmod 0660 /sys/class/i2c-adapter/i2c-7/7-0072/irq_enable
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+    chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+
+    start ufs_ffu
+
+# Set hub drive strength to +5%
+on property:ro.bootmode=normal
+   write /sys/module/usb3813_hub/parameters/boost_val 2
+
+service ufs_ffu /system/bin/ufs_ffu.sh
+    user root
+    class core
+    oneshot
+    disabled
+
+on property:ro.build.motfactory=1
+    write /sys/class/power_supply/battery/device/factory_image_mode 1

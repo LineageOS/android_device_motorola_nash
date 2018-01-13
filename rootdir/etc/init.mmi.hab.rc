@@ -1,0 +1,36 @@
+# high assurance boot image verification service
+
+service hab_verify_1 /vendor/bin/init.mmi.hab.sh system
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:init_hab:s0
+
+service hab_verify_2 /vendor/bin/init.mmi.hab.sh other
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:init_hab:s0
+
+service hab_verify_3 /vendor/bin/init.mmi.hab.sh complete
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:init_hab:s0
+
+on fs
+    start hab_verify_1
+
+on post-fs-data
+    verity_update_state
+    start hab_verify_2
+
+on property:sys.boot_completed=1
+    start hab_verify_3
+
