@@ -56,6 +56,9 @@ persist.camera.is_type=3
 persist.camera.max.previewfps=60
 vidc.enc.dcvs.extra-buff-count=2
 
+# Color Mode
+vendor.display.enable_default_color_mode=1
+
 # Display
 ro.sf.hwc_set_default_colormode=true
 debug.sf.enable_hwc_vds=1
@@ -155,6 +158,3 @@ ro.opa.eligible_device=true
 
 # Wifi
 wifi.interface=wlan0
-
-#Property to enable display default color mode
-vendor.display.enable_default_color_mode=1
