@@ -199,6 +199,7 @@ PRODUCT_PACKAGES += \
     init.mods.rc \
     init.qcom.rc \
     init.qcom.early_boot.sh \
+    init.qcom.power.sh \
     init.qcom.factory.rc \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
