@@ -121,6 +121,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgenlock \
     liboverlay \
+    libqdMetaData.system \
     libtinyxml
 
 # DRM
