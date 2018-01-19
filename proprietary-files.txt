@@ -906,6 +906,7 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 -app/ims/ims.apk|9bb1da84fd36d3b308607954197f6596fa567f91
+-app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml|a573a0eafbe94d7e9edeb4924a9604a1b6a208a8
 framework/qti-vzw-ims-internal.jar|9f0c22b5b7617b3d40985a9c01b760fe19947012
 lib/lib-imscamera.so
