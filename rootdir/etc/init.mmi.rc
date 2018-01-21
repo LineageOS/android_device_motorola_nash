@@ -540,6 +540,7 @@ service thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service esdpll /vendor/bin/esdpll -w
     class main

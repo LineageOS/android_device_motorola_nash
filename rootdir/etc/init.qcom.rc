@@ -521,6 +521,7 @@ service cnd /system/vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
+    writepid /dev/cpuset/system-background/tasks
 
 service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     class main
@@ -531,6 +532,7 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service rmt_storage /vendor/bin/rmt_storage
     class core
@@ -554,6 +556,7 @@ service start_hci_filter /system/vendor/bin/wcnss_filter
     group bluetooth diag system wakelock log
     seclabel u:r:bluetooth:s0
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 #service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
 #    class late_start
@@ -589,6 +592,7 @@ service port-bridge /system/vendor/bin/port-bridge
     group radio system inet
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 #service qmiproxy /system/bin/qmiproxy
 #    class main
@@ -606,6 +610,7 @@ service port-bridge /system/vendor/bin/port-bridge
 service netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service ipacm-diag /system/vendor/bin/ipacm-diag
     class main
@@ -613,6 +618,7 @@ service ipacm-diag /system/vendor/bin/ipacm-diag
     socket ipacm_log_file dgram 660 radio radio
     group radio diag
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service ipacm /system/vendor/bin/ipacm
     class main
@@ -625,12 +631,14 @@ service qti /system/vendor/bin/qti
     user radio
     group radio net_raw diag usb net_admin
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service sensors /vendor/bin/sensors.qcom
     class core
     user root
     group root
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -677,6 +685,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 #service vendor.wigig_supplicant /vendor/bin/hw/wpa_supplicant \
 #    -iwigig0 -Dnl80211 -c/data/vendor/wifi/wigig_supplicant.conf \
@@ -803,11 +812,13 @@ service wlan_logging /system/vendor/bin/cnss_diag -q -f
     group system wifi inet net_admin sdcard_rw media_rw diag
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.shutdown.requested=*
     stop cnss-daemon
@@ -858,6 +869,7 @@ service loc_launcher /system/vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
+    writepid /dev/cpuset/system-background/tasks
 
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
@@ -910,11 +922,13 @@ service qvop-daemon /vendor/bin/qvop-daemon
     class late_start
     user system
     group system drmrpc
+    writepid /dev/cpuset/system-background/tasks
 
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+    writepid /dev/cpuset/system-background/tasks
 
 service hostapd_fst /vendor/bin/hostapd -dd -g /data/vendor/wifi/hostapd/global /data/misc/wifi/hostapd.conf
     class late_start
@@ -1102,6 +1116,7 @@ service time_daemon /system/vendor/bin/time_daemon
     class main
     user root
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service qdmastatsd /system/vendor/bin/qdmastatsd
     class late_start
