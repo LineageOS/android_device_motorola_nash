@@ -199,6 +199,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    socket thermal-send-rule stream 0660 system system
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 #service security-check1 /sbin/security_boot_check system
 #    class core
@@ -213,6 +214,7 @@ service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
    group media
+   writepid /dev/cpuset/system-background/tasks
 
 #service hbtp /system/vendor/bin/hbtp_daemon
 #    class main
@@ -381,6 +383,7 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:init.svc.hwcomposer-2-1=stopped
     stop ppd
@@ -415,6 +418,7 @@ service energy-awareness /system/vendor/bin/energy-awareness
     user root
     group system
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service mdtpd /system/vendor/bin/mdtpd
     class late_start
@@ -425,6 +429,7 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
+    writepid /dev/cpuset/system-background/tasks
 
 service qvrd /system/bin/qvrservice
     class late_start
