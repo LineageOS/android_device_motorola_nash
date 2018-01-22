@@ -735,6 +735,21 @@ vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
+# Moto Mods
+-app/MotCameraMod/MotCameraMod.apk:app/MotCameraMod/MotCameraMod.apk
+etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
+etc/permissions/com.motorola.aov.xml
+etc/permissions/com.motorola.mod.protocols.xml
+etc/permissions/com.motorola.mod.xml
+etc/permissions/com.motorola.moto.xml
+etc/permissions/com.motorola.motodisplay.xml
+lib64/libmodhw.so
+-priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk
+-priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk
+vendor/bin/mods_camd
+vendor/lib/libmodmanager.so
+vendor/lib64/libmodmanager.so
+
 # NFC
 vendor/firmware/libpn553_fw.so
 
