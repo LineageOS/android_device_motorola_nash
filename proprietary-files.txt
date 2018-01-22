@@ -977,7 +977,6 @@ vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 
 # Wi-Fi
-vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
 
 vendor/lib/libmotext_inf.so
