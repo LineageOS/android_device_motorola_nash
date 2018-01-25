@@ -1234,11 +1234,6 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     user media
     group media
 
-service vendor.audiod /vendor/bin/audiod
-    class late_start
-    user system
-    group system
-
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
