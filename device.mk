@@ -364,6 +364,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
+# TextClassifier
+PRODUCT_PACKAGES += \
+    textclassifier.smartselection.bundle1
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-service.nash
