@@ -181,6 +181,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.gbmods.sh \
     init.mmi.rc \
     init.mmi.charge_only.rc \
     init.mmi.chipset.rc \
