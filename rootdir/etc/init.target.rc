@@ -437,3 +437,6 @@ service qvrd /system/bin/qvrservice
     group system camera graphics
     socket qvrservice stream 0666 system system
     capabilities SYS_NICE
+
+on property:sys.boot_completed=1
+    setprop sys.io.scheduler bfq
