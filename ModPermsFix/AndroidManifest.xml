@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="ModPermsFix" >
+
+    <!--
+      This package only exists to explicitly define the following permissions.
+    -->
+
+    <permission android:name="com.motorola.mod.permission.MOD_INTERNAL"
+        android:protectionLevel="signatureOrSystem" />
+
+    <permission android:name="com.motorola.mod.permission.MOD_SERVICE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <permission android:name="com.motorola.mod.permission.INTERACT_ACROSS_USERS_FULL"
+        android:protectionLevel="signatureOrSystem" />
+
+</manifest>
