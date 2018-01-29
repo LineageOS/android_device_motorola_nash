@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "791ee907_b46d7d83",
+        "filename": "ModFmwkProxyService/src/com/motorola/modservice/fmwkwrapper/IntentReceiver.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2018-01-29T13:40:06Z",
+      "side": 1,
+      "message": "wtf",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 5
+      },
+      "revId": "475062a4e9e225fbcb75ae92a8873cf4533d930c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
