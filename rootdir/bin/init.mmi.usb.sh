@@ -165,14 +165,14 @@ fi
 # Allow USB enumeration with default PID/VID
 #
 usb_config=`getprop persist.sys.usb.config`
-oem_5002_config=`getprop persist.mot.usb.config`
+mot_usb_config=`getprop persist.mot.usb.config`
 bootmode=`getprop ro.bootmode`
 buildtype=`getprop ro.build.type`
 securehw=`getprop ro.boot.secure_hardware`
 cid=`getprop ro.boot.cid`
 diagmode=`getprop persist.radio.usbdiag`
 
-echo "mmi-usb-sh: persist usb configs = \"$usb_config\", \"$oem_5002_config\", \"$diagmode\""
+echo "mmi-usb-sh: persist usb configs = \"$usb_config\", \"$mot_usb_config\", \"$diagmode\""
 
 
 phonelock_type=`getprop persist.sys.phonelock.mode`
@@ -289,9 +289,9 @@ case "$bootmode" in
             "mtp,adb" | "mtp" | "adb")
             ;;
             *)
-                case "$oem_5002_config" in
+                case "$mot_usb_config" in
                     "mtp,adb" | "mtp" | "adb")
-                        setprop persist.sys.usb.config $oem_5002_config
+                        setprop persist.sys.usb.config $mot_usb_config
                     ;;
                     *)
                         case "$securehw" in
