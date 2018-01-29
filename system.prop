@@ -74,6 +74,9 @@ ro.sf.hwrotation=180
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
+# Mods
+sys.mod.platformsdkversion=205
+
 # NFC
 ro.nfc.port=I2C
 
