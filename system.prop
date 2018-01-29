@@ -71,6 +71,9 @@ ro.qualcomm.cabl=0
 ro.sf.lcd_density=560
 ro.sf.hwrotation=180
 
+# Mods
+sys.mod.platformsdkversion=205
+
 # NFC
 ro.nfc.port=I2C
 
