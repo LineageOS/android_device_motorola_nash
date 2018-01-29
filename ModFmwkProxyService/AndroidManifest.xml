@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" android:versionCode="105000" android:versionName="01.05.000" package="com.motorola.modservice.fmwkwrapper" >
+    <!-- Permissions default to protectionLevel="signature", so define them here.
+         This allows us to use ModService.apk with the original signature instead
+         of re-signing it with the platform certificate. -->
+    <permission android:name="com.motorola.mod.permission.MOD_INTERNAL" android:protectionLevel="signatureOrSystem" />
+    <permission android:name="com.motorola.mod.permission.MOD_SERVICE" android:protectionLevel="signatureOrSystem" />
+    <permission android:name="com.motorola.mod.permission.INTERACT_ACROSS_USERS_FULL" android:protectionLevel="signatureOrSystem" />
     <uses-permission android:name="android.permission.GRANT_RUNTIME_PERMISSIONS" />
     <uses-permission android:name="android.permission.REVOKE_RUNTIME_PERMISSIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
