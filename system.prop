@@ -71,9 +71,6 @@ ro.qualcomm.cabl=0
 ro.sf.lcd_density=560
 ro.sf.hwrotation=180
 
-# Factory reset partition
-ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
-
 # Mods
 sys.mod.platformsdkversion=205
 
