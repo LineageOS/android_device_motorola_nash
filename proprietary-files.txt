@@ -48,6 +48,8 @@ vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
 # Camera
+lib/hw/libSonyDefocus.so
+vendor/bin/vl53l1_daemon
 vendor/lib/hw/camera.msm8998.so
 vendor/lib/libactuator_mot_ak7371.so
 vendor/lib/libchromatix_imx386_4k_video_3a.so
