@@ -48,6 +48,10 @@ on init
     #ESDFS
     chown oem_5016 root /proc/fs/esdfs/packages
 
+    # Laser focus sensor
+    chmod 0660 /sys/devices/virtual/laser/stmvl53l1/enable_sar
+    chown root system /sys/devices/virtual/laser/stmvl53l1/enable_sar
+
 on fs
     wait /dev/block/bootdevice/by-name/hw
     start oem-hw-sh
