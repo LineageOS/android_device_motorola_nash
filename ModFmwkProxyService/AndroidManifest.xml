@@ -26,6 +26,7 @@
         <receiver android:name=".BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />

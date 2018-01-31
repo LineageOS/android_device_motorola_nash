@@ -14,7 +14,7 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         Intent it;
-        if (!sInitialized && "android.intent.action.USER_PRESENT".equals(action)) {
+        if (!sInitialized && ("android.intent.action.USER_PRESENT".equals(action) || "android.intent.action.LOCKED_BOOT_COMPLETED".equals(action))) {
             if (DEBUG) {
                 Log.i("fwkbootreceiver", "Received intent " + action + ", starting to check bootanim");
             }
