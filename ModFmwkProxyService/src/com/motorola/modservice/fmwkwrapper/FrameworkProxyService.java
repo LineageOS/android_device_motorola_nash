@@ -93,7 +93,7 @@ public class FrameworkProxyService extends Service {
     private void startModService() {
         Intent it = new Intent("com.motorola.modservice.ACTION_BOOT");
         it.setComponent(IntentReceiver.MOD_SERVICE_NAME);
-        startService(it);
+        startServiceAsUser(it, UserHandle.CURRENT);
     }
 
     public void onCreate() {

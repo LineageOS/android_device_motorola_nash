@@ -103,7 +103,7 @@ public class IntentReceiver extends BroadcastReceiver {
                 if (bind) {
                     Intent it = new Intent("com.motorola.mod.action.BIND_MANAGER");
                     it.setComponent(MOD_SERVICE_NAME);
-                    ctx.bindService(it, this.mServiceConnection, 73);
+                    ctx.bindServiceAsUser(it, this.mServiceConnection, 73, UserHandle.CURRENT);
                 }
             } else if ("com.motorola.mod.action.display.ON_INTERNAL".equals(action)) {
                 if (intent.getIntExtra("powerMode", -1) == 1) {

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.UserHandle;
 import android.util.Log;
 
 public class BootReceiver extends BroadcastReceiver {
@@ -19,12 +20,12 @@ public class BootReceiver extends BroadcastReceiver {
             }
             it = new Intent("com.motorola.mod.action.SERVICE_INIT");
             it.setClass(context.getApplicationContext(), FrameworkProxyService.class);
-            context.startService(it);
+            context.startServiceAsUser(it, UserHandle.CURRENT);
             sInitialized = true;
         } else if ("android.intent.action.PACKAGE_DATA_CLEARED".equals(action)) {
             it = new Intent("com.motorola.mod.action.SERVICE_INIT");
             it.setClass(context.getApplicationContext(), FrameworkProxyService.class);
-            context.startService(it);
+            context.startServiceAsUser(it, UserHandle.CURRENT);
         }
     }
 }
