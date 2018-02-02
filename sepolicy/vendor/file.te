@@ -6,3 +6,6 @@ type persist_camera_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 type sysfs_sensor, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
+
+# charge_only_mode
+type chargeonly_data_file, file_type, data_file_type;

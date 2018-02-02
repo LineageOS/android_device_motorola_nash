@@ -45,3 +45,5 @@
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
 
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
+
+/(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
