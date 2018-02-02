@@ -82,6 +82,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
+# CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
 # Dalvik/HWUI
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
