@@ -82,10 +82,6 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
-# CMActions
-PRODUCT_PACKAGES += \
-    CMActions
-
 # Dalvik/HWUI
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
@@ -241,6 +237,10 @@ PRODUCT_PACKAGES += \
 # LED packages
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.nash
+
+# LineageActions
+PRODUCT_PACKAGES += \
+    LineageActions
 
 # Media
 PRODUCT_COPY_FILES += \
