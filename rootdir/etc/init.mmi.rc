@@ -1,5 +1,3 @@
-import /vendor/etc/init/hw/init.mmi.modprobe.rc
-
 # Target-specific file
 import /vendor/etc/init/hw/init.mmi.overlay.rc
 
