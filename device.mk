@@ -79,6 +79,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
+    libbson \
     libxml2 \
     Snap
 
@@ -190,6 +191,7 @@ PRODUCT_PACKAGES += \
     init.mmi.diag_mdlog.rc \
     init.mmi.hab.rc \
     init.mmi.hab.sh \
+    init.mmi.laser.sh \
     init.mmi.overlay.rc \
     init.mmi.ramdump.rc \
     init.mmi.usb.sh \
