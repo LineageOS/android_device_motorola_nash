@@ -32,6 +32,8 @@ on early-boot
 on early-init
 
 on init
+    export LD_SHIM_LIBS /system/vendor/lib/libmdmcutback.so|libqsap_shim.so:/system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
+
     chown system log /sys/fs/pstore/console-ramoops-0
     chmod 0440 /sys/fs/pstore/console-ramoops-0
     chown system log /sys/fs/pstore/annotate-ramoops-0
