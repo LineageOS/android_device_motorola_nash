@@ -37,10 +37,10 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    bootctrl.msm8998
+    bootctrl.qcom
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msm8998 \
+    bootctrl.qcom \
     libgptutils \
     libz
 
