@@ -48,6 +48,7 @@ vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
 # Camera
+etc/permissions/com.motorola.camera2.xml
 etc/zaf/zaf_mot_s5k2l7sa.json
 etc/zaf/zaf_imx386.json
 etc/zaf/zaf_imx386_mono.json
