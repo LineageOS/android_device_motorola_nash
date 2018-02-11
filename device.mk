@@ -156,6 +156,9 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
+# GMS
+PRODUCT_GMS_CLIENTID_BASE := android-motorola
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \

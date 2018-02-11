@@ -86,6 +86,12 @@ ro.core_ctl_min_cpu=2
 ro.vendor.at_library=libqti-at.so
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# Play store
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
+
 # Radio
 persist.cne.feature=1
 persist.dpm.feature=0
