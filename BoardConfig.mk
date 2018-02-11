@@ -98,9 +98,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 
-# Bootctrl HAL
-BOARD_PROVIDES_BOOTCTRL_HAL := true
-
 # Camera
 USE_CAMERA_STUB := true
 
