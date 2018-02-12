@@ -806,6 +806,7 @@ vendor/lib64/libdisp-aba.so
 
 # QMI
 etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -853,8 +854,10 @@ etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 framework/qcrilhook.jar
 framework/qti-telephony-common.jar
+framework/com.qti.dpmframework.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
@@ -879,19 +882,27 @@ vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
 vendor/lib64/libconfigdb.so
+vendor/lib/libconfigdb.so
 vendor/lib64/liblqe.so
+vendor/lib/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
+vendor/lib/libnetmgr.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
+vendor/lib/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
+vendor/lib/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/lib-dplmedia.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
+vendor/lib/libsystem_health_mon.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
@@ -961,6 +972,16 @@ vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
+# MOTO RIL
+vendor/bin/qmi_motext_hook
+vendor/lib64/libmotext_inf.so
+vendor/lib/libmotext_inf.so
+vendor/lib/libmdmcutback.so
+vendor/lib64/libmdmcutback.so
+vendor/lib/libqmimotext.so
+vendor/lib64/libqmimotext.so
+
+
 # Sensors
 vendor/bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8998.so
@@ -994,15 +1015,9 @@ vendor/bin/time_daemon
 # Wi-Fi
 vendor/bin/cnss-daemon
 
-vendor/lib/libmotext_inf.so
-vendor/lib64/libmotext_inf.so
-vendor/lib/libmdmcutback.so
-vendor/lib64/libmdmcutback.so
 vendor/lib64/com.fingerprints.extension@1.0_vendor.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
-vendor/lib64/libqmimotext.so
-vendor/lib/libqmimotext.so
 vendor/lib64/libadropbox.so
 vendor/lib64/sensors.iio.so
 vendor/lib/sensors.iio.so
