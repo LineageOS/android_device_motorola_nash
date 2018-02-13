@@ -35,7 +35,7 @@ public class DozePreferenceActivity extends PreferenceActivity {
                 .replace(android.R.id.content, new DozePreferenceFragment()).commit();
     }
 
-    public class DozePreferenceFragment extends PreferenceFragment {
+    public static class DozePreferenceFragment extends PreferenceFragment {
         private static final String KEY_AMBIENT_DISPLAY_ENABLE = "doze_enabled";
 
         private SwitchPreference mAmbientDisplayPreference;
