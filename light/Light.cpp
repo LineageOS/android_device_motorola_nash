@@ -28,17 +28,16 @@ namespace light {
 namespace V2_0 {
 namespace implementation {
 
+#define LED_LIGHT_OFF 0
+#define LED_LIGHT_ON  1
+
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
-#define LED_LED         LEDS "charging/"
+#define CHARGING_LED    LEDS "charging/"
 
 #define BRIGHTNESS      "brightness"
 
-#define LED_LIGHT_OFF          0
-#define LED_LIGHT_BLINK_FAST   1
-#define LED_LIGHT_BLINK_SLOW   2
-#define LED_LIGHT_SOLID_ON     3
 
 /*
  * Write value to path and close file.
@@ -58,34 +57,30 @@ static void set(std::string path, int value) {
     set(path, std::to_string(value));
 }
 
+static uint32_t is_lit(const LightState& state) {
+    return state.color & 0x00ffffff;
+}
+
+static uint32_t rgbToBrightness(const LightState& state) {
+    uint32_t color = state.color & 0x00ffffff;
+    return ((77 * ((color >> 16) & 0xff)) + (150 * ((color >> 8) & 0xff)) +
+            (29 * (color & 0xff))) >> 8;
+}
+
 static void handleBacklight(const LightState& state) {
-    uint32_t brightness = state.color & 0xFF;
+    uint32_t brightness = rgbToBrightness(state);
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
 static void handleNotification(const LightState& state) {
-    uint32_t brightness;
+    uint32_t Brightness;
 
-    /*
-     * Extract brightness light.
-     */
-    brightness = ((state.color >> 24) & 0xFF) ? LED_LIGHT_SOLID_ON : LED_LIGHT_OFF;
-
-    if (state.flashMode == Flash::TIMED) {
-        /*
-         * If the flashOnMs duration is not long enough to fit ramping up
-         * and down at the default step duration, step duration is modified
-         * to fit.
-         */
-        int32_t flashOffMs = state.flashOffMs;
-        if (flashOffMs > 750)
-            set(LED_LED BRIGHTNESS, LED_LIGHT_BLINK_SLOW);
-        else
-            set(LED_LED BRIGHTNESS, LED_LIGHT_BLINK_FAST);
-        
-    } else {
-        set(LED_LED BRIGHTNESS, brightness);
-    }
+    if (is_lit(state))
+        Brightness = LED_LIGHT_ON;
+    else
+        Brightness = LED_LIGHT_OFF;
+    
+     set(CHARGING_LED BRIGHTNESS, Brightness);
 }
 
 static std::map<Type, std::function<void(const LightState&)>> lights = {
