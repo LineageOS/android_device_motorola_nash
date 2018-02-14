@@ -177,39 +177,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
-# Init
-PRODUCT_COPY_FILES += \
-    device/motorola/nash/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
-
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.class_main.sh \
-    init.gbmods.sh \
-    init.mmi.rc \
-    init.mmi.charge_only.rc \
-    init.mmi.chipset.rc \
-    init.mmi.common.rc \
-    init.mmi.debug.rc \
-    init.mmi.diag.rc \
-    init.mmi.diag_mdlog.rc \
-    init.mmi.hab.rc \
-    init.mmi.hab.sh \
     init.mmi.laser.sh \
-    init.mmi.overlay.rc \
     init.mmi.ramdump.rc \
-    init.mmi.usb.sh \
     init.mmi.usb.rc \
-    init.mmi.volte.rc \
-    init.mods.rc \
+    init.mmi.usb.sh \
     init.qcom.rc \
+    init.power.rc \
     init.qcom.early_boot.sh \
     init.qcom.power.sh \
-    init.qcom.factory.rc \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
+    init.gbmods.sh \
     init.qti.qseecomd.sh \
-    init.target.rc \
+    ueventd.qcom.rc \
     wlan_carrier_bin.sh
 
 # IPACM
