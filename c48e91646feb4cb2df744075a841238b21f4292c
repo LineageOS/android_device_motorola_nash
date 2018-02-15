@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5323665_67bbb4ac",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 15775
+      },
+      "writtenOn": "2018-02-15T11:35:24Z",
+      "side": 1,
+      "message": "You can use this https://github.com/LineageOS/android_external_bson",
+      "revId": "c48e91646feb4cb2df744075a841238b21f4292c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
