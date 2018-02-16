@@ -538,10 +538,10 @@ service mmi-audio-sh /vendor/bin/init.mmi.audio.sh
     user root
     oneshot
 
-service charge_only_mode /vendor/bin/charge_only_mode
-    user root
-    group graphics system input
-    disabled
+service charger /charger
+    class charger
+    group log
+    seclabel u:r:healthd:s0
 
 service thermal-com /vendor/bin/thermal-engine --minimode
     class main
