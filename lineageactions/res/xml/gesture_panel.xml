@@ -60,9 +60,14 @@
 
 
         <SwitchPreference
-            android:key="fp_sleep"
-            android:title="@string/fingerprint_sleep_title"
-            android:summary="@string/fingerprint_sleep_summary" />
+            android:key="fp_home"
+            android:title="@string/fingerprint_as_home_title"
+            android:summary="@string/fingerprint_as_home_summary" />
+
+        <SwitchPreference
+            android:key="fp_home_wakeup"
+            android:title="@string/fingerprint_wakeup_title"
+            android:summary="@string/fingerprint_wakeup_summary" />
 
     </PreferenceCategory>
 

@@ -26,10 +26,16 @@ import android.preference.PreferenceManager;
 public class Constants {
 
     // Swap keys
-    public static final String FP_SLEEP_KEY = "fp_sleep";
+    public static final String FP_HOME_KEY = "fp_home";
+
+    // Wakeup key
+    public static final String FP_HOME_WAKEUP_KEY = "fp_home_wakeup";
 
     // Swap nodes
-    public static final String FP_SLEEP_NODE = "/sys/bus/spi/devices/spi8.0/key_enable";
+    public static final String FP_HOME_NODE = "/sys/homebutton/enable";
+
+    // Wakeup node
+    public static final String FP_HOME_WAKEUP_NODE = "/sys/homebutton/enable_wakeup";
 
     // Holds <preference_key> -> <proc_node> mapping
     public static final Map<String, String> sBooleanNodePreferenceMap = new HashMap<>();
@@ -38,12 +44,15 @@ public class Constants {
     public static final Map<String, Object> sNodeDefaultMap = new HashMap<>();
 
     public static final String[] sButtonPrefKeys = {
-        FP_SLEEP_KEY,
+        FP_HOME_KEY,
+        FP_HOME_WAKEUP_KEY,
     };
 
     static {
-        sBooleanNodePreferenceMap.put(FP_SLEEP_KEY, FP_SLEEP_NODE);
-        sNodeDefaultMap.put(FP_SLEEP_KEY, false);
+        sBooleanNodePreferenceMap.put(FP_HOME_KEY, FP_HOME_NODE);
+        sBooleanNodePreferenceMap.put(FP_HOME_WAKEUP_KEY, FP_HOME_WAKEUP_NODE);
+        sNodeDefaultMap.put(FP_HOME_KEY, false);
+        sNodeDefaultMap.put(FP_HOME_WAKEUP_KEY, false);
     }
 
     public static boolean isPreferenceEnabled(Context context, String key) {

@@ -8,6 +8,8 @@
 # as published by the Free Software Foundation.
 #
 
-# fpc1020 "finger present"
-key 614   FPS_DOWN
-key 615   FPS_UP
+device.internal = 1
+
+keyboard.layout = fpc1020
+keyboard.builtIn = 1
+keyboard.orientationAware = 0
