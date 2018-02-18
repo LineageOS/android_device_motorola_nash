@@ -760,6 +760,10 @@ vendor/lib64/libmodmanager.so
 # NFC
 vendor/firmware/libpn553_fw.so
 
+# Offmode charging
+lib64/com.motorola.mod@1.0.so
+vendor/bin/charge_only_mode
+
 # Perf
 lib/libqti_performance.so
 lib/libqti-perfd-client_system.so
