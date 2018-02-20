@@ -1116,10 +1116,9 @@ service vendor.mlid /vendor/bin/mlid
     socket mlid stream 0666 gps gps
 
 service vendor.loc_launcher /vendor/bin/loc_launcher
-    #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet diag wifi
-    writepid /dev/cpuset/system-background/tasks
+    user gps
+    group gps
 
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
