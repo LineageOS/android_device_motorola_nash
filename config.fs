@@ -88,6 +88,12 @@ user:  AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE BLOCK_SUSPEND
 
+[vendor/bin/loc_launcher]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: SETUID SETGID
+
 [vendor/bin/sensors.qti]
 mode: 0755
 user: AID_SYSTEM
