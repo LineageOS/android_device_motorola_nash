@@ -29,6 +29,13 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
 
 on init
+    # Disable UFS powersaving
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
+    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 0
+
+    write /sys/module/lpm_levels/parameters/sleep_disabled Y
+
     # Set up schedtune
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
@@ -103,6 +110,11 @@ on post-fs-data
     write /sys/block/dm-1/queue/read_ahead_kb 2048
 
 on property:sys.boot_completed=1
+    # Enable UFS powersaving
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
+    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
+
     #Reset read ahead for dm-0 and dm-1 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
@@ -136,6 +148,13 @@ on moto-charger
     start gbmodinstall
     start charge_only_mode
     start thermal-com
+
+    # Enable UFS powersaving
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
+    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
+
+    write /sys/module/lpm_levels/parameters/sleep_disabled N
 
     # disable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 0
