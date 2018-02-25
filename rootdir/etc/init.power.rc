@@ -137,8 +137,14 @@ on moto-charger
     start charge_only_mode
     start thermal-com
 
+    # disable thermal core control
+    write /sys/module/msm_thermal/core_control/enabled 0
+
+    # online cpu 0 and set governor powersave
     write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+
+    # offline remaining cores
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
