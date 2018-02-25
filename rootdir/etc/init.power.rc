@@ -103,13 +103,30 @@ on boot
     # in FBE mode, /data is here
     write /sys/block/sdb/queue/read_ahead_kb 512
 
-# msm specific files that need to be created on /data
-on post-fs-data
-    # set aggressive read ahead for dm-0 and dm-1 during boot up
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-    write /sys/block/dm-1/queue/read_ahead_kb 2048
+on late-fs
+    # Enable boot time fs tuning (ro like system is on sde/f, rw like userdata is on sdb)
+    write /sys/block/sdb/queue/iostats 0
+    write /sys/block/sdb/queue/nr_requests 256
+    write /sys/block/sdb/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/sdf/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/iostats 0
+    write /sys/block/sde/queue/nr_requests 256
+    write /sys/block/sda/queue/read_ahead_kb 2048
 
 on property:sys.boot_completed=1
+    # Disable boot time fs tuning
+    write /sys/block/sdb/queue/read_ahead_kb 1024
+    write /sys/block/sdb/queue/nr_requests 128
+    write /sys/block/sdb/queue/iostats 1
+    write /sys/block/sdf/queue/read_ahead_kb 1024
+    write /sys/block/sdf/queue/nr_requests 128
+    write /sys/block/sdf/queue/iostats 1
+    write /sys/block/sde/queue/read_ahead_kb 1024
+    write /sys/block/sde/queue/nr_requests 128
+    write /sys/block/sde/queue/iostats 1
+
     # Enable UFS powersaving
     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
