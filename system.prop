@@ -92,6 +92,9 @@ ro.com.google.clientidbase.gmm=android-motorola
 ro.com.google.clientidbase.ms=android-motorola
 ro.com.google.clientidbase.yt=android-motorola
 
+# privapp-permissions whitelist
+ro.control_privapp_permissions=enforce
+
 # Radio
 persist.vendor.radio.no_wait_for_card=1
 persist.vendor.radio.dfr_mode_set=1
