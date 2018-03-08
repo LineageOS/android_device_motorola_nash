@@ -359,10 +359,9 @@ on post-fs-data
     mkdir /data/misc/fm 0770 system system
     chmod 0770 /data/misc/fm
 
-    #Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
+    # Create perfd related dirs
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
 
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
@@ -591,6 +590,13 @@ service ftmd /vendor/bin/ftmdaemon
     group bluetooth net_bt_admin misc diag net_bt
     disabled
     oneshot
+
+service perfd /vendor/bin/perfd
+   class main
+   user root
+   group root readproc system
+   socket perfd seqpacket 0666 root system
+   disabled
 
 service port-bridge /system/vendor/bin/port-bridge
     class main
@@ -884,6 +890,10 @@ on property:crypto.driver.load=1
 
 #on property:drmdiag.load=0
 #    stop drmdiag
+
+# qcom-power triggers this property
+on property:sys.post_boot.parsed=1
+    start perfd
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
