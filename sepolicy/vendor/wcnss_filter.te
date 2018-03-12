@@ -1,0 +1,3 @@
+r_dir_file(wcnss_filter, firmware_file)
+allow wcnss_filter self:capability dac_override;
+
