@@ -1,0 +1,45 @@
+/dev/block/platform/soc/1da4000.ufshc/sd[abef]          u:object_r:gpt_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]4           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]9           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]12          u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]16          u:object_r:ab_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]19          u:object_r:system_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[ef]20          u:object_r:ab_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/sd[cd]            u:object_r:xbl_block_device:s0
+
+/dev/mmi_sys_temp            u:object_r:thermal_device:s0
+/dev/socket/perfd            u:object_r:perfd_socket:s0
+
+/fsg                         u:object_r:fsg_firmware_file:s0
+
+/dev/laser                   u:object_r:vl53l1_device:s0
+/dev/v4l2-hal-ctrl           u:object_r:video_device:s0
+/sys/devices/soc/8c0000.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa0000.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa4000.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
+/persist/camera(/.*)?                                         u:object_r:persist_camera_file:s0
+/sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
+/sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
+
+/data/vendor/nfc(/.*)?                                        u:object_r:nfc_data_file:s0
+
+/(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
+/(vendor|system/vendor)/bin/init.gbmods.sh                    u:object_r:init-gbmods-sh_exec:s0
+/(vendor|system/vendor)/bin/mods_camd                         u:object_r:mods_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.nash    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.nash    u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@1\.1-service\.nash  u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/init\.mmi\.(laser|usb)\.sh                        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.power\.sh                             u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/perfd                                             u:object_r:perfd_exec:s0
+
+/sys/devices/soc/c900000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness                 u:object_r:sysfs_leds:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds/charging/brightness     u:object_r:sysfs_leds:s0
+
+/sys/kernel/debug/rmt_storage(/.*)?                           u:object_r:debugfs_rmts:s0
+/sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
+
+/sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
