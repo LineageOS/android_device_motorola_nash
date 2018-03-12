@@ -1,0 +1,10 @@
+type init-gbmods-sh, domain;
+type init-gbmods-sh_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init-gbmods-sh)
+
+allow init-gbmods-sh vendor_shell_exec:file rx_file_perms;
+allow init-gbmods-sh vendor_toolbox_exec:file rx_file_perms;
+
+# execute grep
+allow init-gbmods-sh vendor_file:file rx_file_perms;

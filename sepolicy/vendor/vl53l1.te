@@ -1,0 +1,2 @@
+type vl53l1, domain;
+type vl53l1_exec, exec_type, vendor_file_type, file_type;
