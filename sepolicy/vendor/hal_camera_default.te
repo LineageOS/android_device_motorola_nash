@@ -1,0 +1,1 @@
+allow hal_camera_default persist_camera_file:file r_file_perms;
