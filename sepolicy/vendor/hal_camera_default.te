@@ -1,0 +1,2 @@
+r_dir_file(hal_camera_default, persist_camera_file)
+allow hal_camera_default vl53l1_device:chr_file rw_file_perms;
