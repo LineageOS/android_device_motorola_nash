@@ -1,0 +1,2 @@
+r_dir_file(hal_power_default, sysfs_graphics)
+unix_socket_connect(hal_power_default, perfd, perfd)
