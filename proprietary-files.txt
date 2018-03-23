@@ -906,7 +906,6 @@ vendor/radio/qcril_database/qcril.db
 -app/ims/ims.apk|9bb1da84fd36d3b308607954197f6596fa567f91
 etc/permissions/qti-vzw-ims-internal.xml|a573a0eafbe94d7e9edeb4924a9604a1b6a208a8
 framework/qti-vzw-ims-internal.jar|9f0c22b5b7617b3d40985a9c01b760fe19947012
-lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so
 lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so
@@ -916,7 +915,6 @@ lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
 lib/librcc.so
 lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/lib-imscamera.so
 lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so
@@ -930,12 +928,8 @@ lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
-vendor/bin/imsrcsd
-vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so
-vendor/lib/lib-imscmservice.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcs-v2.so
 vendor/lib/lib-imsxml.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
@@ -943,18 +937,14 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
-vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-imscmservice.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs-v2.so
 vendor/lib64/lib-imsxml.so
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
