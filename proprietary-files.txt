@@ -468,8 +468,6 @@ vendor/lib/libmm-hdcpmgr.so
 vendor/lib64/libmm-hdcpmgr.so
 
 # DRM - Qualcomm Trusted Execution Enviornment
-lib/vendor.qti.hardware.qteeconnector@1.0.so
-lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
@@ -538,8 +536,6 @@ vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
 
 # GPS
-lib/vendor.qti.gnss@1.0.so
-lib64/vendor.qti.gnss@1.0.so
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/DR_AP_Service
 vendor/bin/garden_app
@@ -580,16 +576,6 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 # Graphics
 -vendor/lib/libsdm-disp-vndapis.so
 -vendor/lib64/libsdm-disp-vndapis.so
-lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
-lib/libsdm-disp-apis.so:vendor/lib/libsdm-disp-apis.so
-lib/vendor.display.color@1.0.so
-lib/vendor.display.postproc@1.0.so
-lib/vendor.qti.hardware.qdutils_disp@1.0.so|a3686a9e8523506305237e3398a16467b00d43d5
-lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so
-lib64/libsdm-disp-apis.so:vendor/lib64/libsdm-disp-apis.so
-lib64/vendor.display.color@1.0.so
-lib64/vendor.display.postproc@1.0.so
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so|6758be5776f8df423a90567d69ef34dadd8df5aa
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|0ed4f41dd0868e12c57ef0ecf493dafa6885ace2
 vendor/etc/init/vendor.display.color@1.0-service.rc
@@ -784,9 +770,6 @@ vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
 # Postprocessing
-etc/permissions/com.qti.snapdragon.sdk.display.xml
-framework/com.qti.snapdragon.sdk.display.jar
--vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-dpps
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
@@ -834,15 +817,10 @@ vendor/lib64/libsmemlog.so
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
--app/radioconfig/radioconfig.apk
 etc/permissions/qcrilhook.xml
-etc/permissions/radioconfig.xml
-etc/permissions/radioconfiginterface.xml
 etc/permissions/telephonyservice.xml
-framework/embmslibrary.jar
 framework/qcrilhook.jar
 framework/qti-telephony-common.jar
-framework/com.qti.dpmframework.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
