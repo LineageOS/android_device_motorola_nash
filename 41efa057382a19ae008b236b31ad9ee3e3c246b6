@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8842fd8c_2fb2dcd8",
+        "filename": "sepolicy/vendor/init.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Remove brackets, unneeded",
+      "range": {
+        "startLine": 1,
+        "startChar": 33,
+        "endLine": 1,
+        "endChar": 44
+      },
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bef24cb8_76922a67",
+        "filename": "sepolicy/vendor/per_mgr.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Remove brackets, unneeded",
+      "range": {
+        "startLine": 1,
+        "startChar": 30,
+        "endLine": 1,
+        "endChar": 41
+      },
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7c8bc9e_12070978",
+        "filename": "sepolicy/vendor/rmt_storage.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Don\u0027t allow dac_override, add necessary group",
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c770ce11_33a79434",
+        "filename": "sepolicy/vendor/rmt_storage.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Remove brackets, unneeded",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 48
+      },
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66a7045c_001e14aa",
+        "filename": "sepolicy/vendor/rmt_storage.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Remove brackets, unneeded",
+      "range": {
+        "startLine": 3,
+        "startChar": 58,
+        "endLine": 3,
+        "endChar": 75
+      },
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7608a59_71f4a8b0",
+        "filename": "sepolicy/vendor/thermalserviced.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-04-04T10:48:12Z",
+      "side": 1,
+      "message": "Don\u0027t allow dac_override, add necessary group",
+      "revId": "41efa057382a19ae008b236b31ad9ee3e3c246b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
