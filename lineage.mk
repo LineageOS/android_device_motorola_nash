@@ -66,5 +66,6 @@ PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := nash
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=nash \
-        BUILD_FINGERPRINT=motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/release-keys
+        PRODUCT_NAME=nash
+
+BUILD_FINGERPRINT := motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/release-keys
