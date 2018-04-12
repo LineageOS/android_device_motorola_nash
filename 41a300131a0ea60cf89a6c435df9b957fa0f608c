@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f85bcdf4_aa4b3fa1",
+        "filename": "device.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2018-04-12T13:42:15Z",
+      "side": 0,
+      "message": "this change belongs in a separate commit",
+      "range": {
+        "startLine": 134,
+        "startChar": 47,
+        "endLine": 134,
+        "endChar": 55
+      },
+      "revId": "41a300131a0ea60cf89a6c435df9b957fa0f608c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
