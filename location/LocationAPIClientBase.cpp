@@ -29,12 +29,12 @@
 #define LOG_NDDEBUG 0
 #define LOG_TAG "LocSvc_APIClientBase"
 
-#include <platform_lib_log_util.h>
+#include <loc_pla.h>
+#include <log_util.h>
 #include <inttypes.h>
 #include <loc_cfg.h>
 #include "LocationAPIClientBase.h"
 
-#define FLP_CONF_FILE "/etc/flp.conf"
 #define GEOFENCE_SESSION_ID 0xFFFFFFFF
 #define CONFIG_SESSION_ID 0xFFFFFFFF
 
@@ -364,7 +364,7 @@ int32_t LocationAPIClientBase::locAPIGetBatchSize()
         {
             {"BATCH_SIZE", &mBatchSize, nullptr, 'n'},
         };
-        UTIL_READ_CONF(FLP_CONF_FILE, flp_conf_param_table);
+        UTIL_READ_CONF(LOC_PATH_FLP_CONF, flp_conf_param_table);
         if (mBatchSize < 0) {
             // set mBatchSize to 0 if we got an illegal value from config file
             mBatchSize = 0;
