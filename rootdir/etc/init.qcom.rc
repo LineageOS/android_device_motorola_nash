@@ -354,7 +354,6 @@ on boot
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
-    chown wifi wifi /sys/kernel/boot_wlan/boot_wlan
 
     # restore default console_loglevel to KERN_DEBUG
     # restore default_message_loglevel to KERN_WARNING
