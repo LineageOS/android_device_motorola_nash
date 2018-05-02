@@ -1293,6 +1293,20 @@ struct AGnssExtStatusIpV6 {
     uint8_t ipV6Addr[16];
 };
 
+/* ODCPI Request Info */
+enum OdcpiRequestType {
+    ODCPI_REQUEST_TYPE_START,
+    ODCPI_REQUEST_TYPE_STOP
+};
+struct OdcpiRequestInfo {
+    size_t size;
+    OdcpiRequestType type;
+    uint32_t tbfMillis;
+    bool isEmergencyMode;
+};
+/* Callback to send ODCPI request to framework */
+typedef std::function<void(const OdcpiRequestInfo& request)> OdcpiRequestCallback;
+
 /*
  * Callback with AGNSS(IpV4) status information.
  *
@@ -1314,8 +1328,8 @@ typedef void (*LocAgpsOpenResultCb)(bool isSuccess, AGpsExtType agpsType, const 
 typedef void (*LocAgpsCloseResultCb)(bool isSuccess, AGpsExtType agpsType, void* userDataPtr);
 
 /* Shared resources of LocIpc */
-#define LOC_IPC_HAL "/data/vendor/location/socket_hal"
-#define LOC_IPC_XTRA "/data/vendor/location/xtra/socket_xtra"
+#define LOC_IPC_HAL "/dev/socket/location/socket_hal"
+#define LOC_IPC_XTRA "/dev/socket/location/xtra/socket_xtra"
 
 #ifdef __cplusplus
 }
