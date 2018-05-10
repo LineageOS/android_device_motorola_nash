@@ -13,3 +13,4 @@ get_prop(rild, moto_boot_prop)
 get_prop(rild, vendor_radio_prop)
 
 binder_call(rild, qtidataservices_app)
+get_prop(rild, vendor_pd_locater_dbg_prop)
