@@ -946,13 +946,6 @@ service vendor.ftmd /vendor/bin/ftmdaemon
     disabled
     oneshot
 
-service vendor.perfd /vendor/bin/perfd
-   class main
-   user root
-   group root readproc system
-   socket perfd seqpacket 0666 root system
-   disabled
-
 service vendor.port-bridge /vendor/bin/port-bridge
     class main
     user radio
