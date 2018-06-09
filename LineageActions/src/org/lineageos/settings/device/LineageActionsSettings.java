@@ -17,14 +17,10 @@
 
 package org.lineageos.settings.device;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
-
-import android.util.Log;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 
@@ -74,8 +70,8 @@ public class LineageActionsSettings {
         return new AmbientDisplayConfiguration(context).alwaysOnEnabled(UserHandle.USER_CURRENT);
     }
 
-    public static boolean isDozeEnabled(ContentResolver contentResolver) {
-        return (Settings.Secure.getInt(contentResolver, Settings.Secure.DOZE_ENABLED, 1) != 0);
+    public static boolean isDozeEnabled(Context context) {
+        return new AmbientDisplayConfiguration(context).pulseOnNotificationEnabled(UserHandle.USER_CURRENT);
     }
 
     public boolean isAODEnabled() {
@@ -83,7 +79,7 @@ public class LineageActionsSettings {
     }
 
     public boolean isDozeEnabled() {
-        return isDozeEnabled(mContext.getContentResolver());
+        return isDozeEnabled(mContext);
     }
 
     public boolean isIrWakeupEnabled() {
