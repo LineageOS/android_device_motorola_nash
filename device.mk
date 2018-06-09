@@ -422,6 +422,10 @@ PRODUCT_PACKAGES += brillo_update_payload
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-03-05
+
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
