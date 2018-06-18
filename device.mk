@@ -369,10 +369,8 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/recovery/root/init.recovery.nash.rc:root/init.recovery.nash.rc \
-    device/motorola/nash/recovery/root/init.recovery.nash.usb.rc:root/init.recovery.nash.usb.rc \
-    device/motorola/nash/recovery/root/init.recovery.usb.configfs.rc:root/init.recovery.usb.configfs.rc \
-    device/motorola/nash/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc
+    device/motorola/nash/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    device/motorola/nash/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
