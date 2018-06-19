@@ -11,3 +11,6 @@ allow hal_fingerprint_fpc tee_device:chr_file { open read write ioctl };
 allow hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_fpc sysfs_fingerprint:dir r_dir_perms;
 allow hal_fingerprint_fpc sysfs_fingerprint:file rw_file_perms;
+
+# Allow hal_fingerprint_fpc to add and find fpc_extension_service
+allow hal_fingerprint_fpc fpc_extension_service:hwservice_manager { add find };
