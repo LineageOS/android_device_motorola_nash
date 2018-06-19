@@ -1,0 +1,3 @@
+allow servicemanager hal_fingerprint_fpc:dir { search };
+allow servicemanager hal_fingerprint_fpc:file { read open };
+allow servicemanager hal_fingerprint_fpc:process { getattr };

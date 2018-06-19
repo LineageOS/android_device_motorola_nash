@@ -9,5 +9,20 @@ r_dir_file(hal_fingerprint_fpc, sysfs_devfreq)
 
 allow hal_fingerprint_fpc tee_device:chr_file { open read write ioctl };
 allow hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
-allow hal_fingerprint_fpc sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_fpc sysfs_fingerprint:dir rw_dir_perms;
 allow hal_fingerprint_fpc sysfs_fingerprint:file rw_file_perms;
+
+# Allow hal_fingerprint_fpc to add and find fpc_extension_service
+allow hal_fingerprint_fpc fpc_extension_service:hwservice_manager { add find };
+
+allow hal_fingerprint_fpc fingerprint_data_file:dir rw_dir_perms;
+allow hal_fingerprint_fpc fingerprint_data_file:file create_file_perms;
+
+allow hal_fingerprint_fpc self:netlink_socket create_socket_perms_no_ioctl;
+
+allow hal_fingerprint_fpc property_socket:sock_file write;
+allow hal_fingerprint_fpc init:unix_stream_socket connectto;
+binder_call(hal_fingerprint_fpc, vndservicemanager)
+allow hal_fingerprint_fpc vndbinder_device:chr_file rw_file_perms;
+set_prop(hal_fingerprint_fpc, system_prop)
+binder_use(hal_fingerprint_fpc)

@@ -1,0 +1,3 @@
+allow vndservicemanager hal_fingerprint_fpc:dir { search read open };
+allow vndservicemanager hal_fingerprint_fpc:file { read open };
+allow vndservicemanager hal_fingerprint_fpc:process getattr;

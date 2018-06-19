@@ -43,6 +43,7 @@
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
 
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
+/data/fpc(/.*)?		        u:object_r:fingerprint_data_file:s0
 
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
 
