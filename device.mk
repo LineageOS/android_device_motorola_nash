@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+    device/motorola/nash/keylayout/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -232,7 +232,6 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/Vendor_22b8_Product_ffff.kl:system/usr/keylayout/Vendor_22b8_Product_ffff.kl
 
 # Keymaster HAL
