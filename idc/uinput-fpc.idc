@@ -8,5 +8,9 @@
 # as published by the Free Software Foundation.
 #
 
-# fpc1020 "finger present"
-key 614   SLEEP
+device.internal = 1
+
+keyboard.layout = uinput-fpc
+keyboard.builtIn = 1
+keyboard.orientationAware = 0
+
