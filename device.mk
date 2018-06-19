@@ -267,7 +267,7 @@ PRODUCT_COPY_FILES += \
 
 # ModService
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/whitelist_modservice.xml:system/etc/sysconfig/whitelist_modservice.xml
+    device/motorola/nash/sysconfig/whitelist_modservice.xml:system/etc/sysconfig/whitelist_modservice.xml
 
 # Network
 PRODUCT_PACKAGES += \
