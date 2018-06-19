@@ -209,7 +209,8 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qti.qseecomd.sh \
-    init.target.rc
+    init.target.rc \
+    wlan_carrier_bin.sh
 
 # IPACM
 PRODUCT_PACKAGES += \
