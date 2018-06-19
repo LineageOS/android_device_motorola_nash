@@ -235,6 +235,14 @@ LOCAL_VENDOR_MODULE    := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := wlan_carrier_bin.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES    := bin/wlan_carrier_bin.sh
+LOCAL_VENDOR_MODULE    := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.target.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
