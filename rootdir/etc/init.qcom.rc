@@ -86,10 +86,18 @@ on init
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
-    mount_all /vendor/etc/fstab.qcom
+    mount_all /vendor/etc/fstab.qcom --early
 
     restorecon_recursive /persist
     mkdir /persist/data 0700 system system
+
+on late-fs
+    # Start services for bootanim
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    # mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
