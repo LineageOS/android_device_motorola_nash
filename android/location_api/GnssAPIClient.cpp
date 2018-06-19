@@ -165,6 +165,10 @@ bool GnssAPIClient::gnssSetPositionMode(IGnss::GnssPositionMode mode,
     mLocationOptions.size = sizeof(LocationOptions);
     mLocationOptions.minInterval = minIntervalMs;
     mLocationOptions.minDistance = preferredAccuracyMeters;
+    if (IGnss::GnssPositionRecurrence::RECURRENCE_SINGLE == recurrence) {
+        mLocationOptions.minInterval =
+                std::numeric_limits<decltype(mLocationOptions.minInterval)>::max();
+    }
     if (mode == IGnss::GnssPositionMode::STANDALONE)
         mLocationOptions.mode = GNSS_SUPL_MODE_STANDALONE;
     else if (mode == IGnss::GnssPositionMode::MS_BASED)
