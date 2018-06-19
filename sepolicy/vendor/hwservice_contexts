@@ -1,0 +1,5 @@
+com.fingerprints.extension::IFingerprintAuthenticator                             u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintCalibration                               u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintEngineering                               u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintNavigation                                u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintSensorTest                                u:object_r:fpc_extension_service:s0
