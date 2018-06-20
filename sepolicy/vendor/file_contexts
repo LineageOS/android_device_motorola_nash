@@ -43,3 +43,7 @@
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
 
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
+
+/sys/devices/soc/c1b5000\.i2c/i2c-7/7-005a(/.*)?              u:object_r:sysfs_vibrator:s0
+
+/data/gbfirmware(/.*)?                                        u:object_r:mod_data_file:s0

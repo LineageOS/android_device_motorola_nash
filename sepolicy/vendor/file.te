@@ -1,6 +1,7 @@
 type debugfs_rmts, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type fsg_firmware_file, fs_type, contextmount_type;
+type mod_data_file, file_type, data_file_type;
 type perfd_socket, file_type;
 type persist_camera_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
