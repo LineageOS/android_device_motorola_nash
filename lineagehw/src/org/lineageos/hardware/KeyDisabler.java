@@ -58,7 +58,7 @@ public class KeyDisabler {
         if (sFingerprintNavigation == null) {
             return false;
         }
-        sFingerprintNavigation.setNavigation(!state);
+        sFingerprintNavigation.setNavigation(state);
         return true;
     }
 }
