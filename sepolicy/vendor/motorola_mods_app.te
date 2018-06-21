@@ -6,3 +6,12 @@ net_domain(motorola_mods_app)
 allow motorola_mods_app mod_data_file:dir r_dir_perms;
 allow motorola_mods_app mod_data_file:file rw_file_perms;
 allow motorola_mods_app sysfs_vibrator:file rw_file_perms;
+allow motorola_mods_app sysfs_vibrator:file write;
+allow motorola_mods_app sysfs_usb_supply:dir search;
+allow motorola_mods_app sysfs_vibrator:dir search;
+allow motorola_mods_app sysfs_vibrator:file { open write };
+
+allow motorola_mods_app self:netlink_kobject_uevent_socket { bind create read setopt };
+allow motorola_mods_app default_android_service:service_manager find;
+allow motorola_mods_app mod_data_file:dir { open read };
+allow motorola_mods_app self:netlink_kobject_uevent_socket { bind create read setopt };

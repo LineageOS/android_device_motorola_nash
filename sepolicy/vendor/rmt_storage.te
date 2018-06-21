@@ -10,3 +10,4 @@ r_dir_file(rmt_storage, persist_file)
 
 allow rmt_storage debugfs_rmts:dir r_dir_perms;
 allow rmt_storage debugfs_rmts:file rw_file_perms;
+
