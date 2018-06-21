@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policy>
+
+  <!-- ModService --> 
+  <signer signature="@MOTOROLA" > 
+   <package name="com.motorola.modservice" > 
+      <seinfo value="motorola" /> 
+    </package> 
+  </signer> 
+
+</policy>
