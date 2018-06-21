@@ -11,3 +11,4 @@ allow hal_fingerprint_fpc tee_device:chr_file { open read write ioctl };
 allow hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_fpc sysfs_fingerprint:dir r_dir_perms;
 allow hal_fingerprint_fpc sysfs_fingerprint:file rw_file_perms;
+#allow hal_fingerprint_fpc default_android_hwservice:hwservice_manager add;
