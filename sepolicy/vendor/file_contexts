@@ -45,3 +45,43 @@
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
 
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
+
+/sys/devices/soc/c1b5000\.i2c/i2c-7/7-005a(/.*)?              u:object_r:sysfs_vibrator:s0
+
+# Greybus (Mods)
+/sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
+/sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
+/sys/class/power_supply/usb/usb_priority                    u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_ap(/.*)?                         u:object_r:sysfs_greybus:s0
+/sys/devices/soc/0.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
+/sys/module/qpnp_smbcharger_mmi/parameters(/.*)?            u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_codec.0(/.*)?                    u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
+/sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc(/.*)?                              u:object_r:sysfs_greybus:s0
+/sys/devices/soc/6a00000.*/power_supply/usb/usb_priority    u:object_r:sysfs_greybus:s0
+/data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
+/dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
+
+/dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
+/sys/devices/soc/(.+)hsusb(.+)/uevent                             u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/type                  u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/online                u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)fd/video4linux/video([0-9])+/name            u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)msm-cam/video4linux/video([0-9])+/name       u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)cci/(.+)/video4linux/video([0-9])+/name      u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)hsusb(.+)/video4linux/video([0-9])+/name     u:object_r:sysfs_mods_camd:s0
+
+/sys/module/usb3813_hub/parameters/ignore_typec                   u:object_r:sysfs_mods_camd:s0
+
+/dev/v4l-subdev[0-9]*	                                            u:object_r:video_device:s0
+
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/name	     u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/uevent	   u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/open_mode	u:object_r:sysfs_v4l2_openmode:s0
+
+/sys/devices/virtual/video4linux/video([0-9])+/name               u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/video([0-9])+/uevent             u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux/video([0-9])+/open_mode          u:object_r:sysfs_v4l2_openmode:s0
+/sys/module/qpnp_smbcharger_mmi(/.*)?                             u:object_r:sysfs_batt_mods:s0
