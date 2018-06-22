@@ -1,0 +1,27 @@
+type mods_camd, domain;
+type mods_camd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(mods_camd)
+
+allow mods_camd ion_device:chr_file rw_file_perms;
+allow mods_camd video_device:chr_file rw_file_perms;
+
+allow mods_camd self:netlink_kobject_uevent_socket { bind create read setopt };
+allow mods_camd sysfs_mods_camd:file rw_file_perms;
+allow mods_camd sysfs_mods_camd:dir rw_dir_perms;
+allow mods_camd sysfs:file { getattr read write };
+allow mods_camd sysfs:file { getattr open read write };
+
+allow mods_camd mods_camd_device:chr_file {getattr ioctl open read write };
+
+allow mods_camd sysfs_greybus:file rw_file_perms;
+allow mods_camd sysfs_greybus:dir rw_dir_perms;
+
+allow mods_camd sysfs_v4l2_openmode:file rw_file_perms;
+allow mods_camd sysfs_v4l2_openmode:dir rw_dir_perms;
+
+allow mods_camd cameraserver:fd use;
+allow mods_camd gpu_device:chr_file { ioctl open read write };
+allow mods_camd init:unix_stream_socket connectto;
+allow mods_camd property_socket:sock_file write;
+allow mods_camd surfaceflinger:fd use;
+allow mods_camd camera_prop:property_service set;

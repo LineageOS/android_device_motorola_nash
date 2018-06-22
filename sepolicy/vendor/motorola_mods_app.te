@@ -3,10 +3,22 @@ type motorola_mods_app, domain, coredomain;
 app_domain(motorola_mods_app)
 net_domain(motorola_mods_app)
 
-allow motorola_mods_app mod_data_file:dir r_dir_perms;
-allow motorola_mods_app mod_data_file:file rw_file_perms;
 allow motorola_mods_app sysfs_vibrator:file rw_file_perms;
 allow motorola_mods_app sysfs_usb_supply:dir search;
 allow motorola_mods_app sysfs_vibrator:dir search;
-
+allow motorola_mods_app default_android_service:service_manager find;
+allow motorola_mods_app greybus_raw_device:chr_file rw_file_perms;
+allow motorola_mods_app greybus_raw_device:dir rw_dir_perms;
+allow motorola_mods_app input_device:chr_file getattr;
+allow motorola_mods_app input_device:dir search;
+allow motorola_mods_app mods_service:service_manager find;
 allow motorola_mods_app self:netlink_kobject_uevent_socket { bind create read setopt };
+allow motorola_mods_app sysfs_batt_mods:dir rw_dir_perms;
+allow motorola_mods_app sysfs_batt_mods:file rw_file_perms;
+allow motorola_mods_app sysfs_greybus:dir r_dir_perms;
+allow motorola_mods_app sysfs_greybus:file rw_file_perms;
+allow motorola_mods_app sysfs_greybus:lnk_file r_file_perms;
+allow motorola_mods_app sysfs_mods_camd:file rw_file_perms;
+allow motorola_mods_app sysfs_mods_camd:dir rw_dir_perms;
+allow motorola_mods_app gbfirmware_file:dir create_dir_perms;
+allow motorola_mods_app gbfirmware_file:file create_file_perms;
