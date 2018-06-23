@@ -20,3 +20,7 @@ type sysfs_mods_camd, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_v4l2_openmode, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_batt_mods, fs_type, sysfs_type, mlstrustedobject;
 type mod_data_file, file_type, data_file_type;
+
+# Input devices
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
