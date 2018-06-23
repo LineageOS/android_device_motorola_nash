@@ -46,6 +46,10 @@
 /data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
 /data/fpc/socket                                              u:object_r:fingerprint_socket:s0
 
+# Input devices
+/(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
+
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
 
 /sys/devices/soc/c1b5000\.i2c/i2c-7/7-005a(/.*)?              u:object_r:sysfs_vibrator:s0
