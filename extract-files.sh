@@ -63,4 +63,12 @@ BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
+# Load libSonyDefocus from vendor
+CAMERA_IMX386="$BLOB_ROOT"/vendor/lib/libmmcamera_imx386.so
+sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "$CAMERA_IMX386"
+
+# Load ZAF configs from vendor
+ZAF_CORE="$BLOB_ROOT"/vendor/lib/libzaf_core.so
+sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
+
 "$MY_DIR"/setup-makefiles.sh

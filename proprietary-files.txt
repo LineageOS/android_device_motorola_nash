@@ -48,11 +48,11 @@ vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
 # Camera
-etc/permissions/com.motorola.camera2.xml
-etc/zaf/zaf_mot_s5k2l7sa.json
-etc/zaf/zaf_imx386.json
-etc/zaf/zaf_imx386_mono.json
-lib/hw/libSonyDefocus.so
+etc/permissions/com.motorola.camera2.xml:vendor/etc/permissions/com.motorola.camera2.xml
+etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
+etc/zaf/zaf_imx386.json:vendor/etc/zaf/zaf_imx386.json
+etc/zaf/zaf_imx386_mono.json:vendor/etc/zaf/zaf_imx386_mono.json
+lib/hw/libSonyDefocus.so:vendor/lib/hw/libSonyDefocus.so
 vendor/bin/vl53l1_daemon
 vendor/lib/hw/camera.msm8998.so
 vendor/lib/libactuator_mot_ak7371.so
