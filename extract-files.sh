@@ -71,4 +71,8 @@ sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "$CAMERA_IMX386"
 ZAF_CORE="$BLOB_ROOT"/vendor/lib/libzaf_core.so
 sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
 
+# Load wrapped shim
+MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
+sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
+
 "$MY_DIR"/setup-makefiles.sh
