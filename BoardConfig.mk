@@ -92,11 +92,6 @@ AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_RAS := true
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
-# Bionic
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
