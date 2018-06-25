@@ -94,8 +94,8 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
+    /vendor/lib/libmdmcutback.so|libqsap_shim.so \
+    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -171,6 +171,8 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4378853376
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1409286144
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 0x40000
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -180,6 +182,7 @@ TARGET_NO_RECOVERY := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
+TARGET_COPY_OUT_VENDOR := vendor
 
 # RIL
 TARGET_RIL_VARIANT := caf
