@@ -1,6 +1,4 @@
 allow rild vendor_file:file rx_file_perms;
 allow rild fwk_sensor_hwservice:hwservice_manager find;
 allow rild system_data_file:dir { add_name open read remove_name write };
-allow rild system_data_file:sock_file { create setattr unlink };
 allow rild system_server:binder { call transfer };
-
