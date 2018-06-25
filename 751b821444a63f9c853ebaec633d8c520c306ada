@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9794d208_1e1561b7",
+        "filename": "recovery/root/init.recovery.qcom.rc",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2018-06-25T16:42:13Z",
+      "side": 1,
+      "message": "You really need this?",
+      "revId": "751b821444a63f9c853ebaec633d8c520c306ada",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
