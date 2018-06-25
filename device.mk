@@ -205,7 +205,7 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/Vendor_22b8_Product_ffff.kl:system/usr/keylayout/Vendor_22b8_Product_ffff.kl
+    device/motorola/nash/keylayout/Vendor_22b8_Product_ffff.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_22b8_Product_ffff.kl
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -235,7 +235,7 @@ PRODUCT_COPY_FILES += \
 
 # ModService
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/sysconfig/whitelist_modservice.xml:system/etc/sysconfig/whitelist_modservice.xml
+    device/motorola/nash/sysconfig/whitelist_modservice.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/whitelist_modservice.xml
 
 # Network
 PRODUCT_PACKAGES += \
@@ -298,7 +298,7 @@ PRODUCT_COPY_FILES += \
 
 # QCOM
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+    device/motorola/nash/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -399,6 +399,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
+PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/oem
 $(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
