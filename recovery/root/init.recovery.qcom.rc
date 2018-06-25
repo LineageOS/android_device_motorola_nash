@@ -3,4 +3,7 @@ import /init.recovery.qcom.usb.rc
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
+    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
+    symlink /dev/block/bootdevice/by-name/oem /dev/block/bootdevice/by-name/vendor
     setprop ro.build.system_root_image true
