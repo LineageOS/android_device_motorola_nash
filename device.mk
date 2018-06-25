@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Properties
+-include device/motorola/nash/vendor_prop.mk
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
