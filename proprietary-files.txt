@@ -999,10 +999,10 @@ vendor/lib64/sensors.iio.so
 vendor/lib/sensors.iio.so
 vendor/lib64/sensors.tof.so
 vendor/lib/sensors.tof.so
-lib/lib_mot_app6_metadata.so
-lib64/libiio.so
-lib/libiio.so
-lib/libmot_lux_standardization.so
+lib/lib_mot_app6_metadata.so:vendor/lib/lib_mot_app6_metadata.so
+lib64/libiio.so:vendor/lib64/libiio.so
+lib/libiio.so:vendor/lib/libiio.so
+lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
 vendor/lib/lib_mot_led_calibration.so
 vendor/lib/libmot_afd.so
 vendor/lib/libmot_gpu_mapper.so
