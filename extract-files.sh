@@ -75,4 +75,7 @@ sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
 MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
 
+# Replace libcamera_client with a shared lib wrapper containing android.hardware.camera.common@1.0-helper
+patch_blob "--replace-needed libcamera_client.so android.hardware.camera.common@1.0-helper.so" "vendor/lib/hw/camera.msm8998.so"
+
 "$MY_DIR"/setup-makefiles.sh

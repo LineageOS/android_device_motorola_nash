@@ -79,9 +79,9 @@ PRODUCT_COPY_FILES += \
     device/motorola/nash/configs/camera/mot_ov5695_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov5695_chromatix.xml
 
 PRODUCT_PACKAGES += \
+    android.hardware.camera.common@1.0-helper \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    camera.device@3.2-impl \
     libbson.vendor \
     libxml2 \
     Snap
@@ -432,8 +432,10 @@ PRODUCT_PACKAGES += \
 # VNDK
 # Update this list with what each blob is actually for
 # libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
+# libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
+    libstdc++.vendor \
     vndk_package
 
 # Weaver
