@@ -28,6 +28,9 @@ allow charge_only system_data_file:dir { write add_name };
 
 allow charge_only sysfs_batteryinfo:file r_file_perms;
 
+allow charge_only sysfs_greybus:file { read open write };
+allow charge_only sysfs_leds:file { read open write };
+
 # Read /sys/fs/pstore/console-ramoops
 # Don't worry about overly broad permissions for now, as there's
 # only one file in /sys/fs/pstore
