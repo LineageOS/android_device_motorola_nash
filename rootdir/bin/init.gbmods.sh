@@ -11,8 +11,8 @@ fi
 
 insmod /vendor/lib/modules/greybus.ko
 
-# Only support PTP and BATTERY in charge-only mode
-if [ "$bootmode" == "charger" ]; then
+# Only support PTP and BATTERY in charge-only and recovery mode
+if [ "$bootmode" == "charger" ] || [ "$bootmode" == "recovery" ]; then
     insmod /vendor/lib/modules/gb-mods.ko
     insmod /vendor/lib/modules/gb-battery.ko
     insmod /vendor/lib/modules/gb-ptp.ko

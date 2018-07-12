@@ -356,7 +356,8 @@ PRODUCT_PACKAGES += \
 # Recovery
 PRODUCT_COPY_FILES += \
     device/motorola/nash/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    device/motorola/nash/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
+    device/motorola/nash/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc \
+    device/motorola/nash/rootdir/bin/init.gbmods.sh:root/sbin/init.gbmods.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
