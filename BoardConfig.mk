@@ -183,6 +183,7 @@ TARGET_USES_MKE2FS := true
 
 # RIL
 TARGET_RIL_VARIANT := caf
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware fsg persist
