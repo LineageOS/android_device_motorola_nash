@@ -28,6 +28,7 @@
 #import /vendor/etc/init/hw/init.mmi.ramdump.rc
 import /vendor/etc/init/hw/init.mmi.usb.rc
 import /vendor/etc/init/hw/init.power.rc
+import /vendor/etc/init/hw/init.${ro.boot.device}.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
