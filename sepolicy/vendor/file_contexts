@@ -11,6 +11,7 @@
 /dev/socket/perfd            u:object_r:perfd_socket:s0
 
 /fsg                         u:object_r:fsg_firmware_file:s0
+/(vendor|system/vendor)/fsg  u:object_r:fsg_firmware_file:s0
 
 /dev/laser                   u:object_r:vl53l1_device:s0
 /dev/v4l2-hal-ctrl           u:object_r:video_device:s0

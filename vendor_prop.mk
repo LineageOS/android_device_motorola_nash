@@ -171,7 +171,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableDebugDataPathLogs=0 \
     persist.vendor.ims.disableADBLogs=0 \
     persist.vendor.ims.vt.enableadb=1 \
-    persist.vendor.ims.disableQXDMLogs=1
+    persist.vendor.ims.disableQXDMLogs=1 \
+    ro.build.vendorprefix=/vendor
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
