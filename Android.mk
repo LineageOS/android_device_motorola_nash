@@ -35,6 +35,8 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
         $(TARGET_OUT_VENDOR)/firmware/msadp)
 
+$(shell mkdir -p $(TARGET_COPY_OUT_VENDOR)/fsg)
+
 MODS_LIBS := libmodhw.so
 MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/priv-app/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
 $(MODS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
