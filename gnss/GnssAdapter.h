@@ -43,9 +43,38 @@
 #define MAX_SATELLITES_IN_USE 12
 #define LOC_NI_NO_RESPONSE_TIME 20
 #define LOC_GPS_NI_RESPONSE_IGNORE 4
-#define ODCPI_INJECTED_POSITION_COUNT_PER_REQUEST 30
+#define ODCPI_EXPECTED_INJECTION_TIME_MS 30000
 
 class GnssAdapter;
+
+class OdcpiTimer : public LocTimer {
+public:
+    OdcpiTimer(GnssAdapter* adapter) :
+            LocTimer(), mAdapter(adapter), mActive(false) {}
+
+    inline void start() {
+        mActive = true;
+        LocTimer::start(ODCPI_EXPECTED_INJECTION_TIME_MS, false);
+    }
+    inline void stop() {
+        mActive = false;
+        LocTimer::stop();
+    }
+    inline void restart() {
+        stop();
+        start();
+    }
+    inline bool isActive() {
+        return mActive;
+    }
+
+private:
+    // Override
+    virtual void timeOutCallback() override;
+
+    GnssAdapter* mAdapter;
+    bool mActive;
+};
 
 typedef struct {
     pthread_t               thread;        /* NI thread */
@@ -82,6 +111,7 @@ namespace loc_core {
 }
 
 class GnssAdapter : public LocAdapterBase {
+
     /* ==== ULP ============================================================================ */
     UlpProxyBase* mUlpProxy;
 
@@ -112,7 +142,9 @@ class GnssAdapter : public LocAdapterBase {
     /* ==== ODCPI ========================================================================== */
     OdcpiRequestCallback mOdcpiRequestCb;
     bool mOdcpiRequestActive;
-    uint32_t mOdcpiInjectedPositionCount;
+    OdcpiTimer mOdcpiTimer;
+    OdcpiRequestInfo mOdcpiRequest;
+    void odcpiTimerExpire();
 
     /* === SystemStatus ===================================================================== */
     SystemStatus* mSystemStatus;
@@ -222,6 +254,7 @@ public:
     /* ======== UTILITIES ================================================================== */
     void initOdcpi(const OdcpiRequestCallback& callback);
     void injectOdcpi(const Location& location);
+    void odcpiTimerExpireEvent();
 
     /* ======== RESPONSES ================================================================== */
     void reportResponse(LocationError err, uint32_t sessionId);
