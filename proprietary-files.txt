@@ -749,7 +749,7 @@ vendor/lib64/libmodmanager.so
 vendor/firmware/libpn553_fw.so
 
 # Offmode charging
-lib64/com.motorola.mod@1.0.so
+lib64/com.motorola.mod@1.0.so:vendor/lib64/com.motorola.mod@1.0.so
 vendor/bin/charge_only_mode
 
 # Perf
@@ -777,7 +777,7 @@ vendor/lib64/libdisp-aba.so
 
 # QMI
 etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
-etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -815,13 +815,13 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar
+-app/datastatusnotification/datastatusnotification.apk:vendor/app/datastatusnotification/datastatusnotification.apk
+-app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 framework/qti-telephony-common.jar
-framework/QtiTelephonyServicelibrary.jar
+framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/ATFWD-daemon
