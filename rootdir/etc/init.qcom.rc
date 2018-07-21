@@ -181,8 +181,6 @@ on early-boot
     write /sys/kernel/boot_cdsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
-    setprop sys.usb.controller "a800000.dwc3"
-    setprop sys.usb.configfs 1
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
     write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
 
@@ -402,6 +400,10 @@ on boot
     insmod /system/lib/modules/msm-vidc.ko
     insmod /system/lib/modules/msm-vidc-dyn-gov.ko
     insmod /system/lib/modules/msm-vidc-table-gov.ko
+
+    # set USB props
+    setprop sys.usb.controller "a800000.dwc3"
+    setprop sys.usb.configfs 1
 
 # msm specific files that need to be created on /data
 on post-fs-data
