@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55e308ac_4deeb112",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-23T09:01:41Z",
+      "side": 1,
+      "message": "What happened here?",
+      "range": {
+        "startLine": 9,
+        "startChar": 68,
+        "endLine": 9,
+        "endChar": 122
+      },
+      "revId": "99630cf499ba7708c859eeb08ce9d1a3a70bcccf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
