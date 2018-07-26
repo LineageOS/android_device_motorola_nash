@@ -184,8 +184,8 @@ TARGET_RIL_VARIANT := caf
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware persist
-BOARD_ROOT_EXTRA_SYMLINKS := /vendor/fsg:/fsg
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware firmware persist
+BOARD_ROOT_EXTRA_SYMLINKS := /vendor/fsg:/fsg /vendor/lib/dsp:/dsp
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
