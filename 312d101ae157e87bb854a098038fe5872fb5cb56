@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65959ae0_35b47dc3",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2018-07-28T12:14:55Z",
+      "side": 1,
+      "message": "Wrong comment",
+      "revId": "312d101ae157e87bb854a098038fe5872fb5cb56",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
