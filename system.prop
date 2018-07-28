@@ -43,7 +43,7 @@ vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.fm.a2dp.conc.disabled=true
-vendor.voice.path.for.pcm.voip=true
+vendor.voice.path.for.pcm.voip=false
 
 # Bluetooth
 bt.max.hfpclient.connections=1
