@@ -420,8 +420,14 @@ $(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    android.hardware.vibrator@1.1-service.nash
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vibrator.hal.click.duration=10 \
+    ro.vibrator.hal.tick.duration=4
+
+PRODUCT_COPY_FILES += \
+    device/motorola/nash/configs/drv2624.cal:$(TARGET_COPY_OUT_VENDOR)/etc/haptics/drv2624.cal
 
 # VNDK
 PRODUCT_PACKAGES += vndk-sp

@@ -49,6 +49,8 @@
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
 
 /sys/devices/soc/c1b5000\.i2c/i2c-7/7-005a(/.*)?              u:object_r:sysfs_vibrator:s0
+/(vendor|system/vendor)/etc/haptics(/.*)?                     u:object_r:vendor_haptics_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.1-service.nash    u:object_r:hal_vibrator_default_exec:s0
 
 # Greybus (Mods)
 /sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
@@ -89,4 +91,3 @@
 /sys/module/qpnp_smbcharger_mmi(/.*)?                             u:object_r:sysfs_batt_mods:s0
 
 /(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
-
