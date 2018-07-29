@@ -90,3 +90,4 @@
 
 /(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
 
+/(vendor|system/vendor)/etc/haptics(/.*)?                u:object_r:vendor_haptics_file:s0
