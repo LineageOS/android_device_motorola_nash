@@ -416,8 +416,10 @@ PRODUCT_PACKAGES += \
 # VNDK
 # Update this list with what each blob is actually for
 # libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
+# libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
+    libstdc++.vendor \
     vndk_package
 
 # Weaver
