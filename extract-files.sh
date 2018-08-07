@@ -59,10 +59,6 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-# Load camera configs from vendor
-CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
-sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
-
 # Load libSonyDefocus from vendor
 CAMERA_IMX386="$BLOB_ROOT"/vendor/lib/libmmcamera_imx386.so
 sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "$CAMERA_IMX386"
