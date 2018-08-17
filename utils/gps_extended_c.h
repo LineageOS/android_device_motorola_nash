@@ -312,6 +312,8 @@ typedef uint32_t GpsLocationExtendedFlags;
 #define GPS_LOCATION_EXTENDED_HAS_GPS_TIME   0x20000
 /** GpsLocationExtended has Extended Dilution of Precision */
 #define GPS_LOCATION_EXTENDED_HAS_EXT_DOP   0x40000
+/** GpsLocationExtended has Elapsed Time */
+#define GPS_LOCATION_EXTENDED_HAS_ELAPSED_TIME   0x80000
 
 typedef uint32_t LocNavSolutionMask;
 /* Bitmask to specify whether SBAS ionospheric correction is used  */
@@ -478,6 +480,8 @@ typedef struct {
     LocPositionDynamics bodyFrameData;
     /** GPS Time */
     GPSTimeStruct gpsTime;
+    /** Elapsed Time */
+    int64_t  elapsedTime;
     /** Dilution of precision associated with this position*/
     LocExtDOP extDOP;
 } GpsLocationExtended;
