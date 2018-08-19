@@ -83,4 +83,9 @@ sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/Qti
 QTI_LIBPERMISSIONS="$BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
 sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "$QTI_LIBPERMISSIONS"
 
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $BLOB_ROOT/vendor/lib64/vendor.qti.gnss@1.0_vendor.so
+patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $BLOB_ROOT/lib64/vendor.qti.gnss@1.0.so
+
 "$MY_DIR"/setup-makefiles.sh
