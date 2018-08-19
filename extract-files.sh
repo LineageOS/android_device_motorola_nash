@@ -99,4 +99,8 @@ sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/Qti
 QTI_LIBPERMISSIONS="$BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
 sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "$QTI_LIBPERMISSIONS"
 
+# Load vndk-28 libui for libmot_gpu_mapper
+MOT_GPU_MAPPER="$BLOB_ROOT"/vendor/lib/libmot_gpu_mapper.so
+patchelf --add-needed libui-v28.so "$MOT_GPU_MAPPER"
+
 "$MY_DIR"/setup-makefiles.sh

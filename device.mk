@@ -489,6 +489,9 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package
 
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v28/arm64/arch-arm-armv8-a/shared/vndk-core/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib/libui-v28.so
+
 # Weaver
 PRODUCT_PACKAGES += \
     android.hardware.weaver@1.0
