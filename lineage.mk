@@ -45,6 +45,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.qcom \
+    libcutils \
     libgptutils \
     libz
 
