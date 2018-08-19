@@ -97,7 +97,7 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-    start qcom-power
+    start vendor.qcom-power
 
 on boot
     # in FBE mode, /data is here
@@ -153,7 +153,7 @@ on charger
     trigger moto-charger
     class_stop main
     class_stop late_start
-    start hvdcp_opti
+    start vendor.hvdcp_opti
     setprop sys.usb.configfs 1
 
 on moto-charger
@@ -161,9 +161,9 @@ on moto-charger
     load_system_props
     trigger firmware_mounts_complete
     setprop sys.usb.config charging
-    start gbmodinstall
-    start charge_only_mode
-    start thermal-com
+    start vendor.gbmodinstall
+    start vendor.charge_only_mode
+    start vendor.thermal-com
 
     # Enable UFS powersaving
     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
@@ -188,7 +188,7 @@ on moto-charger
     write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
 
-service charge_only_mode /vendor/bin/charge_only_mode
+service vendor.charge_only_mode /vendor/bin/charge_only_mode
     user root
     group graphics system input
     disabled
