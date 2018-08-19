@@ -67,7 +67,7 @@ on firmware_mounts_complete
     write /config/usb_gadget/g1/strings/0x409/manufacturer ${ro.product.manufacturer}
     write /config/usb_gadget/g1/strings/0x409/product ${ro.product.model}
 
-service mmi-usb-sh /vendor/bin/init.mmi.usb.sh
+service vendor.mmi-usb-sh /vendor/bin/init.mmi.usb.sh
     class late_start
     user root
     group system
