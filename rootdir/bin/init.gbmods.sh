@@ -27,4 +27,4 @@ do
 done
 
 insmod /vendor/lib/modules/v4l2-hal.ko
-start mods_camd
+start vendor.mods_camd
