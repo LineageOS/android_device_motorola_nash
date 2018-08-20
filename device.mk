@@ -102,7 +102,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.qcom \
     libcutils \
-    libgptutils \
+    libgptutils.nash.recovery \
     libz
 
 # Camera
