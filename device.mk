@@ -94,16 +94,9 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
     android.hardware.boot@1.0-service \
-    bootctrl.qcom
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-impl.recovery \
     bootctrl.qcom \
-    libcutils \
-    libgptutils.nash.recovery \
-    libz
+    bootctrl.qcom.recovery
 
 # Camera
 PRODUCT_COPY_FILES += \
