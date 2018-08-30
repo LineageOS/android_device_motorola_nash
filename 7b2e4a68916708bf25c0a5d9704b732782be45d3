@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f1c0615_9cc77885",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 17793
+      },
+      "writtenOn": "2018-08-30T09:34:49Z",
+      "side": 1,
+      "message": "vendor.",
+      "revId": "7b2e4a68916708bf25c0a5d9704b732782be45d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6089f4b0_73382471",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 17793
+      },
+      "writtenOn": "2018-08-30T09:34:49Z",
+      "side": 1,
+      "message": "vendor.",
+      "revId": "7b2e4a68916708bf25c0a5d9704b732782be45d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeb1ad2a_b5fc6e1f",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 17793
+      },
+      "writtenOn": "2018-08-30T09:34:49Z",
+      "side": 1,
+      "message": "vendor.",
+      "revId": "7b2e4a68916708bf25c0a5d9704b732782be45d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37c64f8a_55977e09",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1263,
+      "author": {
+        "id": 17793
+      },
+      "writtenOn": "2018-08-30T09:34:49Z",
+      "side": 1,
+      "message": "vendor.",
+      "revId": "7b2e4a68916708bf25c0a5d9704b732782be45d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
