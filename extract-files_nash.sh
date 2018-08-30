@@ -55,24 +55,22 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files_nash.txt "$SRC" "$SECTION"
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-# Load wrapped shim
-MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
-sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
+# Load libSonyDefocus from vendor
+CAMERA_IMX386="$BLOB_ROOT"/vendor/lib/libmmcamera_imx386.so
+sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "$CAMERA_IMX386"
 
-# Correct qcrilhook library location
-QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
-sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
+# Load ZAF configs from vendor
+ZAF_CORE="$BLOB_ROOT"/vendor/lib/libzaf_core.so
+sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
 
-# Correct QtiTelephonyServicelibrary location
-TELESERVICELIB="$BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
-sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
-
-# Correct android.hidl.manager@1.0-java jar name
-QTI_LIBPERMISSIONS="$BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
-sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "$QTI_LIBPERMISSIONS"
+# Using in vendor libgui for O cam blobs
+sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_ppeiscore.so
+sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera2_stats_modules.so
+sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_bokeh.so
+sed -i "s|libgui.so|libPui.so|g" "$BLOB_ROOT"/vendor/lib/libmmcamera_vstab_module.so
 
 "$MY_DIR"/setup-makefiles.sh
