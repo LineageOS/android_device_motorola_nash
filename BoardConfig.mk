@@ -183,10 +183,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_RIL_VARIANT := caf
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
-# Root
-BOARD_ROOT_EXTRA_FOLDERS := bt_firmware firmware persist
-BOARD_ROOT_EXTRA_SYMLINKS := /vendor/fsg:/fsg /vendor/lib/dsp:/dsp
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
