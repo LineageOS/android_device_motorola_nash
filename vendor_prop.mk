@@ -50,16 +50,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-    qcom.bluetooth.soc=cherokee \
+    vendor.qcom.bluetooth.soc=cherokee \
     ro.bluetooth.a4wp=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist="org.codeaurora.snapcam,com.motorola.camera2,com.motorola.motocit,org.lineageos.snap" \
     persist.camera.camera2=true \
-    persist.camera.expose.aux=1 \
-    persist.camera.is_type=3 \
-    persist.camera.max.previewfps=60 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.is_type=3 \
+    persist.vendor.camera.max.previewfps=60 \
     vidc.enc.dcvs.extra-buff-count=2
 
 # Color Mode

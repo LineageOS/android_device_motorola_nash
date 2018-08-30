@@ -121,52 +121,57 @@ on post-fs
     chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
     chmod 0440 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
     # MOT_LED_CALIBRATION
-    chown cameraserver /persist/camera/ledcal
+    chown cameraserver /mnt/vendor/persist/camera/ledcal
     restorecon_recursive   /carrier
 
-    mkdir /persist/camera 0755 oem_5004 oem_5004
-    mkdir /persist/camera/focus 0775 camera oem_5004
-    mkdir /persist/camera/ledcal 0775 camera oem_5004
-    mkdir /persist/batt_health 0755 oem_5001 oem_5001
-    mkdir /persist/mdm 0770 radio radio
-    mkdir /persist/factory 0755 oem_5004 oem_5004
-    mkdir /persist/factory/audio 0755 oem_5004 system
-    mkdir /persist/factory/wlan 0755 oem_5004 oem_5004
-    mkdir /persist/factory/regulatory 0755 oem_5004 system
-    mkdir /persist/public 0755 oem_5004 oem_5004
-    mkdir /persist/public/atvc 0770 oem_5012 shell
-    mkdir /persist/public/battd 0755 oem_5000 oem_5004
-    mkdir /persist/public/att_dm 0775 radio oem_5004
-    mkdir /persist/public/hiddenmenu 0775 radio oem_5004
-    mkdir /persist/public/hiddenmenu/data 0775 system oem_5004
-    mkdir /persist/public/locale 0700 system system
-    mkdir /persist/public/omadm 0700 radio radio
-    mkdir /persist/public/svcs 0770 system system
-    mkdir /persist/wifi 0755 oem_5004 oem_5004
-    mkdir /persist/bt 0755 oem_5004 bluetooth
-    mkdir /persist/wmdrm 0775 oem_5003 oem_5003
-    mkdir /persist/public/usc_dm 0775 radio radio
-    mkdir /persist/sds 0700 vold vold
-    mkdir /persist/rfs/msm/mpss/mot_rfs 0771 rfs system
+    mkdir /mnt/vendor/persist/camera 0755 oem_5004 oem_5004
+    mkdir /mnt/vendor/persist/camera/dualcal 0775 camera oem_5004
+    mkdir /mnt/vendor/persist/camera/focus 0775 camera oem_5004
+    mkdir /mnt/vendor/persist/camera/ledcal 0775 camera oem_5004
+    mkdir /mnt/vendor/persist/batt_health 0755 oem_5001 oem_5001
+    mkdir /mnt/vendor/persist/mdm 0770 radio radio
+    mkdir /mnt/vendor/persist/factory 0755 oem_5004 oem_5004
+    mkdir /mnt/vendor/persist/factory/audio 0755 oem_5004 system
+    mkdir /mnt/vendor/persist/factory/wlan 0755 oem_5004 oem_5004
+    mkdir /mnt/vendor/persist/factory/regulatory 0755 oem_5004 system
+    mkdir /mnt/vendor/persist/public 0755 oem_5004 oem_5004
+    mkdir /mnt/vendor/persist/public/atvc 0770 oem_5012 shell
+    mkdir /mnt/vendor/persist/public/battd 0755 oem_5000 oem_5004
+    mkdir /mnt/vendor/persist/public/att_dm 0775 radio oem_5004
+    mkdir /mnt/vendor/persist/public/hiddenmenu 0775 radio oem_5004
+    mkdir /mnt/vendor/persist/public/hiddenmenu/data 0775 system oem_5004
+    mkdir /mnt/vendor/persist/public/locale 0700 system system
+    mkdir /mnt/vendor/persist/public/omadm 0700 radio radio
+    mkdir /mnt/vendor/persist/public/svcs 0770 system system
+    mkdir /mnt/vendor/persist/wifi 0755 oem_5004 oem_5004
+    mkdir /mnt/vendor/persist/bt 0755 oem_5004 bluetooth
+    mkdir /mnt/vendor/persist/wmdrm 0775 oem_5003 oem_5003
+    mkdir /mnt/vendor/persist/public/usc_dm 0775 radio radio
+    mkdir /mnt/vendor/persist/sds 0700 vold vold
+    mkdir /mnt/vendor/persist/rfs/msm/mpss/mot_rfs 0771 rfs system
 
-    chown oem_5004 oem_5004 /persist/factory/fti
-    chmod 0660 /persist/factory/fti
-    chown oem_5004 oem_5004 /persist/factory/byte
-    chmod 0660 /persist/factory/byte
-    chmod 0660 /persist/wifi/wlan_mac.bin
-    chown oem_5004 oem_5004 /persist/bt/bt_bdaddr
-    chmod 0664 /persist/bt/bt_bdaddr
+    # This dir is used to store any OMA(both DM and CP) files in persist partition
+    # Any app with radio UID or oem_5004 GID can read/write/execute files in this dir.
+    mkdir /vendor/mnt/persist/public/oma 0775 radio oem_5004
+
+    chown oem_5004 oem_5004 /mnt/vendor/persist/factory/fti
+    chmod 0664 /mnt/vendor/persist/factory/fti
+    chown oem_5004 oem_5004 /mnt/vendor/persist/factory/byte
+    chmod 0660 /mnt/vendor/persist/factory/byte
+    chmod 0660 /mnt/vendor/persist/wifi/wlan_mac.bin
+    chown oem_5004 oem_5004 /mnt/vendor/persist/bt/bt_bdaddr
+    chmod 0664 /mnt/vendor/persist/bt/bt_bdaddr
 
     # Set life_calls and life_timer file permissions
-    chown radio oem_5004 /persist/public/hiddenmenu/life_calls
-    chmod 0775 /persist/public/hiddenmenu/life_calls
-    chown radio oem_5004 /persist/public/hiddenmenu/life_timer
-    chmod 0775 /persist/public/hiddenmenu/life_timer
+    chown radio oem_5004 /mnt/vendor/persist/public/hiddenmenu/life_calls
+    chmod 0775 /mnt/vendor/persist/public/hiddenmenu/life_calls
+    chown radio oem_5004 /mnt/vendor/persist/public/hiddenmenu/life_timer
+    chmod 0775 /mnt/vendor/persist/public/hiddenmenu/life_timer
 
-    chmod 0711 /persist/rfs
-    chmod 0711 /persist/rfs/msm
-    chmod 0711 /persist/rfs/msm/mpss
-    chmod 0771 /persist/rfs/msm/mpss/mot_rfs
+    chmod 0711 /mnt/vendor/persist/rfs
+    chmod 0711 /mnt/vendor/persist/rfs/msm
+    chmod 0711 /mnt/vendor/persist/rfs/msm/mpss
+    chmod 0771 /mnt/vendor/persist/rfs/msm/mpss/mot_rfs
 
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
@@ -915,10 +920,10 @@ service vendor.qti /vendor/bin/qti
     group radio net_raw diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.sensors /vendor/bin/sensors.qcom
+service vendor.sensors /vendor/bin/sensors.qti
     class core
-    user root
-    group root
+    user system
+    group system
     disabled
     writepid /dev/cpuset/system-background/tasks
 
