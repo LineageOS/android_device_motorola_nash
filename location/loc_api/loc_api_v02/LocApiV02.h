@@ -34,7 +34,32 @@
 #include <ds_client.h>
 #include <LocApiBase.h>
 #include <loc_api_v02_client.h>
+#include <vector>
+#include <functional>
 
+#define LOC_SEND_SYNC_REQ(NAME, ID, REQ)  \
+    int rv = true; \
+    locClientStatusEnumType st; \
+    locClientReqUnionType reqUnion; \
+    qmiLoc##NAME##IndMsgT_v02 ind; \
+\
+    memset(&ind, 0, sizeof(ind)); \
+    reqUnion.p##NAME##Req = &REQ; \
+\
+    st = locSyncSendReq(QMI_LOC_##ID##_REQ_V02,          \
+                        reqUnion,                        \
+                        LOC_ENGINE_SYNC_REQUEST_TIMEOUT, \
+                        QMI_LOC_##ID##_IND_V02,          \
+                        &ind);                           \
+\
+    if (st != eLOC_CLIENT_SUCCESS || \
+        eQMI_LOC_SUCCESS_V02 != ind.status) { \
+        LOC_LOGE ("%s:%d]: Error : st = %d, ind.status = %d", \
+                  __func__, __LINE__,  st, ind.status); \
+        rv = false; \
+    }
+
+using Resender = std::function<void()>;
 using namespace loc_core;
 
 /* This class derives from the LocApiBase class.
@@ -64,6 +89,7 @@ private:
   bool mInSession;
   bool mEngineOn;
   bool mMeasurementsStarted;
+  std::vector<Resender> mResenders;
 
   /* Convert event mask from loc eng to loc_api_v02 format */
   static locClientEventMaskType convertMask(LOC_API_ADAPTER_EVENT_MASK_T mask);
@@ -143,6 +169,10 @@ private:
   void reportGnssMeasurementData(
     const qmiLocEventGnssSvMeasInfoIndMsgT_v02& gnss_measurement_report_ptr);
 
+  /* convert and report ODCPI request */
+  void reportOdcpiRequest(
+    const qmiLocEventWifiReqIndMsgT_v02& odcpiReq);
+
   bool registerEventMask(locClientEventMaskType qmiMask);
   locClientEventMaskType adjustMaskForNoSession(locClientEventMaskType qmiMask);
   void cacheGnssMeasurementSupport();
@@ -186,6 +216,9 @@ public:
 
   virtual enum loc_api_adapter_err
     injectPosition(double latitude, double longitude, float accuracy);
+
+  virtual enum loc_api_adapter_err
+    injectPosition(const Location& location);
 
   virtual LocationError
     deleteAidingData(const GnssAidingData& data);
@@ -263,6 +296,14 @@ public:
   virtual bool gnssConstellationConfig();
   virtual LocPosTechMask convertPosTechMask(qmiLocPosTechMaskT_v02 mask);
   virtual LocNavSolutionMask convertNavSolutionMask(qmiLocNavSolutionMaskT_v02 mask);
+
+  locClientStatusEnumType locSyncSendReq(uint32_t req_id, locClientReqUnionType req_payload,
+          uint32_t timeout_msec, uint32_t ind_id, void* ind_payload_ptr);
+
+  inline locClientStatusEnumType locClientSendReq(uint32_t req_id,
+          locClientReqUnionType req_payload) {
+      return ::locClientSendReq(clientHandle, req_id, req_payload);
+  }
 
 };
 
