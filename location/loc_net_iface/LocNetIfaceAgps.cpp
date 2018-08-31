@@ -29,11 +29,14 @@
 #define LOG_TAG "LocSvc_LocNetIfaceHolder"
 
 #include <LocNetIfaceAgps.h>
-#include <platform_lib_log_util.h>
+#include <loc_pla.h>
+#include <log_util.h>
 
 /* LocNetIfaceAgps members */
 LocNetIface* LocNetIfaceAgps::sLocNetIfaceAgpsInternet = NULL;
 LocNetIface* LocNetIfaceAgps::sLocNetIfaceAgpsSupl = NULL;
+LocNetAgpsState LocNetIfaceAgps::sAgpsStateInternet = LOC_NET_AGPS_STATE_CLOSED;
+LocNetAgpsState LocNetIfaceAgps::sAgpsStateSupl = LOC_NET_AGPS_STATE_CLOSED;
 LocAgpsOpenResultCb LocNetIfaceAgps::sAgpsOpenResultCb = NULL;
 LocAgpsCloseResultCb LocNetIfaceAgps::sAgpsCloseResultCb = NULL;
 void* LocNetIfaceAgps::sUserDataPtr = NULL;
@@ -94,22 +97,26 @@ void LocNetIfaceAgps::agpsStatusCb(AGnssExtStatusIpV4 status){
         if (status.type == LOC_AGPS_TYPE_SUPL) {
 
             LOC_LOGV("REQUEST LOC_AGPS_TYPE_SUPL");
+            sAgpsStateSupl = LOC_NET_AGPS_STATE_OPEN_PENDING;
             if (!sLocNetIfaceAgpsSupl->setupWwanCall()) {
                 LOC_LOGE("Setup wwan call failed !");
                 wwanStatusCallback(
                         sLocNetIfaceAgpsSupl,
                         LOC_NET_WWAN_CALL_EVT_OPEN_FAILED,
                         NULL, LOC_NET_CONN_IP_TYPE_INVALID);
+                sAgpsStateSupl = LOC_NET_AGPS_STATE_CLOSED;
             }
         } else if (status.type == LOC_AGPS_TYPE_WWAN_ANY) {
 
             LOC_LOGV("REQUEST LOC_AGPS_TYPE_WWAN_ANY");
+            sAgpsStateInternet = LOC_NET_AGPS_STATE_OPEN_PENDING;
             if (!sLocNetIfaceAgpsInternet->connectBackhaul()) {
                 LOC_LOGE("Connect Backhaul failed");
                 wwanStatusCallback(
                         sLocNetIfaceAgpsInternet,
                         LOC_NET_WWAN_CALL_EVT_OPEN_FAILED,
                         NULL, LOC_NET_CONN_IP_TYPE_INVALID);
+                sAgpsStateInternet = LOC_NET_AGPS_STATE_CLOSED;
             }
         } else {
 
@@ -121,22 +128,26 @@ void LocNetIfaceAgps::agpsStatusCb(AGnssExtStatusIpV4 status){
         if (status.type == LOC_AGPS_TYPE_SUPL) {
 
             LOC_LOGV("RELEASE LOC_AGPS_TYPE_SUPL");
+            sAgpsStateSupl = LOC_NET_AGPS_STATE_CLOSE_PENDING;
             if (!sLocNetIfaceAgpsSupl->stopWwanCall()) {
                 LOC_LOGE("Stop wwan call failed !");
                 wwanStatusCallback(
                         sLocNetIfaceAgpsSupl,
                         LOC_NET_WWAN_CALL_EVT_CLOSE_FAILED,
                         NULL, LOC_NET_CONN_IP_TYPE_INVALID);
+                sAgpsStateSupl = LOC_NET_AGPS_STATE_CLOSED;
             }
         } else if (status.type == LOC_AGPS_TYPE_WWAN_ANY) {
 
             LOC_LOGV("RELEASE LOC_AGPS_TYPE_WWAN_ANY");
+            sAgpsStateInternet = LOC_NET_AGPS_STATE_CLOSE_PENDING;
             if (!sLocNetIfaceAgpsInternet->disconnectBackhaul()) {
                 LOC_LOGE("Disconnect backhaul failed !");
                 wwanStatusCallback(
                         sLocNetIfaceAgpsInternet,
                         LOC_NET_WWAN_CALL_EVT_CLOSE_FAILED,
                         NULL, LOC_NET_CONN_IP_TYPE_INVALID);
+                sAgpsStateInternet = LOC_NET_AGPS_STATE_CLOSED;
             }
         } else {
 
@@ -173,11 +184,14 @@ void LocNetIfaceAgps::wwanStatusCallback(
 
     /* Derive AGPS type */
     AGpsExtType agpsType = LOC_AGPS_TYPE_INVALID;
+    LocNetAgpsState* agpsStatePtr = NULL;
     if (userDataPtr == (void*)sLocNetIfaceAgpsInternet) {
         agpsType = LOC_AGPS_TYPE_WWAN_ANY;
+        agpsStatePtr = &sAgpsStateInternet;
     }
     else if (userDataPtr == (void*)sLocNetIfaceAgpsSupl) {
         agpsType = LOC_AGPS_TYPE_SUPL;
+        agpsStatePtr = &sAgpsStateSupl;
     }
     else {
         LOC_LOGE("Invalid user data ptr %p", userDataPtr);
@@ -185,25 +199,34 @@ void LocNetIfaceAgps::wwanStatusCallback(
     }
 
     /* Complete AGPS call flow */
-    if (event == LOC_NET_WWAN_CALL_EVT_OPEN_SUCCESS) {
+    if (event == LOC_NET_WWAN_CALL_EVT_OPEN_SUCCESS &&
+            *agpsStatePtr == LOC_NET_AGPS_STATE_OPEN_PENDING) {
         LOC_LOGV("LOC_NET_WWAN_CALL_EVT_OPEN_SUCCESS");
         sAgpsOpenResultCb(
                 true, agpsType, apn, bearerType, sUserDataPtr);
+        *agpsStatePtr = LOC_NET_AGPS_STATE_OPENED;
     }
-    else if (event == LOC_NET_WWAN_CALL_EVT_OPEN_FAILED) {
+    else if (event == LOC_NET_WWAN_CALL_EVT_OPEN_FAILED &&
+            *agpsStatePtr == LOC_NET_AGPS_STATE_OPEN_PENDING) {
         LOC_LOGE("LOC_NET_WWAN_CALL_EVT_OPEN_FAILED");
         sAgpsOpenResultCb(
                 false, agpsType, apn, bearerType, sUserDataPtr);
+        *agpsStatePtr = LOC_NET_AGPS_STATE_CLOSED;
     }
-    else if (event == LOC_NET_WWAN_CALL_EVT_CLOSE_SUCCESS) {
+    else if (event == LOC_NET_WWAN_CALL_EVT_CLOSE_SUCCESS &&
+            *agpsStatePtr == LOC_NET_AGPS_STATE_CLOSE_PENDING) {
         LOC_LOGV("LOC_NET_WWAN_CALL_EVT_CLOSE_SUCCESS");
         sAgpsCloseResultCb(true, agpsType, sUserDataPtr);
+        *agpsStatePtr = LOC_NET_AGPS_STATE_CLOSED;
     }
-    else if (event == LOC_NET_WWAN_CALL_EVT_CLOSE_FAILED) {
+    else if (event == LOC_NET_WWAN_CALL_EVT_CLOSE_FAILED &&
+            *agpsStatePtr == LOC_NET_AGPS_STATE_CLOSE_PENDING) {
         LOC_LOGE("LOC_NET_WWAN_CALL_EVT_CLOSE_FAILED");
         sAgpsCloseResultCb(false, agpsType, sUserDataPtr);
+        *agpsStatePtr = LOC_NET_AGPS_STATE_CLOSED;
     }
     else {
-        LOC_LOGE("Unsupported event %d", event);
+        LOC_LOGE("Unsupported event %d, type %d, state %d",
+                event, agpsType, *agpsStatePtr);
     }
 }
