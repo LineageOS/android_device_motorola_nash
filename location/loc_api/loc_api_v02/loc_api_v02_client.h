@@ -728,14 +728,25 @@ typedef union
     const qmiLocInjectSrnApDataReqMsgT_v02 *pInjectSrnApDataReq;
     /*QMI_LOC_INJECT_SRN_AP_DATA_REQ_V02*/
 
-    const qmiLocQueryXtraInfoReqMsgT_v02   *pQueryXtraInfoReq;
+    const qmiLocCrowdSourceManagerControlReqMsgT_v02 *pCrowdSourceManagerControlReq;
+    /*QMI_LOC_CROWDSOURCE_MANAGER_CONTROL_REQ*/
 
+    const qmiLocCrowdSourceManagerReadDataReqMsgT_v02 *pCrowdSourceManagerReadDataReq;
+    /*QMI_LOC_CROWDSOURCE_MANAGER_CONTROL_REQ*/
+
+    const qmiLocQueryXtraInfoReqMsgT_v02   *pQueryXtraInfoReq;
     /*QMI_LOC_QUERY_XTRA_INFO_REQ_V02*/
     const qmiLocStartOutdoorTripBatchingReqMsgT_v02 *pStartOutdoorTripBatchingReq;
     /*QMI_LOC_START_OUTDOOR_TRIP_BATCHING_REQ_V02*/
 
     const qmiLocQueryOTBAccumulatedDistanceReqMsgT_v02 *pQueryOTBAccumulatedDistanceReq;
     /*QMI_LOC_QUERY_OTB_ACCUMULATED_DISTANCE_REQ_V02*/
+
+    const qmiLocGetFdclBsListReqMsgT_v02 *pGetFdclBsListReq;
+    /*QMI_LOC_GET_FDCL_BS_LIST_REQ_V02*/
+
+    const qmiLocInjectFdclDataReqMsgT_v02 *pInjectFdclDataReq;
+    /*QMI_LOC_INJECT_FDCL_DATA_REQ_V02*/
 }locClientReqUnionType;
 
 
@@ -1002,6 +1013,11 @@ typedef union
    /**< Sent by the engine to notify the client about a SRN Ap data
         request.
         QMI_LOC_EVENT_INJECT_SRN_AP_DATA_REQ_IND_V02. */
+
+   const qmiLocEventFdclServiceReqIndMsgT_v02 *pFdclServiceReqEvent;
+  /**< Sent by the engine to request the client for FDCL data
+    QMI_LOC_EVENT_FDCL_SERVICE_REQ_IND_V02. */
+
 }locClientEventIndUnionType;
 
 
@@ -1459,11 +1475,24 @@ typedef union
     const qmiLocInjectSrnApDataIndMsgT_v02 *pInjectSrnApDataInd;
     /*QMI_LOC_INJECT_SRN_AP_DATA_IND_V02*/
 
+    const qmiLocCrowdSourceManagerControlIndMsgT_v02 *pCrowdSourceManagerControlInd;
+    /* QMI_LOC_CROWDSOURCE_MANAGER_CONTROL_IND_V02*/
+
     const qmiLocStartOutdoorTripBatchingIndMsgT_v02 *pStartOutdoorTripBatchingInd;
     /*QMI_LOC_START_OUTDOOR_TRIP_BATCHING_IND_V02*/
 
     const qmiLocQueryOTBAccumulatedDistanceIndMsgT_v02 *pQueryOTBAccumulatedDistanceInd;
     /*QMI_LOC_QUERY_OTB_ACCUMULATED_DISTANCE_IND_V02*/
+
+    const qmiLocInjectXtraDataIndMsgT_v02 *pInjectXtraDataInd;
+    /*QMI_LOC_INJECT_XTRA_DATA_IND_V02*/
+
+    const qmiLocGetFdclBsListIndMsgT_v02 *pGetFdclBsListInd;
+    /*QMI_LOC_GET_FDCL_BS_LIST_IND_V02 */
+
+    const qmiLocInjectFdclDataIndMsgT_v02 *pInjectFdclDataInd;
+    /* QMI_LOC_INJECT_FDCL_DATA_IND_V02 */
+
 }locClientRespIndUnionType;
 
 /** @} */ /* end_addtogroup data_types */

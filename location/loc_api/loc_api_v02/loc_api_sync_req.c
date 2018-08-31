@@ -36,7 +36,7 @@
 #include <loc_cfg.h>
 #include "loc_api_v02_client.h"
 #include "loc_api_sync_req.h"
-#include "platform_lib_macros.h"
+#include <loc_pla.h>
 
 /* Logging */
 // Uncomment to log verbose logs
@@ -121,7 +121,11 @@ void loc_sync_req_init()
       loc_sync_req_data_s_type *slot = &loc_sync_array.slots[i];
 
       pthread_mutex_init(&slot->sync_req_lock, NULL);
-      pthread_cond_init(&slot->ind_arrived_cond, NULL);
+      pthread_condattr_t condAttr;
+      pthread_condattr_init(&condAttr);
+      pthread_condattr_setclock(&condAttr, CLOCK_MONOTONIC);
+      pthread_cond_init(&slot->ind_arrived_cond, &condAttr);
+      pthread_condattr_destroy(&condAttr);
 
       slot->client_handle = LOC_CLIENT_INVALID_HANDLE_VALUE;
       slot->ind_is_selected = false;       /* is ind selected? */
@@ -416,7 +420,6 @@ static int loc_sync_wait_for_ind(
    int ret_val = 0;  /* the return value of this function: 0 = no error */
    int rc;          /* return code from pthread calls */
 
-   struct timeval present_time;
    struct timespec expire_time;
 
    pthread_mutex_lock(&slot->sync_req_lock);
@@ -438,9 +441,7 @@ static int loc_sync_wait_for_ind(
       }
 
       /* Calculate absolute expire time */
-      gettimeofday(&present_time, NULL);
-      expire_time.tv_sec  = present_time.tv_sec;
-      expire_time.tv_nsec = present_time.tv_usec * 1000;
+      clock_gettime(CLOCK_MONOTONIC, &expire_time);
       expire_time.tv_sec += timeout_seconds;
 
       /* Take new wait request */
@@ -497,7 +498,6 @@ locClientStatusEnumType loc_sync_send_req
    locClientStatusEnumType status = eLOC_CLIENT_SUCCESS ;
    int select_id;
    int rc = 0;
-   int sendReqRetryRem = 5; // Number of retries remaining
 
    // Select the callback we are waiting for
    select_id = loc_sync_select_ind(client_handle, ind_id, req_id,
@@ -505,48 +505,38 @@ locClientStatusEnumType loc_sync_send_req
 
    if (select_id >= 0)
    {
-      // Loop to retry few times in case of failures
-      do
-      {
-         status =  locClientSendReq (client_handle, req_id, req_payload);
-         LOC_LOGV("%s:%d]: select_id = %d,locClientSendReq returned %d\n",
-                       __func__, __LINE__, select_id, status);
-
-         if (status == eLOC_CLIENT_SUCCESS )
-         {
-            // Wait for the indication callback
-            if (( rc = loc_sync_wait_for_ind( select_id,
-                                              timeout_msec / 1000,
-                                              ind_id) ) < 0)
-            {
-               if ( rc == -ETIMEDOUT)
-                  status = eLOC_CLIENT_FAILURE_TIMEOUT;
-               else
-                  status = eLOC_CLIENT_FAILURE_INTERNAL;
-
-               // Callback waiting failed
-               LOC_LOGE("%s:%d]: loc_api_wait_for_ind failed, err %d, "
-                        "select id %d, status %s", __func__, __LINE__, rc ,
-                        select_id, loc_get_v02_client_status_name(status));
-            }
-            else
-            {
-               status =  eLOC_CLIENT_SUCCESS;
-               LOC_LOGV("%s:%d]: success (select id %d)\n",
-                             __func__, __LINE__, select_id);
-            }
-         }
-
-      } while(( status == eLOC_CLIENT_FAILURE_ENGINE_BUSY ||
-                    status == eLOC_CLIENT_FAILURE_PHONE_OFFLINE ||
-                    status == eLOC_CLIENT_FAILURE_INTERNAL ) &&
-                sendReqRetryRem-- > 0);
+      status =  locClientSendReq (client_handle, req_id, req_payload);
+      LOC_LOGV("%s:%d]: select_id = %d,locClientSendReq returned %d\n",
+                    __func__, __LINE__, select_id, status);
 
       if (status != eLOC_CLIENT_SUCCESS )
       {
          loc_free_slot(select_id);
       }
+      else
+      {
+         // Wait for the indication callback
+         if (( rc = loc_sync_wait_for_ind( select_id,
+                                           timeout_msec / 1000,
+                                           ind_id) ) < 0)
+         {
+            if ( rc == -ETIMEDOUT)
+               status = eLOC_CLIENT_FAILURE_TIMEOUT;
+            else
+               status = eLOC_CLIENT_FAILURE_INTERNAL;
 
+            // Callback waiting failed
+            LOC_LOGE("%s:%d]: loc_api_wait_for_ind failed, err %d, "
+                     "select id %d, status %s", __func__, __LINE__, rc ,
+                     select_id, loc_get_v02_client_status_name(status));
+         }
+         else
+         {
+            status =  eLOC_CLIENT_SUCCESS;
+            LOC_LOGV("%s:%d]: success (select id %d)\n",
+                          __func__, __LINE__, select_id);
+         }
+      }
    } /* select id */
 
    return status;
