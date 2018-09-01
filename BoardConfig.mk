@@ -182,6 +182,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_RIL_VARIANT := caf
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := persist
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
