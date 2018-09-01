@@ -36,12 +36,12 @@
 target=`getprop ro.board.platform`
 usb_action=`getprop usb.mmi-usb-sh.action`
 echo "mmi-usb-sh: action = \"$usb_action\""
-sys_usb_config=`getprop sys.usb.config`
+sys_usb_config=`getprop vendor.usb.config`
 
 tcmd_ctrl_adb ()
 {
-    ctrl_adb=`getprop tcmd.ctrl_adb`
-    echo "mmi-usb-sh: tcmd.ctrl_adb = $ctrl_adb"
+    ctrl_adb=`getprop vendor.tcmd.ctrl_adb`
+    echo "mmi-usb-sh: vendor.tcmd.ctrl_adb = $ctrl_adb"
     case "$ctrl_adb" in
         "0")
             if [[ "$sys_usb_config" == *adb* ]]
@@ -49,9 +49,9 @@ tcmd_ctrl_adb ()
                 # *** ALWAYS expecting adb at the end ***
                 new_usb_config=${sys_usb_config/,adb/}
                 echo "mmi-usb-sh: disabling adb ($new_usb_config)"
-                setprop persist.sys.usb.config $new_usb_config
-                setprop sys.usb.config $new_usb_config
-                setprop persist.factory.allow_adb 0
+                setprop persist.vendor.usb.config $new_usb_config
+                setprop vendor.usb.config $new_usb_config
+                setprop persist.vendor.factory.allow_adb 0
             fi
         ;;
         "1")
@@ -60,9 +60,9 @@ tcmd_ctrl_adb ()
                 # *** ALWAYS expecting adb at the end ***
                 new_usb_config="$sys_usb_config,adb"
                 echo "mmi-usb-sh: enabling adb ($new_usb_config)"
-                setprop persist.sys.usb.config $new_usb_config
-                setprop sys.usb.config $new_usb_config
-                setprop persist.factory.allow_adb 1
+                setprop persist.vendor.usb.config $new_usb_config
+                setprop vendor.usb.config $new_usb_config
+                setprop persist.vendor.factory.allow_adb 1
             fi
         ;;
     esac
@@ -73,7 +73,7 @@ tcmd_ctrl_adb ()
 case "$usb_action" in
     "")
     ;;
-    "tcmd.ctrl_adb")
+    "vendor.tcmd.ctrl_adb")
         tcmd_ctrl_adb
     ;;
 esac
@@ -87,11 +87,11 @@ fi
 
 case "$target" in
     "msm8937")
-        setprop sys.usb.rps_mask 0
-        setprop sys.rmnet_vnd.rps_mask 0
+        setprop vendor.usb.rps_mask 0
+        setprop vendor.rmnet_vnd.rps_mask 0
         case "$soc_id" in
 	    "294" | "295")
-		setprop sys.usb.rps_mask 40
+		setprop vendor.usb.rps_mask 40
 	    ;;
         esac
 
@@ -112,72 +112,100 @@ case "$target" in
     ;;
     "msm8953")
         #Set RPS Mask for Tethering to CPU4
-        setprop sys.usb.rps_mask 10
-        setprop sys.rmnet_vnd.rps_mask 0
-        qcom_usb_config="diag,serial_smd,serial_tty,rmnet_bam,mass_storage"
-        qcom_adb_usb_config="diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb"
-        bpt_usb_config="diag,serial_smd,serial_tty,rmnet"
-        bpt_adb_usb_config="diag,serial_smd,serial_tty,rmnet,adb"
-        setprop sys.usb.controller "7000000.dwc3"
+        setprop vendor.usb.rps_mask 10
+        setprop vendor.rmnet_vnd.rps_mask 0
+        if [ -d /config/usb_gadget/g1 ]; then
+            qcom_usb_config="diag,serial_cdev,rmnet"
+            qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+            bpt_usb_config="diag,serial,rmnet"
+            bpt_adb_usb_config="diag,serial,rmnet,adb"
+            setprop vendor.usb.rndis.func.name "rndis_bam"
+            setprop vendor.usb.rmnet.func.name "rmnet_bam"
+        else
+            qcom_usb_config="diag,serial_smd,serial_tty,rmnet_bam,mass_storage"
+            qcom_adb_usb_config="diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb"
+            bpt_usb_config="diag,serial_smd,serial_tty,rmnet"
+            bpt_adb_usb_config="diag,serial_smd,serial_tty,rmnet,adb"
+        fi
+        setprop vendor.usb.controller "7000000.dwc3"
     ;;
     "msm8996")
         #Set RPS Mask for Tethering to CPU2
-        setprop sys.usb.rps_mask 2
-        setprop sys.rmnet_vnd.rps_mask 0f
+        setprop vendor.usb.rps_mask 2
+        setprop vendor.rmnet_vnd.rps_mask 0f
         qcom_usb_config="diag,serial_cdev,serial_tty,rmnet_bam,mass_storage"
         qcom_adb_usb_config="diag,serial_cdev,serial_tty,rmnet_bam,mass_storage,adb"
         bpt_usb_config="diag,serial_cdev,serial_tty,rmnet"
         bpt_adb_usb_config="diag,serial_cdev,serial_tty,rmnet,adb"
-        setprop sys.usb.controller "6a00000.dwc3"
+        setprop vendor.usb.controller "6a00000.dwc3"
     ;;
     "msm8998")
+        #Set RPS Mask for Tethering to CPU2
+        setprop vendor.usb.rps_mask 30
+        setprop vendor.rmnet_vnd.rps_mask 0d
         qcom_usb_config="diag,serial_cdev,rmnet"
         qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
         bpt_usb_config="diag,serial,rmnet"
         bpt_adb_usb_config="diag,serial,rmnet,adb"
-        setprop sys.usb.controller "a800000.dwc3"
-        setprop sys.usb.rndis.func.name "gsi"
-        setprop sys.usb.rmnet.func.name "gsi"
+        setprop vendor.usb.controller "a800000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
     ;;
     "sdm660")
+        #Set RPS Mask for Tethering to CPU2
+        setprop vendor.usb.rps_mask 30
+        setprop vendor.rmnet_vnd.rps_mask 4
         qcom_usb_config="diag,serial_cdev,rmnet"
         qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
         bpt_usb_config="diag,serial,rmnet"
         bpt_adb_usb_config="diag,serial,rmnet,adb"
-        setprop sys.usb.controller "a800000.dwc3"
-        setprop sys.usb.rndis.func.name "rndis_bam"
-        setprop sys.usb.rmnet.func.name "rmnet_bam"
+        setprop vendor.usb.controller "a800000.dwc3"
+        setprop vendor.usb.rndis.func.name "rndis_bam"
+        setprop vendor.usb.rmnet.func.name "rmnet_bam"
+    ;;
+    "sdm845")
+        qcom_usb_config="diag,serial_cdev,rmnet"
+        qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+    ;;
+    "sdm710")
+        qcom_usb_config="diag,serial_cdev,rmnet"
+        qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
     ;;
 esac
 
 ## This is needed to switch to the qcom rndis driver.
-diag_extra=`getprop persist.sys.usb.config.extra`
+diag_extra=`getprop persist.vendor.usb.config.extra`
 if [ "$diag_extra" == "" ]; then
-        setprop persist.sys.usb.config.extra none
-fi
-
-# check configfs is mounted or not
-if [ -d /config/usb_gadget/g1 ]; then
-	setprop sys.usb.configfs 1
+        setprop persist.vendor.usb.config.extra none
 fi
 
 #
 # Allow USB enumeration with default PID/VID
 #
-usb_config=`getprop persist.sys.usb.config`
-mot_usb_config=`getprop persist.mot.usb.config`
+usb_config=`getprop persist.vendor.usb.config`
+mot_usb_config=`getprop persist.vendor.mot.usb.config`
 bootmode=`getprop ro.bootmode`
 buildtype=`getprop ro.build.type`
 securehw=`getprop ro.boot.secure_hardware`
-cid=`getprop ro.boot.cid`
-diagmode=`getprop persist.radio.usbdiag`
+cid=`getprop ro.vendor.boot.cid`
+diagmode=`getprop persist.vendor.radio.usbdiag`
 
 echo "mmi-usb-sh: persist usb configs = \"$usb_config\", \"$mot_usb_config\", \"$diagmode\""
 
 
 phonelock_type=`getprop persist.sys.phonelock.mode`
 usb_restricted=`getprop persist.sys.usb.policylocked`
-if [ "$securehw" == "1" ] && [ "$buildtype" == "user" ] && [ "$cid" != "0x0000" ]
+if [ "$securehw" == "1" ] && [ "$buildtype" == "user" ] && [ "$(($cid))" != 0 ]
 then
     if [ "$usb_restricted" == "1" ]
     then
@@ -203,10 +231,10 @@ case "$diagmode" in
             * )
 		case "$securehw" in
 		    "1" )
-			setprop persist.sys.usb.config $bpt_usb_config
+			setprop persist.vendor.usb.config $bpt_usb_config
 		    ;;
 		    *)
-			setprop persist.sys.usb.config $bpt_adb_usb_config
+			setprop persist.vendor.usb.config $bpt_adb_usb_config
                     ;;
                 esac
             ;;
@@ -228,32 +256,36 @@ case "$bootmode" in
             * )
 		case "$securehw" in
 		    "1" )
-			setprop persist.sys.usb.config $bpt_usb_config
-			setprop persist.sys.usb.bp-tools.func $bpt_usb_config
+			setprop persist.vendor.usb.config $bpt_usb_config
+			setprop persist.vendor.usb.bp-tools.config $bpt_usb_config
+			setprop persist.vendor.usb.bp-tools.func $bpt_usb_config
 		    ;;
 		    *)
-			setprop persist.sys.usb.config $bpt_adb_usb_config
-			setprop persist.sys.usb.bp-tools.func $bpt_adb_usb_config
+			setprop persist.vendor.usb.config $bpt_adb_usb_config
+			setprop persist.vendor.usb.bp-tools.config $bpt_adb_usb_config
+			setprop persist.vendor.usb.bp-tools.func $bpt_adb_usb_config
 		    ;;
 		esac
             ;;
         esac
     ;;
     "mot-factory" )
-        allow_adb=`getprop persist.factory.allow_adb`
+        allow_adb=`getprop persist.vendor.factory.allow_adb`
         case "$allow_adb" in
             "1")
                 if [ "$usb_config" != "usbnet,adb" ]
                 then
-                    setprop persist.sys.usb.config usbnet,adb
-                    setprop persist.sys.usb.mot-factory.func usbnet,adb
+                    setprop persist.vendor.usb.config usbnet,adb
+                    setprop persist.vendor.usb.mot-factory.config usbnet,adb
+                    setprop persist.vendor.usb.mot-factory.func usbnet,adb
                 fi
             ;;
             *)
                 if [ "$usb_config" != "usbnet" ]
                 then
-                    setprop persist.sys.usb.config usbnet
-                    setprop persist.sys.usb.mot-factory.func usbnet
+                    setprop persist.vendor.usb.config usbnet
+                    setprop persist.vendor.usb.mot-factory.config usbnet
+                    setprop persist.vendor.usb.mot-factory.func usbnet
                 fi
             ;;
         esac
@@ -267,12 +299,14 @@ case "$bootmode" in
             * )
 		case "$securehw" in
 		    "1" )
-			setprop persist.sys.usb.config $qcom_usb_config
-			setprop persist.sys.usb.qcom.func $qcom_usb_config
+			setprop persist.vendor.usb.config $qcom_usb_config
+			setprop persist.vendor.usb.qcom.config $qcom_usb_config
+			setprop persist.vendor.usb.qcom.func $qcom_usb_config
 		    ;;
 		    *)
-			setprop persist.sys.usb.config $qcom_adb_usb_config
-			setprop persist.sys.usb.qcom.func $qcom_adb_usb_config
+			setprop persist.vendor.usb.config $qcom_adb_usb_config
+			setprop persist.vendor.usb.qcom.config $qcom_adb_usb_config
+			setprop persist.vendor.usb.qcom.func $qcom_adb_usb_config
 		    ;;
 		esac
             ;;
@@ -291,15 +325,15 @@ case "$bootmode" in
             *)
                 case "$mot_usb_config" in
                     "mtp,adb" | "mtp" | "adb")
-                        setprop persist.sys.usb.config $mot_usb_config
+                        setprop persist.vendor.usb.config $mot_usb_config
                     ;;
                     *)
                         case "$securehw" in
                             "1" )
-                                setprop persist.sys.usb.config mtp
+                                setprop persist.vendor.usb.config mtp
                             ;;
                             *)
-                                setprop persist.sys.usb.config mtp,adb
+                                setprop persist.vendor.usb.config adb
                             ;;
                         esac
                     ;;
@@ -307,10 +341,24 @@ case "$bootmode" in
             ;;
         esac
 
+        adb_early=`getprop ro.boot.adb_early`
+        if [ "$adb_early" == "1" ]; then
+            echo 0 > /sys/class/android_usb/android0/secure
+            echo "Enabling enumeration after bootup, count =  $count !"
+            new_persist_usb_config=`getprop persist.vendor.usb.config`
+            if [ "$sys_usb_config" != "$new_persist_usb_config" ]; then
+                setprop vendor.usb.config $new_persist_usb_config
+            fi
+            if [ "$new_persist_usb_config" == "" ]; then
+                setprop vendor.usb.config "adb"
+            fi
+            exit 0
+        fi
+
         if [ "$buildtype" == "user" ] && [ "$phonelock_type" != "1" ] && [ "$usb_restricted" != "1" ]
         then
             count=0
-            bootcomplete=`getprop sys.boot_completed`
+            bootcomplete=`getprop vendor.boot_completed`
             echo "mmi-usb-sh - bootcomplete = $booted"
             while [ "$bootcomplete" != "1" ]; do
                 echo "Sleeping till bootup!"
@@ -321,15 +369,16 @@ case "$bootmode" in
                     echo "mmi-usb-sh - Timed out waiting for bootup"
                     break
                 fi
-                bootcomplete=`getprop sys.boot_completed`
+                bootcomplete=`getprop vendor.boot_completed`
             done
             echo 0 > /sys/class/android_usb/android0/secure
             echo "Enabling enumeration after bootup, count =  $count !"
+            exit 0
         fi
     ;;
 esac
 
-new_persist_usb_config=`getprop persist.sys.usb.config`
+new_persist_usb_config=`getprop persist.vendor.usb.config`
 if [ "$sys_usb_config" != "$new_persist_usb_config" ]; then
-	setprop sys.usb.config $new_persist_usb_config
+	setprop vendor.usb.config $new_persist_usb_config
 fi
