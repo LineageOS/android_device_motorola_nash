@@ -459,7 +459,7 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libquipc_os_api.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk:vendor/app/datastatusnotification/datastatusnotification.apk
+-vendor/app/datastatusnotification/datastatusnotification.apk|9e21f9a695951c3bc9ef39fcd4e73ec58b13415c
 -app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
@@ -546,9 +546,9 @@ vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 
 # Radio - IMS
--app/ims/ims.apk|9bb1da84fd36d3b308607954197f6596fa567f91
+-app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
 vendor/etc/permissions/qti-vzw-ims-internal.xml|89409c5f355acbd65a45b13f12e1baafb13baf46
-vendor/framework/qti-vzw-ims-internal.jar|9f0c22b5b7617b3d40985a9c01b760fe19947012
+vendor/framework/qti-vzw-ims-internal.jar|5db6e9e149e6beef70ab68a1246917ab2ef19dbc
 lib/lib-imscamera.so
 lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so
