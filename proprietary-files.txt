@@ -237,6 +237,8 @@ vendor/lib/vendor.qti.gnss@1.2.so
 vendor/lib/vendor.qti.gnss@2.0.so
 vendor/lib64/hw/vendor.qti.gnss@2.0-impl.so
 vendor/lib64/lib_drplugin_server.so
+-vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_ds_api.so
 vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdrplugin_client.so
