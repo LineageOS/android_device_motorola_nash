@@ -163,10 +163,10 @@ vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
-# DRM - Widevine
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+# DRM - Widevine from PH-1 PPR1.180610.091
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|abdfb842a9b540f6540094d649072961ff7eff75
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
-vendor/lib64/libwvhidl.so
+vendor/lib/libwvhidl.so|f9b7d65c3face1d07687415ea4cdaea2cd37f7c9
 
 # DSP
 vendor/lib/libsdsprpc.so
