@@ -13,8 +13,6 @@
 /fsg                         u:object_r:fsg_firmware_file:s0
 /(vendor|system/vendor)/fsg  u:object_r:fsg_firmware_file:s0
 
-/persist                     u:object_r:persist_file:s0
-
 /dev/laser                   u:object_r:vl53l1_device:s0
 /dev/v4l2-hal-ctrl           u:object_r:video_device:s0
 /sys/devices/soc/8c0000.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
