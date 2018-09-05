@@ -185,6 +185,9 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := persist
 
+# Vendor Security Patch Level
+VENDOR_SECURITY_PATCH := 2018-08-05
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
