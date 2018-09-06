@@ -91,6 +91,8 @@ on fs
     symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
     mount_all /vendor/etc/fstab.qcom --early
 
+    setprop sys.usb.ffs.aio_compat 1
+
     restorecon_recursive /persist
     mkdir /persist/data 0700 system system
 
