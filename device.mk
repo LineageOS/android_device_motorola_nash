@@ -397,7 +397,7 @@ PRODUCT_PACKAGES += brillo_update_payload
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.basic
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
