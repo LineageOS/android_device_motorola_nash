@@ -764,6 +764,9 @@ on post-fs-data
     # Start Loading mods kernel modules
     start vendor.gbmodinstall
 
+    #Start move time data to /data/vendor once post-fs-data done
+    start vendor.move_time_data
+
     setprop vold.post_fs_data_done 1
 
 service vendor.nqnfcinfo /vendor/bin/nqnfcinfo
@@ -1263,6 +1266,13 @@ service vendor.seemp_healthd /vendor/bin/seemp_healthd
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
+    group system
+    disabled
+    oneshot
+
+service vendor.move_time_data /system/bin/move_time_data.sh
+    class main
+    user system
     group system
     disabled
     oneshot
