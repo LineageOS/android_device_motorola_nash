@@ -23,8 +23,6 @@
 /sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 
-/data/vendor/nfc(/.*)?                                        u:object_r:nfc_data_file:s0
-
 /(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
 /(vendor|system/vendor)/bin/init.gbmods.sh                    u:object_r:init-gbmods-sh_exec:s0
 /(vendor|system/vendor)/bin/mods_camd                         u:object_r:mods_exec:s0
