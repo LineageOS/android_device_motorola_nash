@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45c790b2_1a111cfe",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2018-09-14T04:42:10Z",
+      "side": 1,
+      "message": "need to check block device definitions all around this commit.",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 106
+      },
+      "revId": "f363787b25c16aa66e041686463b5c47eada0f92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
