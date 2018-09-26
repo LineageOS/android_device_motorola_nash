@@ -1,2 +1,6 @@
 allow vold sysfs_scsi_devices_0000:file write;
 allow vold sysfs_scsi_devices_other:file write;
+
+# For setting read_ahead_kb
+allow vold sysfs_mmc_host:file create_file_perms;
+
