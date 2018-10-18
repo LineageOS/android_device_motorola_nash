@@ -22,12 +22,4 @@
     
     <string name="config_mms_user_agent_profile_url">http://uaprof.vtext.com/mot/motoz2/motoz2.xml</string>
 
-<!-- IDs for each color mode. The values must match the corresponding constants in
-         android.view.Display -->
-    <integer-array name="color_mode_ids">
-        <item>0</item>
-        <item>-1</item>
-        <item>-1</item>
-    </integer-array>
-
 </resources>
