@@ -40,22 +40,6 @@
          pulsating and RGB control would set this config to 75. -->
     <integer name="config_deviceLightCapabilities">64</integer>
 
-    <!-- Display mode remapping table.
-         If the mode names returned by the backend do not match
-         the predefined and translated strings in the Settings
-         app, they can be remapped here. The format is
-         "oldname:newname", one per entry. -->
-    <string-array name="config_displayModeMappings" translatable="false">
-        <item>hal_srgb:sRGB</item>
-        <item>hal_adobe:Natural</item>
-        <item>hal_native:Standard</item>
-        <item>hal_warm_srgb:Reading</item>
-        <item>hal_warm_adobe:Cinema</item>
-    </string-array>
-
-    <!-- Turn on LiveDisplay auto mode by default -->
-    <integer name="config_defaultLiveDisplayMode">0</integer>
-
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">true</bool>
 

@@ -791,8 +791,8 @@ vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
 # Postprocessing
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|2982f0e417b448d4ce37076f062184dc685c8ee4
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|70580a01c8891a39b65093a1458005e428fde9bf
 vendor/lib64/libdisp-aba.so
 
 # QMI
