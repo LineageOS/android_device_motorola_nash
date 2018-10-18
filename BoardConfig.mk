@@ -119,7 +119,9 @@ TARGET_USES_GRALLOC1 := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_HAS_HDR_DISPLAY := true
-TARGET_HAS_WIDE_COLOR_DISPLAY := true
+# This should work, but adobe_rgb is a second class
+# citizen compared to {dci,display}_p3 in Android
+#TARGET_HAS_WIDE_COLOR_DISPLAY := true
 
 # GPS
 TARGET_NO_RPC := true
