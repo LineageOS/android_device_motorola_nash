@@ -83,6 +83,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
+# HDR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
+
 # Mods
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.mod.platformsdkversion=205
