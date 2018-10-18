@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
+# HDR
+PRODUCT_COPY_FILES += \
+    device/motorola/nash/configs/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
