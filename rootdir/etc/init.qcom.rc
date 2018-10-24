@@ -80,8 +80,6 @@ on fs
     symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
     symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
 
-    # Start HW service manager early
-    start hwservicemanager
     mount_all /vendor/etc/fstab.qcom --early
 
     # for android.hardware.health@2.0-service.nash cycle count backup
