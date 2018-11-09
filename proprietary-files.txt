@@ -750,6 +750,9 @@ vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
+# Media - AC3
+lib/libstagefright_soft_ddpdec.so|e6a3fcd535f421d6a98ce9fc24a386e4086aade5
+
 # Moto Mods
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|36fdc66b39643433d2ffa46c986e300c6e6f7288
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
