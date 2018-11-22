@@ -43,7 +43,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 write_headers
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
-write_makefiles "$MY_DIR"/proprietary-files_nash.txt true
 
 cat << EOF >> "$ANDROIDMK"
 
