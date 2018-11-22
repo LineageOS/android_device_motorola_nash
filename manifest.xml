@@ -220,13 +220,12 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.radio.deprecated</name>
+        <name>android.hardware.radio.config</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IOemHook</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
+            <name>IRadioConfig</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -236,17 +235,6 @@
         <interface>
             <name>IDevice</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.secure_element</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISecureElement</name>
-            <instance>SIM1</instance>
-            <instance>SIM2</instance>
-            <instance>eSE1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -603,6 +591,7 @@
         <interface>
             <name>IQtiOemHook</name>
             <instance>oemhook0</instance>
+            <instance>oemhook1</instance>
         </interface>
     </hal>
     <hal format="hidl">
