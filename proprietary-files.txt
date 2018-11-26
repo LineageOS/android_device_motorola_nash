@@ -780,6 +780,22 @@ etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.x
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 etc/permissions/com.motorola.camera2.xml:vendor/etc/permissions/com.motorola.camera2.xml
 
+# Moto Mods (Audio
+
+vendor/lib/hw/audio.primary.msm8998.so
+vendor/lib/soundfx/libspeakerbundle.so
+vendor/lib/soundfx/libmmieffectswrapper.so
+vendor/lib/libeqservicebridge.so
+vendor/lib/libmotaudioutils.so
+vendor/lib/libtinyalsa.so
+vendor/lib/libtinycompress.so
+vendor/lib/libtinycompress_vendor.so
+vendor/lib/libunshorten.so
+vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
+vendor/lib64/libtinyalsa.so
+vendor/lib64/libtinycompress.so
+vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
+
 # NFC
 vendor/lib64/libpn553_fw.so
 
