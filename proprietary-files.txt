@@ -480,7 +480,7 @@ vendor/lib64/libquipc_os_api.so
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
 framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
-framework/qti-telephony-common.jar
+framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
@@ -562,7 +562,7 @@ vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 
 # Radio - IMS
--app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
+-priv-app/ims/ims.apk|eef47c0b6f250e7f96e7155d84274b1c83940d8f
 vendor/etc/permissions/qti-vzw-ims-internal.xml|89409c5f355acbd65a45b13f12e1baafb13baf46
 vendor/framework/qti-vzw-ims-internal.jar|5db6e9e149e6beef70ab68a1246917ab2ef19dbc
 lib/lib-imscamera.so
