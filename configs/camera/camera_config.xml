@@ -94,7 +94,7 @@ LensInfo : Information of the lens present in the module.
     <FlashName>aw3643_rear</FlashName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK</Position>
-    <MountAngle>90</MountAngle>
+    <MountAngle>270</MountAngle>
     <CSIInfo>
       <CSIDCore>2</CSIDCore>
       <LaneMask>0x1F</LaneMask>
@@ -142,7 +142,7 @@ LensInfo : Information of the lens present in the module.
     <EepromName>gt24c128b_mono</EepromName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK_AUX</Position>
-    <MountAngle>90</MountAngle>
+    <MountAngle>270</MountAngle>
     <CSIInfo>
       <CSIDCore>1</CSIDCore>
       <LaneMask>0x1F</LaneMask>
