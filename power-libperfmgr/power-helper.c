@@ -47,9 +47,6 @@
 #define RPM_SYSTEM_STAT "/d/system_stats"
 #endif
 
-#ifndef WLAN_POWER_STAT
-#define WLAN_POWER_STAT "/d/wlan0/power_stats"
-#endif
 
 #define ARRAY_SIZE(x) (sizeof((x))/sizeof((x)[0]))
 #define LINE_SIZE 128
@@ -71,18 +68,6 @@ struct stat_pair rpm_stat_map[] = {
     { VOTER_MPSS,    "MPSS",    master_stat_params, ARRAY_SIZE(master_stat_params) },
     { VOTER_ADSP,    "ADSP",    master_stat_params, ARRAY_SIZE(master_stat_params) },
     { VOTER_SLPI,    "SLPI",    master_stat_params, ARRAY_SIZE(master_stat_params) },
-};
-
-
-const char *wlan_power_stat_params[] = {
-    "cumulative_sleep_time_ms",
-    "cumulative_total_on_time_ms",
-    "deep_sleep_enter_counter",
-    "last_deep_sleep_enter_tstamp_ms"
-};
-
-struct stat_pair wlan_stat_map[] = {
-    { WLAN_POWER_DEBUG_STATS, "POWER DEBUG STATS", wlan_power_stat_params, ARRAY_SIZE(wlan_power_stat_params) },
 };
 
 static int parse_stats(const char **params, size_t params_size,
@@ -169,8 +154,4 @@ static int extract_stats(uint64_t *list, char *file,
 
 int extract_platform_stats(uint64_t *list) {
     return extract_stats(list, RPM_SYSTEM_STAT, rpm_stat_map, ARRAY_SIZE(rpm_stat_map));
-}
-
-int extract_wlan_stats(uint64_t *list) {
-    return extract_stats(list, WLAN_POWER_STAT, wlan_stat_map, ARRAY_SIZE(wlan_stat_map));
 }
