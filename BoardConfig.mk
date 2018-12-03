@@ -101,6 +101,8 @@ QCOM_BT_USE_BTNV := true
 # Camera
 USE_CAMERA_STUB := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/bin/hw/android.hardware.camera.provider@2.4-service=27
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
