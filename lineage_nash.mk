@@ -7,6 +7,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/nash/nash-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/mods/mods-vendor.mk)
 
 # Device
 $(call inherit-product, device/motorola/nash/device.mk)
