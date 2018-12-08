@@ -670,4 +670,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>motorola.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMotHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
