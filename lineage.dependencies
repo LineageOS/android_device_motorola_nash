@@ -10,5 +10,9 @@
   {
     "repository": "android_external_bson",
     "target_path": "external/bson"
+  },
+  {
+    "repository": "android_system_qcom",
+    "target_path": "system/qcom"
   }
 ]
