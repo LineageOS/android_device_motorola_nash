@@ -13,7 +13,6 @@ r_dir_file(charge_only, sysfs_type)
 r_dir_file(charge_only, rootfs)
 r_dir_file(charge_only, cgroup)
 
-allow charge_only self:capability { dac_override net_admin sys_tty_config sys_boot };
 allow charge_only self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 wakelock_use(charge_only)
@@ -24,12 +23,8 @@ allow charge_only sysfs:dir { read open };
 allow charge_only sysfs:file { read open write };
 
 allow charge_only sysfs_wake_lock:file rw_file_perms;
-allow charge_only system_data_file:dir { write add_name };
 
 allow charge_only sysfs_batteryinfo:file r_file_perms;
-
-allow charge_only sysfs_greybus:file { read open write };
-allow charge_only sysfs_leds:file { read open write };
 
 # Read /sys/fs/pstore/console-ramoops
 # Don't worry about overly broad permissions for now, as there's
