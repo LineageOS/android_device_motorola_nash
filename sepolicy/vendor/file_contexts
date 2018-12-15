@@ -1,11 +1,11 @@
-/dev/block/platform/soc/1da4000.ufshc/sd[abef]          u:object_r:gpt_block_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]4           u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]9           u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]12          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]16          u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]19          u:object_r:system_block_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[ef]20          u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000.ufshc/sd[cd]            u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[abef]          u:object_r:gpt_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]4           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]9           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]12          u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]16          u:object_r:ab_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]19          u:object_r:system_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]20          u:object_r:ab_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[cd]            u:object_r:xbl_block_device:s0
 
 /dev/mmi_sys_temp            u:object_r:thermal_device:s0
 /dev/socket/perfd            u:object_r:perfd_socket:s0
@@ -15,20 +15,20 @@
 
 /dev/laser                   u:object_r:vl53l1_device:s0
 /dev/v4l2-hal-ctrl           u:object_r:video_device:s0
-/sys/devices/soc/8c0000.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
-/sys/devices/soc/caa0000.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices/soc/caa4000.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
-/sys/devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/soc/8c0000\.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa0000\.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa4000\.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/soc/ca0c000\.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
 /persist/camera(/.*)?                                         u:object_r:persist_camera_file:s0
 /sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 
 /(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
-/(vendor|system/vendor)/bin/init.gbmods.sh                    u:object_r:init-gbmods-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.gbmods\.sh                    u:object_r:init-gbmods-sh_exec:s0
 /(vendor|system/vendor)/bin/mods_camd                         u:object_r:mods_exec:s0
 
-/(vendor|system/vendor)/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
-/vendor/bin/hw/android\.hardware\.health@2\.0-service\.nash                   u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.nash                   u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.nash    u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.nash    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.nash-libperfmgr u:object_r:hal_power_default_exec:s0
@@ -36,6 +36,7 @@
 /(vendor|system/vendor)/bin/init\.mmi\.(laser|usb)\.sh                        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.power\.sh                             u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/perfd                                             u:object_r:perfd_exec:s0
+/system/bin/move_time_data\.sh                                                u:object_r:move-time-data-sh_exec:s0
 
 /sys/kernel/debug/rmt_storage(/.*)?                           u:object_r:debugfs_rmts:s0
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
@@ -58,9 +59,9 @@
 /sys/class/power_supply/usb/usb_priority                    u:object_r:sysfs_greybus:s0
 /sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap(/.*)?                         u:object_r:sysfs_greybus:s0
-/sys/devices/soc/0.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
+/sys/devices/soc/0\.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
 /sys/module/qpnp_smbcharger_mmi/parameters(/.*)?            u:object_r:sysfs_greybus:s0
-/sys/devices/platform/mods_codec.0(/.*)?                    u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_codec\.0(/.*)?                    u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
 /sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
 /sys/devices/soc/soc:muc(/.*)?                              u:object_r:sysfs_greybus:s0
@@ -93,4 +94,10 @@
 /(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
 
 /persist/battery(/.*)?                                        u:object_r:persist_battery_file:s0
-
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/battery(/.*)?      u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/dc(/.*)?           u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/main(/.*)?         u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/pc_port(/.*)?      u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb(/.*)?          u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usbeb(/.*)?        u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/wireless(/.*)?     u:object_r:sysfs_healthd:s0
