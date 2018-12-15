@@ -36,20 +36,7 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
-    # create symlink for vendor mount points
-    symlink /vendor/firmware_mnt /firmware
-    symlink /vendor/bt_firmware /bt_firmware
-    symlink /vendor/dsp /dsp
-
-    symlink /data/tombstones /tombstones
-
 on init
-    # Set permissions for persist partition
-    mkdir /persist 0771 root system
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
 
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
