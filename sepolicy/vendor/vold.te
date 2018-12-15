@@ -1,0 +1,2 @@
+allow vold sysfs_scsi_devices_0000:file write;
+allow vold sysfs_scsi_devices_other:file write;
