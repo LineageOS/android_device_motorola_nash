@@ -8,3 +8,4 @@ allow mods self:netlink_kobject_uevent_socket { bind create read setopt };
 allow mods sysfs_graphics:file rw_file_perms;
 allow mods ion_device:chr_file { open read };
 allow mods sysfs_graphics:dir search;
+allow mods sysfs_mods_camd:file getattr;
