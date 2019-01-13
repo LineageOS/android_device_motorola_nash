@@ -441,6 +441,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml2
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # TWRP
 ifeq ($(WITH_TWRP),true)
 $(call inherit-product, $(LOCAL_PATH)/twrp/twrp.mk)
