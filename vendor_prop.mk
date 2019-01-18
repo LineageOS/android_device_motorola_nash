@@ -73,8 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_gl_backpressure=1 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196610 \
-    ro.qualcomm.cabl=0 \
-    ro.sf.lcd_density=560
+    ro.qualcomm.cabl=0
 
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
