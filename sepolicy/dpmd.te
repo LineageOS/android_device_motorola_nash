@@ -1,0 +1,14 @@
+typeattribute dpmd system_writes_vendor_properties_violators;
+allow dpmd socket_device:dir { write add_name };
+allow dpmd socket_device:sock_file { create setattr  };
+
+#get_prop(dpmd, serialno_prop)
+
+userdebug_or_eng(`
+    diag_use(dpmd)
+')
+
+#Add netutils support to install iptables
+use_netutils(dpmd)
+
+allow dpmd netutils_wrapper:process sigkill;
