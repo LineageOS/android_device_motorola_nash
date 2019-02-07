@@ -64,7 +64,7 @@ vendor/bin/qseecomd
 vendor/lib/libcppf.so
 vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libsdedrm.so
+vendor/lib/libsdedrm.so|14659302ccd3df6929debd931a1a7258739ca144
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -72,7 +72,7 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
-vendor/lib64/libsdedrm.so
+vendor/lib64/libsdedrm.so|dfc54b03ea50147b7143966a5c1a4df2710d2205
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 
@@ -287,8 +287,8 @@ vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 
 # Graphics
--vendor/lib/libsdm-disp-vndapis.so
--vendor/lib64/libsdm-disp-vndapis.so
+-vendor/lib/libsdm-disp-vndapis.so|f81628ddf7fff00f5e316956ed3b50941932c7de
+-vendor/lib64/libsdm-disp-vndapis.so|8ac59a32a2601a8a4b0d3b097ed02f1279f3c6b7
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -311,9 +311,9 @@ vendor/lib/libqseed3.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib/libsdm-color.so
+vendor/lib/libsdm-color.so|8e083bb2a20ecf76bf96e303134cbaa9ce46be81
 vendor/lib/libsdm-diag.so
-vendor/lib/libsdmextension.so
+vendor/lib/libsdmextension.so|3104df6a013e53b972227ed132aa683ec7303746
 vendor/lib/libtinyxml2_1.so
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/vendor.display.color@1.1.so
@@ -338,17 +338,17 @@ vendor/lib64/libqseed3.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libsdm-color.so
+vendor/lib64/libsdm-color.so|1a9b68e5f2f09d37c2fa83907a6a70c7adb081f5
 vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdmextension.so
+vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Graphics - HDR
-vendor/lib/libhdr_tm.so
-vendor/lib64/libhdr_tm.so
+vendor/lib/libhdr_tm.so|17705b090e4e8b487a39071b2f46a45324d611a6
+vendor/lib64/libhdr_tm.so|a44d285a08aa30ef90e791c646b9c12a697a30b2
 
 # Graphics - Firmwares
 vendor/firmware/a225_pfp.fw
