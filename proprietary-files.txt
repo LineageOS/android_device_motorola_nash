@@ -64,7 +64,7 @@ vendor/bin/qseecomd
 vendor/lib/libcppf.so
 vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libsdedrm.so
+vendor/lib/libsdedrm.so|8cb2d9afec44f74c9c8c5feb8e7f7152f17c5059
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -72,7 +72,7 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
-vendor/lib64/libsdedrm.so
+vendor/lib64/libsdedrm.so|973dde7d654c4f1ef46844011e6a2de3e6f7ee8c
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 
@@ -307,14 +307,15 @@ vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
-vendor/lib/libqseed3.so
+vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-diag.so
-vendor/lib/libsdmextension.so
-vendor/lib/libtinyxml2_1.so
+vendor/lib/libsdm-color.so|418a070bc1e845f0268ffb2f627af8fcddc437f2
+vendor/lib/libsdm-diag.so|e0455e9dd0e2378a3f770eb914aa11e612d594eb
+-vendor/lib/libsdm-disp-vndapis.so|31b8df32d8091ef0390352b118e59bbde3d4acc1
+vendor/lib/libsdmextension.so|65efe8438a4b6634e7bdfc656fe72e4b8db30ec6
+vendor/lib/libtinyxml2_1.so|20fea724b7a9f94530833cfdc841049104a0ffa3
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/vendor.display.color@1.1.so
 vendor/lib/vendor.display.postproc@1.0.so
@@ -338,10 +339,11 @@ vendor/lib64/libqseed3.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml2_1.so
+vendor/lib64/libsdm-color.so|5c8cda1e79cd46cd29e45d689017e24a440800b7
+vendor/lib64/libsdm-diag.so|25bab19a8c4453b3d20e3e1a71a0e8d3675b17b4
+-vendor/lib64/libsdm-disp-vndapis.so|6b0ee25367d386ccc1b42ea941f1da439a48b3ec
+vendor/lib64/libsdmextension.so||616b323d407e002035849a8674f1b0efb3390725
+vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.postproc@1.0.so
