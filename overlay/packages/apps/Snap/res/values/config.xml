@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!-- Copyright (C) 2012 The Android Open Source Project
+=======
+<!-- Copyright (C) 2019 The LineageOS Project
+>>>>>>> 809503f1... tissot: Snap: Enable support for bokeh mode
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -33,5 +37,8 @@
     <!-- Force use a specific preview-size
          Example: 1920x1080 -->
     <string name="preview_size_for_photo">1920x1080</string>
+
+    <!-- Enable support for bokeh mode -->
+    <bool name="support_bokeh_mode">true</bool>
 
 </resources>
