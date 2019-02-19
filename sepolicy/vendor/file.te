@@ -1,15 +1,15 @@
 type debugfs_rmts, debugfs_type, fs_type;
 type debugfs_ufs, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
-type fsg_firmware_file, fs_type, contextmount_type;
+type fsg_firmware_file, fs_type, vendor_file_type, contextmount_type;
 type perfd_socket, file_type;
 type persist_camera_file, file_type;
 type persist_battery_file, file_type;
 type sysfs_scsi_devices_0000, sysfs_type, fs_type;
 type sysfs_scsi_devices_other, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
-type fingerprint_data_file, data_file_type, file_type;
-type fingerprint_socket, data_file_type, file_type;
+type fingerprint_data_file, core_data_file_type, data_file_type, file_type;
+type fingerprint_socket, core_data_file_type, data_file_type, file_type;
 type sysfs_sensor, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
 
@@ -19,7 +19,7 @@ type chargeonly_data_file, file_type, data_file_type;
 # Greybus
 type sysfs_greybus, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_greybus_media, fs_type, sysfs_type, mlstrustedobject;
-type gbfirmware_file, file_type, data_file_type, mlstrustedobject;
+type gbfirmware_file, file_type, core_data_file_type, data_file_type, mlstrustedobject;
 type sysfs_mods_camd, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_v4l2_openmode, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_batt_mods, fs_type, sysfs_type, mlstrustedobject;
