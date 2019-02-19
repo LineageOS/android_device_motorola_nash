@@ -8,7 +8,6 @@ allow platform_app input_device:chr_file getattr;
 allow platform_app input_device:dir search;
 allow platform_app mods_service:service_manager find;
 allow platform_app self:netlink_kobject_uevent_socket { bind create read setopt };
-allow platform_app sysfs_batt_mods:dir rw_dir_perms;
 allow platform_app sysfs_batt_mods:file rw_file_perms;
 allow platform_app sysfs_greybus:dir r_dir_perms;
 allow platform_app sysfs_greybus:file rw_file_perms;
