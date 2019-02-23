@@ -17,6 +17,26 @@
 # Vendor Properties
 -include device/motorola/nash/vendor_prop.mk
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/motorola/nash/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
+# A/B updater
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    RUN_POSTINSTALL_system=true
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
@@ -48,7 +68,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/nash/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     device/motorola/nash/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     device/motorola/nash/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+7    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
@@ -66,7 +86,17 @@ TARGET_SCREEN_WIDTH := 1440
 # Boot Control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.0-service \
+    bootctrl.qcom
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.qcom \
+    libcutils \
+    libgptutils \
+    libz
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -400,8 +430,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml2
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+$(call inherit-product, device/motorola/nash/twrp/twrp.mk)
+else
+TARGET_RECOVERY_FSTAB := device/motorola/nash/rootdir/etc/fstab.qcom
+endif
+
 # Update Engine
-PRODUCT_PACKAGES += brillo_update_payload
+PRODUCT_PACKAGES += \
+    brillo_update_payload \
+    otapreopt_script \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 # USB
 PRODUCT_PACKAGES += \
