@@ -1,0 +1,2 @@
+allow system_app mods_service:service_manager add;
+
