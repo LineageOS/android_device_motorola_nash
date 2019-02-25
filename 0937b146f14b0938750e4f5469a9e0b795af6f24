@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39f6fb9f_d279f801",
+        "filename": "sepolicy/private/platform_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-02-25T20:23:06Z",
+      "side": 1,
+      "message": "You could simply make it { add find }",
+      "revId": "0937b146f14b0938750e4f5469a9e0b795af6f24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
