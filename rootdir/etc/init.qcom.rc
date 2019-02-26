@@ -1522,13 +1522,6 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service qvrd /system/bin/qvrservice
-    class late_start
-    user system
-    group system camera graphics
-    socket qvrservice stream 0666 system system
-    capabilities SYS_NICE
-
 service vendor.mods_camd /vendor/bin/mods_camd
     class late_start
     user camera
