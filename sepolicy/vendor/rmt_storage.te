@@ -12,6 +12,6 @@ allow rmt_storage debugfs_rmts:file rw_file_perms;
 allow rmt_storage persist_rfs_file:dir search;
 allow rmt_storage vendor_radio_prop:file { getattr open read };
 allow rmt_storage mnt_vendor_file:dir search;
-allow rmt_storage persist_rfs_file:file write;
+allow rmt_storage persist_rfs_file:file { getattr open read write };
 
 
