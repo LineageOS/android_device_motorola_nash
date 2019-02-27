@@ -1,0 +1,2 @@
+allow priv_app mods_service:service_manager find;
+allow priv_app mods_service:service_manager add;
