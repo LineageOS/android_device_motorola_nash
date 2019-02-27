@@ -1,4 +1,19 @@
 allow priv_app bt_firmware_file:filesystem getattr;
 allow priv_app firmware_file:filesystem getattr;
 allow priv_app fsg_firmware_file:filesystem getattr;
-
+allow priv_app device:dir { open read };
+allow priv_app rfs_system_file:dir getattr;
+allow priv_app greybus_raw_device:chr_file rw_file_perms;
+allow priv_app greybus_raw_device:dir rw_dir_perms;
+allow priv_app input_device:chr_file getattr;
+allow priv_app input_device:dir search;
+allow priv_app sysfs_batt_mods:dir r_dir_perms;
+allow priv_app sysfs_batt_mods:file rw_file_perms;
+allow priv_app sysfs_greybus:dir r_dir_perms;
+allow priv_app sysfs_greybus:file rw_file_perms;
+allow priv_app camera_prop:file open;
+allow priv_app proc_interrupts:file { open read };
+allow priv_app proc_modules:file { getattr open read };
+allow priv_app adsprpcd_file:filesystem getattr;
+allow priv_app { firmware_file bt_firmware_file }:filesystem getattr;
+allow priv_app sysfs_wifi:file open;
