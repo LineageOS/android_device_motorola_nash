@@ -74,6 +74,11 @@
 /sys/module/uvcvideo/parameters/quirks                      u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply/gb_ptp(/.*)?         u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply/gb_battery(/.*)?     u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/state      u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_ap/greybus1/1-3(/.*)?     u:object_r:sysfs_greybus:s0
+/sys/class/power_supply/gb_ptp                              u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/hwmon/hwmon41/subsystem(/.*)?          u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/hwmon/hwmon41/subsystem                u:object_r:sysfs_greybus:s0
 
 /dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
 /sys/devices/soc/(.+)hsusb(.+)/uevent                             u:object_r:sysfs_mods_camd:s0
@@ -107,3 +112,4 @@
 /sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb(/.*)?          u:object_r:sysfs_healthd:s0
 /sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usbeb(/.*)?        u:object_r:sysfs_healthd:s0
 /sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/wireless(/.*)?     u:object_r:sysfs_healthd:s0
+
