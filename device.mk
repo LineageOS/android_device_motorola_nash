@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
     libcamera_metadata_helper \
     Snap
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m \
