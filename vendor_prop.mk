@@ -101,6 +101,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.expose.aux=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
+# Codec2 switch
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.media.codec2=2
+
 # Color Mode
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1
