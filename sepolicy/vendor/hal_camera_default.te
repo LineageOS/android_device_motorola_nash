@@ -3,5 +3,7 @@ allow hal_camera_default vl53l1_device:chr_file rw_file_perms;
 allow hal_camera_default mnt_vendor_file:file rw_file_perms;
 allow hal_camera_default hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
 allow hal_camera_default sysfs_healthd:dir search;
+allow hal_camera_default camera_data_file:dir search;
 
+allow hal_camera_default persist_camera_prop:property_socket:sock_file write;
 allow hal_camera_default persist_camera_prop:property_service set;
