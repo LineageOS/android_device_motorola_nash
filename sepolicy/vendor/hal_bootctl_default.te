@@ -1,3 +1,5 @@
 allow hal_bootctl_default modem_efs_partition_device:blk_file getattr;
 allow hal_bootctl_default ab_block_device:blk_file getattr;
 
+# Allow boot_control_hal to read SCSI devices.
+allow hal_bootctl_default sysfs_scsi_devices_other:dir r_dir_perms;
