@@ -15,3 +15,6 @@ allow hal_health_default sysfs_healthd:dir r_dir_perms;
 allow hal_health_default sysfs_healthd:file rw_file_perms;
 allow hal_health_default sysfs_greybus:dir r_dir_perms;
 allow hal_health_default sysfs_greybus:file rw_file_perms;
+
+allow hal_health_default default_android_hwservice:hwservice_manager add;
+
