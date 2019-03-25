@@ -1,2 +1,3 @@
 allow thermal-engine sysfs_healthd:dir search;
+allow thermal-engine sysfs_healthd:file rw_file_perms;
 
