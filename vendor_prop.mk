@@ -134,6 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=0 \
     persist.vendor.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
+    persist.radio.aosp_usr_pref_sel=true \
     persist.radio.VT_CAM_INTERFACE=2 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
