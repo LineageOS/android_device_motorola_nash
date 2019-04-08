@@ -7,6 +7,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/nash/nash-vendor.mk)
 
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 # Device
 $(call inherit-product, device/motorola/nash/device.mk)
 
