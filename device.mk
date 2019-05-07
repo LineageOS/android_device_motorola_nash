@@ -24,18 +24,11 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # A/B updater
-AB_OTA_PARTITIONS += \
-    boot \
-    system \
-    vendor
-
 AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     RUN_POSTINSTALL_system=true
-
-AB_OTA_UPDATER := true
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal

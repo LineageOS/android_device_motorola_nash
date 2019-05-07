@@ -33,6 +33,14 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a73
 
 BUILD_BROKEN_DUP_RULES := true
 
+# A/B updater
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
+
+AB_OTA_UPDATER := true
+
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
