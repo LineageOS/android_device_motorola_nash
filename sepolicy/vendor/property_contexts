@@ -2,6 +2,5 @@ sys.post_boot. u:object_r:post_boot_prop:s0
 vendor.powerhal.state u:object_r:power_prop:s0
 vendor.powerhal.audio u:object_r:power_prop:s0
 vendor.powerhal.init u:object_r:power_prop:s0
-vendor.powerhal.rendering u:object_r:power_prop:s0
 ro.gpu.available_frequencies u:object_r:gpu_prop:s0
 persist.camera.debug.logfile u:object_r:persist_camera_prop:s0
