@@ -105,7 +105,11 @@
                 </devicePort>
                 <devicePort tagName="Dock Headset" type="AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET" role="sink">
                 </devicePort>
-                <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_ALL_SCO" role="sink">
+                <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO" role="sink">
+                </devicePort>
+                <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
+                </devicePort>
+                <devicePort tagName="BT SCO Car Kit" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT" role="sink">
                 </devicePort>
                 <devicePort tagName="HDMI Out" type="AUDIO_DEVICE_OUT_HDMI" role="sink">
                 </devicePort>
@@ -141,6 +145,10 @@
                 <route type="mix" sink="Proxy"
                        sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="BT SCO"
+                       sources="primary output,deep_buffer,compressed_offload"/>
+                <route type="mix" sink="BT SCO Headset"
+                       sources="primary output,deep_buffer,compressed_offload"/>
+                <route type="mix" sink="BT SCO Car Kit"
                        sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="HDMI Out"
                        sources="primary output,deep_buffer,compressed_offload"/>
