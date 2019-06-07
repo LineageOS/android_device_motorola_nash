@@ -8,13 +8,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     audio.offload.disable=false \
     audio.offload.video=false \
-    persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
-    persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
-    persist.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
-    persist.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
-    persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
-    persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
-    persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
+    persist.vendor.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
+    persist.vendor.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
+    persist.vendor.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
+    persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
+    persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
+    persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
+    persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
     persist.audio.dualmic.config=endfire \
     persist.vendor.audio.fluence.audiorec=false \
     persist.vendor.audio.fluence.speaker=false \
@@ -55,10 +55,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.camera2=true \
-    persist.camera.expose.aux=1 \
-    persist.camera.is_type=3 \
-    persist.camera.max.previewfps=60 \
+    persist.vendor.camera.camera2=true \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.is_type=3 \
+    persist.vendor.camera.max.previewfps=60 \
     vidc.enc.dcvs.extra-buff-count=2
 
 # Color Mode

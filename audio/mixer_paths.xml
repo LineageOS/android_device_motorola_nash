@@ -311,7 +311,7 @@
 	<!-- Incall Recording End -->
 
 	<!-- Incall Music -->
-	<ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
+	<ctl name="Incall_Music Audio Mixer MultiMedia9" value="0" />
 	<ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="0" />
 	<!-- Incall Music End -->
 
@@ -443,6 +443,16 @@
 		<path name="deep-buffer-playback hdmi" />
 	</path>
 
+	<path name="deep-buffer-playback speaker-and-bt-sco">
+		<path name="deep-buffer-playback" />
+		<path name="deep-buffer-playback bt-sco" />
+	</path>
+
+	<path name="deep-buffer-playback speaker-and-bt-sco-wb">
+		<path name="deep-buffer-playback" />
+		<path name="deep-buffer-playback bt-sco-wb" />
+	</path>
+
 	<path name="echo-reference">
 		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
 	</path>
@@ -532,6 +542,16 @@
 		<path name="low-latency-playback hdmi" />
 	</path>
 
+	<path name="low-latency-playback speaker-and-bt-sco">
+		<path name="low-latency-playback" />
+		<path name="low-latency-playback bt-sco" />
+	</path>
+
+	<path name="low-latency-playback speaker-and-bt-sco-wb">
+		<path name="low-latency-playback" />
+		<path name="low-latency-playback bt-sco-wb" />
+	</path>
+
 	<path name="compress-offload-playback">
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="1" />
 	</path>
@@ -594,6 +614,16 @@
 	<path name="compress-offload-playback mod-and-hdmi">
 		<path name="compress-offload-playback mod" />
 		<path name="compress-offload-playback hdmi" />
+	</path>
+
+	<path name="compress-offload-playback speaker-and-bt-sco">
+		<path name="compress-offload-playback" />
+		<path name="compress-offload-playback bt-sco" />
+	</path>
+
+	<path name="compress-offload-playback speaker-and-bt-sco-wb">
+		<path name="compress-offload-playback" />
+		<path name="compress-offload-playback bt-sco-wb" />
 	</path>
 
 	<path name="audio-record">
@@ -662,6 +692,9 @@
 		<ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="1" />
 	</path>
 
+	<path name="afe-proxy-playback">
+	</path>
+
 	<path name="afe-proxy-playback afe-proxy">
 	</path>
 
@@ -669,6 +702,9 @@
 	</path>
 
 	<path name="afe-proxy-record afe-proxy">
+	</path>
+
+	<path name="afe-proxy-record usb-headset-mic">
 	</path>
 
 	<path name="voicemmode1-call">
@@ -718,6 +754,18 @@
 		<path name="voicemmode1-call mod-int" />
 	</path>
 
+	<path name="voicemmode1-call speaker-and-headphones">
+		<path name="voicemmode1-call" />
+	</path>
+
+	<path name="voicemmode1-call speaker-and-bt-sco">
+		<path name="voicemmode1-call bt-sco" />
+	</path>
+
+	<path name="voicemmode1-call speaker-and-bt-sco-wb">
+		<path name="voicemmode1-call bt-sco-wb" />
+	</path>
+
 	<path name="voicemmode2-call">
 		<ctl name="SLIM_0_RX_Voice Mixer VoiceMMode2" value="1" />
 		<ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
@@ -765,6 +813,18 @@
 		<path name="voicemmode2-call mod-int" />
 	</path>
 
+	<path name="voicemmode2-call speaker-and-headphones">
+		<path name="voicemmode2-call" />
+	</path>
+
+	<path name="voicemmode2-call speaker-and-bt-sco">
+		<path name="voicemmode2-call bt-sco" />
+	</path>
+
+	<path name="voicemmode2-call speaker-and-bt-sco-wb">
+		<path name="voicemmode2-call bt-sco-wb" />
+	</path>
+
 	<path name="incall-rec-uplink">
 		<ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
 	</path>
@@ -794,6 +854,10 @@
 		<path name="incall-rec-downlink" />
 	</path>
 
+	<path name="incall-rec-uplink-and-downlink usb-headset-mic">
+		<path name="incall-rec-uplink-and-downlink" />
+	</path>
+
 	<path name="incall-rec-uplink-and-downlink bt-sco">
 		<path name="incall-rec-uplink-and-downlink" />
 	</path>
@@ -802,28 +866,37 @@
 		<path name="incall-rec-uplink-and-downlink" />
 	</path>
 
-	<path name="incall_music_uplink">
-		<ctl name="Incall_Music Audio Mixer MultiMedia2" value="1" />
-	</path>
-
-	<path name="incall_music_uplink bt-sco">
-		<path name="incall_music_uplink" />
-	</path>
-
-	<path name="incall_music_uplink bt-sco-wb">
-		<path name="incall_music_uplink" />
-	</path>
-
-	<path name="incall_music_uplink2">
+	<path name="incall-music-uplink">
+		<ctl name="Incall_Music Audio Mixer MultiMedia9" value="1" />
 		<ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
 	</path>
 
-	<path name="incall_music_uplink2 bt-sco">
-		<path name="incall_music_uplink2" />
+	<path name="incall-music-uplink bt-sco">
+		<path name="incall-music-uplink" />
 	</path>
 
-	<path name="incall_music_uplink2 bt-sco-wb">
-		<path name="incall_music_uplink2" />
+	<path name="incall-music-uplink bt-sco-wb">
+		<path name="incall-music-uplink" />
+	</path>
+
+	<path name="incall-music-uplink afe-proxy">
+		<path name="incall-music-uplink" />
+	</path>
+
+	<path name="incall-music-uplink headphones">
+		<path name="incall-music-uplink" />
+	</path>
+
+	<path name="incall-music-uplink speaker-and-headphones">
+		<path name="incall-music-uplink" />
+	</path>
+
+	<path name="incall-music-uplink speaker-and-bt-sco">
+		<path name="incall-music-uplink" />
+	</path>
+
+	<path name="incall-music-uplink speaker-and-bt-sco-wb">
+		<path name="incall-music-uplink" />
 	</path>
 
 	<path name="hfp-sco">
@@ -903,6 +976,7 @@
 
 	<path name="handset-mic">
 		<path name="mic1" />
+		<ctl name="IN1L Volume" value="12" />
 	</path>
 
 	<path name="headphones">
@@ -1025,7 +1099,7 @@
 	</path>
 
 	<path name="camcorder-mic">
-		<path name="speaker-mic" />
+		<path name="handset-mic" />
 	</path>
 
 	<path name="bt-sco-headset">
@@ -1077,7 +1151,12 @@
 	</path>
 
 	<path name="dmic-endfire">
-		<path name="voice-dmic-ef" />
+		<path name="AOV" />
+		<ctl name="SLIM_0_TX Channels" value="Two" />
+		<ctl name="SLIMTX1 Input 1" value="ISRC2DEC1" />
+		<ctl name="SLIMTX2 Input 1" value="ISRC2DEC2" />
+		<ctl name="IN1L Volume" value="12" />
+		<ctl name="IN2L Volume" value="12" />
 	</path>
 
 	<path name="voice-speaker-dmic-ef">
@@ -1089,11 +1168,11 @@
 	</path>
 
 	<path name="voice-rec-dmic-ef">
-		<path name="voice-dmic-ef" />
+		<path name="dmic-endfire" />
 	</path>
 
 	<path name="voice-rec-dmic-ef-fluence">
-		<path name="voice-dmic-ef" />
+		<path name="dmic-endfire" />
 	</path>
 
 	<path name="camcorder-mic-bf">
