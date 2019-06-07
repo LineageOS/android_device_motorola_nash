@@ -68,12 +68,15 @@
 	<usecase name="USECASE_ADSPD_DSP3_TEXT" type="in" id="7" />
 	<usecase name="USECASE_COMPRESS_VOIP_CALL" type="in" id="23" />
 	<usecase name="USECASE_COMPRESS_VOIP_CALL" type="out" id="23" />
+	<usecase name="USECASE_INCALL_MUSIC_UPLINK" type="out" id="47" />
 </pcm_ids>
 
 <backend_names>
 	<device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones"/>
 	<device name="SND_DEVICE_OUT_LINE" backend="headphones"/>
 	<device name="SND_DEVICE_OUT_USB_HEADSET" backend="usb-headphones"/>
+	<device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO" backend="speaker-and-bt-sco"/>
+	<device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB" backend="speaker-and-bt-sco-wb"/>
 </backend_names>
 
 <config_params>

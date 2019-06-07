@@ -95,8 +95,6 @@ TARGET_BOOTLOADER_BOARD_NAME := Nash
 TARGET_BOARD_PLATFORM := msm8998
 
 # Camera
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /vendor/bin/hw/android.hardware.camera.provider@2.4-service=27
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_CAMERA_STUB := true
 
@@ -183,7 +181,7 @@ USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Vendor Security Patch Level
-VENDOR_SECURITY_PATCH := 2019-03-01
+VENDOR_SECURITY_PATCH := 2019-05-01
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
