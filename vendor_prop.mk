@@ -55,10 +55,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.camera2=true \
-    persist.vendor.camera.expose.aux=1 \
-    persist.vendor.camera.is_type=3 \
-    persist.vendor.camera.max.previewfps=60 \
+    persist.camera.camera2=true \
+    persist.camera.expose.aux=1 \
+    persist.camera.is_type=3 \
+    persist.camera.max.previewfps=60 \
     vidc.enc.dcvs.extra-buff-count=2
 
 # Color Mode
