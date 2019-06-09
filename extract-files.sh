@@ -71,6 +71,10 @@ sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "$ZAF_CORE"
 CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
+# Drod unused dependency
+CAMERA_VSTAB_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera_vstab_module.so
+patchelf --remove-needed libandroid.so "$CAMERA_VSTAB_MODULES"
+
 # Load wrapped shim
 MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
