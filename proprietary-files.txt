@@ -439,6 +439,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 -vendor/lib/com.quicinc.cne.server@2.0.so
 -vendor/lib/com.quicinc.cne.server@2.1.so
 -vendor/lib/com.quicinc.cne.server@2.2.so
+-vendor/lib/com.quicinc.cne.server@2.3.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
@@ -454,6 +455,7 @@ vendor/lib/libxml.so
 -vendor/lib64/com.quicinc.cne.server@2.0.so
 -vendor/lib64/com.quicinc.cne.server@2.1.so
 -vendor/lib64/com.quicinc.cne.server@2.2.so
+-vendor/lib64/com.quicinc.cne.server@2.3.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
