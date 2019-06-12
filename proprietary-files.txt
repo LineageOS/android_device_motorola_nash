@@ -426,6 +426,10 @@ vendor/lib64/libdualcameraddm.so|a11d46aae69bc3a5d407dfcbfefa95e82462fd19
 vendor/lib64/liboptizoom.so|43dddb8806fc5c9d275748472d7c32029f69f177
 vendor/lib64/libseemore.so|b791c6e5114b102355016f542d79c64c5cc5b331
 vendor/lib64/libubifocus.so|a2e6462066f283c636b1bb95bd674f39c324241b
+vendor/lib/libmot_lux_standardization.so
+vendor/lib/lib_mot_app6_metadata.so
+vendor/lib/lib_mot_led_calibration.so
+vendor/lib/libmot_afd.so
 
 # Camera - from payton PPWS29.69-26-6
 vendor/lib/libmot_gpu_mapper.so|af009fe7d457d6fddcff8717040859ef55b22a59
