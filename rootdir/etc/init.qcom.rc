@@ -81,8 +81,8 @@ on fs
     symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
     mount_all /vendor/etc/fstab.qcom --early
 
-    # for android.hardware.health@2.0-service.nash cycle count backup 
-    mkdir /persist/battery 0700 system system 
+    # for android.hardware.health@2.0-service.nash cycle count backup
+    mkdir /persist/battery 0700 system system
 
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
@@ -595,9 +595,10 @@ on post-fs-data
     mkdir /data/misc/fm 0770 system system
     chmod 0770 /data/misc/fm
 
-    # Create perfd related dirs
-    mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
+    #Create PERFD deamon related dirs
+    mkdir /data/vendor/perfd 0770 root system
+    chmod 2770 /data/vendor/perfd
+    rm /data/vendor/perfd/default_values
 
     # NFC vendor data
     mkdir /data/vendor/nfc 0770 nfc nfc
@@ -768,14 +769,6 @@ on post-fs-data
     start vendor.move_time_data
 
     setprop vold.post_fs_data_done 1
-
-    # Setup permission for powerHAL
-    chown system system /dev/stune/top-app/schedtune.boost
-    chown system system /dev/cpu_dma_latency
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
 
 service vendor.nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
@@ -1144,13 +1137,6 @@ on property:crypto.driver.load=1
 #on property:drmdiag.load=0
 #    stop vendor.drmdiag
 
-# qcom-power triggers this property
-on property:vendor.post_boot.parsed=1
-    # Setup permission for powerHAL
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
-
 service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
@@ -1162,15 +1148,10 @@ service vendor.sensor-sh /vendor/bin/init.qcom.sensors.sh
     user root
     oneshot
 
-service vendor.qcom-power /vendor/bin/init.qcom.power.sh
-    class main
-    user root
-    disabled
-    oneshot
-
 service vendor.qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
+    group root system wakelock graphics
     disabled
     oneshot
 

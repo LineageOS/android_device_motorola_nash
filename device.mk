@@ -334,10 +334,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.nash-libperfmgr
-
-PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    android.hardware.power@1.1-service-qti
 
 # QCOM
 PRODUCT_COPY_FILES += \
@@ -364,7 +361,6 @@ PRODUCT_PACKAGES += \
     init.nash.rc \
     init.power.rc \
     init.qcom.early_boot.sh \
-    init.qcom.power.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
