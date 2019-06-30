@@ -16,13 +16,13 @@ lib64/libaptX_encoder.so
 lib64/libaptXHD_encoder.so
 
 # Audio - ACDB
-vendor/etc/acdbdata/Bluetooth_cal.acdb
-vendor/etc/acdbdata/General_cal.acdb
-vendor/etc/acdbdata/Global_cal.acdb
-vendor/etc/acdbdata/Handset_cal.acdb
-vendor/etc/acdbdata/Hdmi_cal.acdb
-vendor/etc/acdbdata/Headset_cal.acdb
-vendor/etc/acdbdata/Speaker_cal.acdb
+vendor/etc/acdbdata/Bluetooth_cal.acdb|679e0558ce41a7f97f874d4170808f2645bdf9da
+vendor/etc/acdbdata/General_cal.acdb|6b6a43ed35956ae6bdaad88b66fc2118807a9eb7
+vendor/etc/acdbdata/Global_cal.acdb|83a03020afcab33eb2c67de1f7ae42f3cdf1c908
+vendor/etc/acdbdata/Handset_cal.acdb|7faeb7338338b04c5fa888c9848821f5f5a2aea4
+vendor/etc/acdbdata/Hdmi_cal.acdb|052cbf48871babf1b45b7219017bccd0dd07bb61
+vendor/etc/acdbdata/Headset_cal.acdb|872558435fc183bc19913b7ed771a53e2ff4f199
+vendor/etc/acdbdata/Speaker_cal.acdb|ef6af0c368f98ebffdd6b1108b4fa53a931287ce
 
 # Audio
 vendor/lib/libacdb-fts.so
