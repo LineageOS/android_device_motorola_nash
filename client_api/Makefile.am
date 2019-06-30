@@ -22,6 +22,7 @@ c_sources = \
 
 liblocation_client_api_la_SOURCES = \
     $(c_sources) $(h_sources)
+liblocation_client_api_la_h_sources = $(h_sources)
 
 ######################
 # Build location_client_api
@@ -40,9 +41,16 @@ endif
 if USE_EXTERNAL_AP
 AM_CFLAGS += $(LOCSOCKET_CFLAGS)
 requiredlibs += $(LOCSOCKET_LIBS)
+else
+AM_CFLAGS += $(DIAGIFACE_CFLAGS)
+AM_CFLAGS += $(DIAG_CFLAGS)
+requiredlibs += $(DIAGIFACE_LIBS)
+requiredlibs += $(DIAG_LIBS)
+h_sources += src/LocationClientApiLog.h
+c_sources += src/LocationClientApiUtils.cpp
 endif
 
-liblocation_client_api_la_LIBADD = $(requiredlibs) -lstdc++
+liblocation_client_api_la_LIBADD = $(requiredlibs) -lstdc++ -ldl
 
 #Create and Install libraries
 library_include_HEADERS = $(h_sources)
