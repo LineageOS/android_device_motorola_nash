@@ -18,8 +18,8 @@ package org.lineageos.settings.device;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceFragment;
 import android.view.MenuItem;
 
 public class DozePreferenceActivity extends PreferenceActivity {
