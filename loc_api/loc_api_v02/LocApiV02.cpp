@@ -5130,6 +5130,10 @@ void LocApiV02::convertGnssMeasurementsHeader(const Gnss_LocSvSystemEnumType loc
             systemTimeFlags = GNSS_SV_MEAS_HEADER_HAS_QZSS_SYSTEM_TIME;
             systemTimeExtFlags = GNSS_SV_MEAS_HEADER_HAS_QZSS_SYSTEM_TIME_EXT;
             break;
+        case GNSS_LOC_SV_SYSTEM_GLONASS:
+            systemTimeExtPtr = &svMeasSetHead.gloSystemTimeExt;
+            systemTimeExtFlags = GNSS_SV_MEAS_HEADER_HAS_GLO_SYSTEM_TIME_EXT;
+            break;
         case GNSS_LOC_SV_SYSTEM_NAVIC:
             systemTimePtr = &svMeasSetHead.navicSystemTime;
             systemTimeExtPtr = &svMeasSetHead.navicSystemTimeExt;
@@ -5416,43 +5420,6 @@ bool LocApiV02 :: convertGnssMeasurements(
     measurementData.stateMask = GNSS_MEASUREMENTS_STATE_UNKNOWN_BIT;
     measurementData.receivedSvTimeNs = 0;
     measurementData.receivedSvTimeUncertaintyNs = 0;
-    // deal first with TOD_KNOWN and TOW_KNOWN bits
-    // GLONASS G1
-    if (GNSS_SV_TYPE_GLONASS == measurementData.svType &&
-        (bBandNotAvailable ||
-        (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GLONASS_G1_V02 == gnssBand))) {
-        if (isGloTimeValid) {
-            measurementData.stateMask |= (GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT |
-                                          GNSS_MEASUREMENTS_STATE_GLO_TOD_KNOWN_BIT);
-        }
-    }
-    if (gnss_measurement_report_ptr.systemTime_valid &&
-        255 != gnss_measurement_report_ptr.systemTime.systemWeek) {
-        // GPS L1
-        if (eQMI_LOC_SV_SYSTEM_GPS_V02 == gnss_measurement_report_ptr.systemTime.system &&
-            (bBandNotAvailable ||
-            (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GPS_L1CA_V02 == gnssBand))) {
-            measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
-        }
-        // BDS B1 I
-        if (eQMI_LOC_SV_SYSTEM_BDS_V02 == gnss_measurement_report_ptr.systemTime.system &&
-            (bBandNotAvailable ||
-            (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_BEIDOU_B1_I_V02 == gnssBand))) {
-            measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
-        }
-        // GAL E1C
-        if (eQMI_LOC_SV_SYSTEM_GALILEO_V02 == gnss_measurement_report_ptr.systemTime.system &&
-            (bBandNotAvailable ||
-            (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GALILEO_E1_C_V02 == gnssBand))) {
-            measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
-        }
-        // SBAS
-        if (eQMI_LOC_SV_SYSTEM_SBAS_V02 == gnss_measurement_report_ptr.systemTime.system &&
-            (bBandNotAvailable ||
-            (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_SBAS_L1_CA_V02 == gnssBand))) {
-            measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
-        }
-    }
 
     // Deal with Galileo first since it is special
     uint64_t galSVstateMask = 0;
@@ -5488,6 +5455,43 @@ bool LocApiV02 :: convertGnssMeasurements(
     }
 
     if (validMeasStatus & QMI_LOC_MASK_MEAS_STATUS_MS_VALID_V02) {
+        // deal first with TOD_KNOWN and TOW_KNOWN bits
+        // GLONASS G1
+        if (GNSS_SV_TYPE_GLONASS == measurementData.svType &&
+            (bBandNotAvailable ||
+            (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GLONASS_G1_V02 == gnssBand))) {
+            if (isGloTimeValid) {
+                measurementData.stateMask |= (GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT |
+                                              GNSS_MEASUREMENTS_STATE_GLO_TOD_KNOWN_BIT);
+            }
+        }
+        if (gnss_measurement_report_ptr.systemTime_valid &&
+            65535 != gnss_measurement_report_ptr.systemTime.systemWeek) {
+            // GPS L1
+            if (eQMI_LOC_SV_SYSTEM_GPS_V02 == gnss_measurement_report_ptr.systemTime.system &&
+                (bBandNotAvailable ||
+                (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GPS_L1CA_V02 == gnssBand))) {
+                measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
+            }
+            // BDS B1 I
+            if (eQMI_LOC_SV_SYSTEM_BDS_V02 == gnss_measurement_report_ptr.systemTime.system &&
+                (bBandNotAvailable ||
+                (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_BEIDOU_B1_I_V02 == gnssBand))) {
+                measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
+            }
+            // GAL E1C
+            if (eQMI_LOC_SV_SYSTEM_GALILEO_V02 == gnss_measurement_report_ptr.systemTime.system &&
+                (bBandNotAvailable ||
+                (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_GALILEO_E1_C_V02 == gnssBand))) {
+                measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
+            }
+            // SBAS
+            if (eQMI_LOC_SV_SYSTEM_SBAS_V02 == gnss_measurement_report_ptr.systemTime.system &&
+                (bBandNotAvailable ||
+                (QMI_LOC_MASK_GNSS_SIGNAL_TYPE_SBAS_L1_CA_V02 == gnssBand))) {
+                measurementData.stateMask |= GNSS_MEASUREMENTS_STATE_TOW_KNOWN_BIT;
+            }
+        }
         /* sub-frame decode & TOW decode */
         measurementData.stateMask |= (GNSS_MEASUREMENTS_STATE_SUBFRAME_SYNC_BIT |
                                       GNSS_MEASUREMENTS_STATE_TOW_DECODED_BIT |
@@ -5670,7 +5674,6 @@ bool LocApiV02 :: convertGnssMeasurements(
             }
         }
         measurementData.adrStateMask |= GNSS_MEASUREMENTS_ACCUMULATED_DELTA_RANGE_STATE_RESET_BIT;
-        measurementData.adrStateMask |= GNSS_MEASUREMENTS_ACCUMULATED_DELTA_RANGE_STATE_CYCLE_SLIP_BIT;
         if (bFound) {
             LOC_LOGv("Found the carrier phase for this satellite from last epoch");
             if (tempAdrData.validMask & QMI_LOC_SV_CARRIER_PHASE_VALID_V02) {
@@ -5680,9 +5683,7 @@ bool LocApiV02 :: convertGnssMeasurements(
                     (tempAdrData.counter == (mCounter - 1))) {
                     // at this point prior epoch does have carrier phase valid
                     measurementData.adrStateMask &=
-                        ~GNSS_MEASUREMENTS_ACCUMULATED_DELTA_RANGE_STATE_CYCLE_SLIP_BIT;
-                    measurementData.adrStateMask &=
-                        ~GNSS_MEASUREMENTS_ACCUMULATED_DELTA_RANGE_STATE_RESET_BIT;
+                            ~GNSS_MEASUREMENTS_ACCUMULATED_DELTA_RANGE_STATE_RESET_BIT;
                     if (tempAdrData.validMask & QMI_LOC_SV_CYCLESLIP_COUNT_VALID_V02 &&
                         gnss_measurement_info.validMask & QMI_LOC_SV_CYCLESLIP_COUNT_VALID_V02) {
                         LOC_LOGv("cycle slip count is valid for both current and prior epochs");
