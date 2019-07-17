@@ -436,7 +436,7 @@ PRODUCT_PACKAGES += \
 ifeq ($(WITH_TWRP),true)
 $(call inherit-product, device/motorola/nash/twrp/twrp.mk)
 else
-TARGET_RECOVERY_FSTAB := device/motorola/nash/recovery/root/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/motorola/nash/rootdir/etc/fstab.qcom
 endif
 
 # Update Engine
