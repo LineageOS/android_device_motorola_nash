@@ -70,6 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
+    debug.sf.enable_gl_backpressure=1 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
