@@ -204,10 +204,6 @@ BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_SHIPPING_API_LEVEL := 25
 
-# Verified Boot
-BOARD_AVB_ENABLE := false
-BOARD_BUILD_DISABLED_VBMETAIMAGE := true
-
 # Wifi
 # Read by other flags later, so ignore alphabetization.
 BOARD_WLAN_DEVICE := qcwcn
