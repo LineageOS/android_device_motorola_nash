@@ -75,6 +75,10 @@ sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 CAMERA_VSTAB_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera_vstab_module.so
 patchelf --remove-needed libandroid.so "$CAMERA_VSTAB_MODULES"
 
+# Load camera metadata shim
+CAMERAHAL="$BLOB_ROOT"/vendor/lib/hw/camera.msm8998.so
+patchelf --replace-needed libcamera_client.so libcamera_metadata_helper.so "$CAMERAHAL"
+
 # Load wrapped shim
 MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"

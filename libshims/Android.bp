@@ -1,0 +1,21 @@
+// Camera
+cc_library_shared {
+    name: "libcamera_metadata_helper",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "CameraMetadata.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libhardware",
+        "libcamera_metadata",
+    ],
+    include_dirs: ["system/media/private/camera/include"],
+}

@@ -201,7 +201,6 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_SHIPPING_API_LEVEL := 25
-BOARD_VNDK_RUNTIME_DISABLE := true
 
 # Wifi
 # Read by other flags later, so ignore alphabetization.
