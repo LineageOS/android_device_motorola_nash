@@ -95,8 +95,6 @@ TARGET_BOOTLOADER_BOARD_NAME := Nash
 TARGET_BOARD_PLATFORM := msm8998
 
 # Camera
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /vendor/bin/hw/android.hardware.camera.provider@2.4-service=27
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_CAMERA_STUB := true
 
@@ -203,6 +201,7 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_SHIPPING_API_LEVEL := 25
+BOARD_VNDK_RUNTIME_DISABLE := true
 
 # Wifi
 # Read by other flags later, so ignore alphabetization.
