@@ -358,6 +358,25 @@
         <item>"/system/framework/boot-core-libart.vdex"</item>
     </string-array>
 
+    <!-- Values for USB port setting. in format of bootmode:current function:new function -->
+    <string-array translatable="false" name="config_oemUsbModeOverride">
+        <item>"bp-tools:mtp:diag,serial,rmnet:mtp"</item>
+        <item>"bp-tools:mtp,adb:diag,serial,rmnet,adb:mtp,adb"</item>
+        <item>"bp-tools:adb:diag,serial,rmnet,adb:adb"</item>
+        <item>"bp-tools:ptp:diag,serial,rmnet:ptp"</item>
+        <item>"bp-tools:ptp,adb:diag,serial,rmnet,adb:ptp,adb"</item>
+        <item>"bp-tools:rndis:rndis,diag,serial:mtp"</item>
+        <item>"bp-tools:rndis,adb:rndis,diag,serial,adb:mtp,adb"</item>
+        <item>"qcom:mtp:diag,serial_cdev,rmnet:mtp"</item>
+        <item>"qcom:mtp,adb:diag,serial_cdev,rmnet,adb:mtp,adb"</item>
+        <item>"qcom:ptp:diag,serial_cdev,rmnet:ptp"</item>
+        <item>"qcom:ptp,adb:diag,serial_cdev,rmnet,adb:ptp,adb"</item>
+        <item>"qcom:adb:diag,serial_cdev,rmnet,adb:adb"</item>
+        <item>"mot-factory:mtp:usbnet:mtp"</item>
+        <item>"mot-factory:mtp,adb:usbnet,adb:mtp,adb"</item>
+        <item>"mot-factory:adb:usbnet,adb:adb"</item>
+    </string-array>
+
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
 
