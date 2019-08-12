@@ -7,3 +7,13 @@ allow hal_camera_default sysfs_healthd:dir search;
 allow hal_camera_default persist_camera_prop:file r_file_perms;
 allow hal_camera_default persist_camera_prop:sock_file r_file_perms;
 allow hal_camera_default persist_camera_prop:property_service set;
+
+binder_call(hal_camera_default, hal_configstore_default)
+binder_call(hal_camera_default, hal_graphics_allocator_default)
+
+typeattribute hal_camera_default data_between_core_and_vendor_violators;
+
+allow hal_camera_default camera_data_file:dir create_dir_perms;
+allow hal_camera_default camera_data_file:file create_file_perms;
+
+allow hal_camera_default hal_graphics_allocator_hwservice:hwservice_manager find;
