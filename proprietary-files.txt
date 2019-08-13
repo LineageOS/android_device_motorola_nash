@@ -352,17 +352,17 @@ vendor/lib/libmm-qcamera.so
 vendor/lib/libmot_gpu_mapper.so
 
 # Camera - Firmware
-vendor/firmware/cpp_firmware_v1_10_0.fw
-vendor/firmware/cpp_firmware_v1_12_0.fw
-vendor/firmware/cpp_firmware_v1_1_1.fw
-vendor/firmware/cpp_firmware_v1_1_6.fw
-vendor/firmware/cpp_firmware_v1_2_0.fw
-vendor/firmware/cpp_firmware_v1_4_0.fw
-vendor/firmware/cpp_firmware_v1_5_0.fw
-vendor/firmware/cpp_firmware_v1_5_1.fw
-vendor/firmware/cpp_firmware_v1_5_2.fw
-vendor/firmware/cpp_firmware_v1_6_0.fw
-vendor/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_1.fw:vendor/firmware/cpp_firmware_v1_5_1.fw
+etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # DRM
 vendor/bin/qseecomd
@@ -468,18 +468,18 @@ vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib/vendor.qti.data.factory@1.0.so
 vendor/lib/vendor.qti.data.factory@1.1.so
+vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.1.so
+vendor/lib64/vendor.qti.latency@2.0.so
 framework/vendor.qti.data.factory-V1.0-java.jar
 framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 framework/vendor.qti.latency-V2.0-java.jar
-lib64/vendor.qti.latency@2.0.so:vendor/lib64/vendor.qti.latency@2.0.so
-lib/vendor.qti.latency@2.0.so:vendor/lib/vendor.qti.latency@2.0.so
 
 # DRM - HDCP
 vendor/lib/libmm-hdcpmgr.so
@@ -679,7 +679,6 @@ vendor/firmware/a530v1_pm4.fw
 vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
-vendor/firmware/a540_gpmu.fw2
 
 # IPA
 vendor/bin/ipacm-diag
@@ -739,16 +738,17 @@ vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
 # Moto Mods
--priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|36fdc66b39643433d2ffa46c986e300c6e6f7288
+-priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|8b52ee03261ef10cae325182e246e66f8b527368
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 etc/permissions/com.motorola.aov.xml
 etc/permissions/com.motorola.mod.protocols.xml
-etc/permissions/com.motorola.mod.xml|b25e55275b7ecc5f4d46db52c6148fe7c75ff60b
+etc/permissions/com.motorola.mod.xml
 etc/permissions/com.motorola.mod_config.xml
 etc/permissions/com.motorola.mod_v2.xml
 etc/permissions/com.motorola.moto.permissions.xml
 lib64/libmodhw.so
--priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED|8acc52de7a5d4f02ae0da7a0580f54f6cd52cf22
+lib64/libvibratorhw.so
+-priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED
 -priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED
 vendor/bin/mods_camd
 vendor/lib/libmodmanager.so

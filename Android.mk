@@ -80,7 +80,7 @@ $(DSP_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(DSP_SYMLINK)
 
-MODS_LIBS := libmodhw.so
+MODS_LIBS := libmodhw.so libvibratorhw.so
 MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/priv-app/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
 $(MODS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MODS lib link: $@"
