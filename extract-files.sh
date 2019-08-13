@@ -83,6 +83,10 @@ patchelf --replace-needed libcamera_client.so libcamera_metadata_helper.so "$CAM
 MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
 
+# Correct mods gid
+MODPERM="$BLOB_ROOT"/etc/permissions/com.motorola.mod.xml
+sed -i "s|vendor_mod|oem_5020|g" "$MODPERM"
+
 # Correct qcrilhook library location
 QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
 sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
