@@ -260,6 +260,7 @@ PRODUCT_COPY_FILES += \
 
 # ModService
 PRODUCT_COPY_FILES += \
+    device/motorola/nash/configs/privapp-permissions-mods.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-mods.xml \
     device/motorola/nash/configs/whitelist_modservice.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/whitelist_modservice.xml
 
 # Network
