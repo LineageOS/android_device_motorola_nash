@@ -338,13 +338,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.opa.eligible_device=true
 
+# Priv-App Permissions
+PRODUCT_COPY_FILES += \
+    device/motorola/nash/configs/privapp-permissions-moto.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-moto.xml \
+    device/motorola/nash/configs/privapp-permissions-qcom.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qcom.xml \
+    device/motorola/nash/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
 # QCOM
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml \
     device/motorola/nash/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
 
 # QMI
