@@ -963,7 +963,7 @@ vendor/lib64/qcrild_librilutils.so
 vendor/lib64/libadropbox.so
 
 # Radio - IMS
--priv-app/ims/ims.apk|e01326c9ed240ee8f3b1824b81f7e60d88b52515
+-priv-app/ims/ims.apk|b664bb413e88dbe88f49f400260f288306fc9e23
 vendor/etc/permissions/qti-vzw-ims-internal.xml|89409c5f355acbd65a45b13f12e1baafb13baf46
 vendor/framework/qti-vzw-ims-internal.jar|5db6e9e149e6beef70ab68a1246917ab2ef19dbc
 lib/lib-imscamera.so
