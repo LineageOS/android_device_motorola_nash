@@ -111,7 +111,8 @@
                 </devicePort>
                 <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
                 </devicePort>
-
+                <devicePort tagName="Proxy" type="AUDIO_DEVICE_OUT_PROXY" role="sink">
+                </devicePort>
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
                 </devicePort>
                 <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source">
@@ -137,6 +138,8 @@
                        sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="Dock Headset"
                        sources="primary output,deep_buffer"/>
+                <route type="mix" sink="Proxy"
+                       sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="HDMI Out"
