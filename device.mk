@@ -421,6 +421,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqsapshim
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
