@@ -416,6 +416,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqsapshim
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    device/motorola/nash
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
