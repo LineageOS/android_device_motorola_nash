@@ -547,7 +547,6 @@ int set_active_boot_slot(struct boot_control_module *module, unsigned slot)
 	int rc = -1;
 	int is_ufs = gpt_utils_is_ufs_device();
 	map<string, vector<string>>::iterator map_iter;
-	vector<string>::iterator string_iter;
 
 	if (boot_control_check_slot_sanity(module, slot)) {
 		ALOGE("%s: Bad arguments", __func__);
