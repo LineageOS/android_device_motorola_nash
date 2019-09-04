@@ -19,10 +19,9 @@ package org.lineageos.settings.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
-
-import com.android.internal.hardware.AmbientDisplayConfiguration;
 
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
