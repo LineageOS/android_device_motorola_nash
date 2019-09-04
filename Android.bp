@@ -1,6 +1,2 @@
-subdirs = [
-    "health",
-    "light",
-    "power",
-    "thermal",
-]
+soong_namespace {
+}
