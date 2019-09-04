@@ -22,7 +22,7 @@ import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 
-import com.android.internal.hardware.AmbientDisplayConfiguration;
+import android.hardware.display.AmbientDisplayConfiguration;
 
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
