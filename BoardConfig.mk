@@ -206,7 +206,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
-PRODUCT_SHIPPING_API_LEVEL := 25
 
 # Wifi
 # Read by other flags later, so ignore alphabetization.
