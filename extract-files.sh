@@ -103,4 +103,8 @@ sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-
 MOT_GPU_MAPPER="$BLOB_ROOT"/vendor/lib/libmot_gpu_mapper.so
 patchelf --add-needed libui-v28.so "$MOT_GPU_MAPPER"
 
+# Add uhid group for fingerprint service
+FP_SERVICE_RC="$BLOB_ROOT"/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+sed -i "s/input/uhid input/" "$FP_SERVICE_RC"
+
 "$MY_DIR"/setup-makefiles.sh
