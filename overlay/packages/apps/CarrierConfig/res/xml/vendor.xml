@@ -2,6 +2,7 @@
 <carrier_config_list>
     <carrier_config>
         <boolean name="world_phone_bool" value="true" />
+        <boolean name="support_enhanced_call_blocking_bool" value="true" />
     </carrier_config>
 
     <carrier_config mcc="310" mnc="120">
