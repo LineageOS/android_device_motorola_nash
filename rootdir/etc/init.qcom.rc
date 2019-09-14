@@ -191,7 +191,6 @@ on early-boot
     write /sys/kernel/boot_slpi/boot 1
     exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
-    write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
 
     # for backward compatibility
     chown system system /persist/sensors
@@ -509,13 +508,6 @@ on post-fs-data
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
 
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
-
     # Create directory used by audio subsystem
     mkdir /data/vendor/misc/audio 0770 audio audio
     mkdir /data/vendor/audio 0770 audio audio
@@ -750,7 +742,6 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/misc/qvr 0770 system system
 
     # Start Loading mods kernel modules
     start vendor.gbmodinstall
