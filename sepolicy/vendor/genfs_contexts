@@ -9,6 +9,10 @@ genfscon sysfs /devices/soc/soc:qcom,memlat-cpu4                              u:
 genfscon sysfs /devices/soc/8c0000.qcom,msm-cam                               u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb0                                  u:object_r:sysfs_graphics:s0
 
+genfscon sysfs /devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4/name u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@1/video4linux/video5/name u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@2/video4linux/video6/name u:object_r:sysfs_graphics:s0
+
 genfscon sysfs /module/stmvl53l1                                              u:object_r:sysfs_sensor:s0
 
 genfscon sysfs /devices/bt_wcn3990/rfkill/rfkill0/state                       u:object_r:sysfs_bluetooth_writable:s0
@@ -24,8 +28,42 @@ genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:3 u:object_r:s
 genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:4 u:object_r:sysfs_scsi_devices_other:s0
 genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:5 u:object_r:sysfs_scsi_devices_other:s0
 
-genfscon sysfs /devices/platform/mods_ap/greybus1/1-3/1-3.2/power_supply/gb_ptp/type u:object_r:sysfs_greybus:s0
-genfscon sysfs /devices/soc/soc:muc_svc@0/mods_interfaces/3/manifest u:object_r:sysfs_greybus:s0
-genfscon sysfs /devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply u:object_r:sysfs_greybus:s0
-
-
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-3/1-3.2/power_supply/gb_ptp/type                   u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply                               u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-3/vendor_id                                        u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/ap_intf_id                                     u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/endo_id                                        u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/power/autosuspend_delay_ms                     u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/power/control                                  u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/power/runtime_active_time                      u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/power/runtime_status                           u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/power/runtime_suspended_time                   u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/subsystem/devices                              u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/subsystem/drivers                              u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/subsystem/drivers_autoprobe                    u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/subsystem/drivers_probe                        u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/1-svc/uevent                                         u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/autosuspend_delay_ms                           u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/control                                        u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/runtime_active_time                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/runtime_status                                 u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/runtime_suspended_time                         u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup                                         u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_abort_count                             u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_active                                  u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_active_count                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_count                                   u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_expire_count                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_last_time_ms                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_max_time_ms                             u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_prevent_sleep_time_ms                   u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/power/wakeup_total_time_ms                           u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1/uevent                                               u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/platform/mods_ap/greybus1                                                      u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/0.apba_ctrl/fw_version                                                     u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/0.apba_ctrl/pid                                                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/0.apba_ctrl/unipro_mid                                                     u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/0.apba_ctrl/unipro_pid                                                     u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/0.apba_ctrl/vid                                                            u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/soc:muc_svc@0/mods_interfaces/3/manifest                                   u:object_r:sysfs_greybus:s0
+genfscon sysfs /devices/soc/soc:muc_svc@0/mods_interfaces                                              u:object_r:sysfs_greybus:s0
