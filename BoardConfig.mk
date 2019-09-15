@@ -187,7 +187,6 @@ TARGET_USES_INTERACTION_BOOST := true
 # RIL
 CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-TARGET_RIL_VARIANT := caf
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Vendor Security Patch Level
