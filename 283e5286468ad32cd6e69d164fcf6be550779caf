@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81be21e8_6c3faa55",
+        "filename": "sepolicy/vendor/hal_health_default.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2019-09-15T06:51:58Z",
+      "side": 1,
+      "message": "tbh, might not need this line after that file_contexts change I made. We should test without this line to confirm that.",
+      "revId": "283e5286468ad32cd6e69d164fcf6be550779caf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
