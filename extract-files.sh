@@ -39,6 +39,9 @@ CLEAN_VENDOR=true
 SECTION=
 KANG=
 
+# Introduce with nash option
+WITH_NASH=false
+
 while [ "$1" != "" ]; do
     case "$1" in
         -n | --no-cleanup )     CLEAN_VENDOR=false
@@ -48,6 +51,8 @@ while [ "$1" != "" ]; do
         -s | --section )        shift
                                 SECTION="$1"
                                 CLEAN_VENDOR=false
+                                ;;
+        --nash)                 WITH_NASH=true
                                 ;;
         * )                     SRC="$1"
                                 ;;
@@ -125,10 +130,14 @@ function blob_fixup() {
     esac
 }
 
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
+if [ "${WITH_NASH}" =  true ]; then
+extract "${MY_DIR}/proprietary-files_nash.txt" "${SRC}" ${KANG} --section "${SECTION}"
+fi
 
 "${MY_DIR}/setup-makefiles.sh"
