@@ -5,6 +5,7 @@ type fsg_firmware_file, file_type, vendor_file_type, contextmount_type;
 type perfd_socket, file_type;
 type persist_camera_file, file_type;
 type persist_battery_file, file_type;
+type persist_mdm_file, file_type, vendor_persist_type;
 type sysfs_scsi_devices_0000, sysfs_type, fs_type;
 type sysfs_scsi_devices_other, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
