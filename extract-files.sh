@@ -63,16 +63,7 @@ BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 MDMCUTBACK="$BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
 
-# Correct qcrilhook library location
-QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
-sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
-
-# Correct QtiTelephonyServicelibrary location
-TELESERVICELIB="$BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
-sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
-
-# Correct android.hidl.manager@1.0-java jar name
-QTI_LIBPERMISSIONS="$BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
-sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "$QTI_LIBPERMISSIONS"
+sed -i 's/xml version="2.0"/xml version="1.0"/' "$BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+sed -i 's/xml version="2.0"/xml version="1.0"/' "$BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 
 "$MY_DIR"/setup-makefiles.sh
