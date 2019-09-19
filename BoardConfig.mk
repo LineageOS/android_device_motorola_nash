@@ -188,9 +188,10 @@ CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 TARGET_USES_OLD_MNC_FORMAT := true
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # Vendor Security Patch Level
-VENDOR_SECURITY_PATCH := 2019-05-01
+VENDOR_SECURITY_PATCH := 2019-10-05
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
