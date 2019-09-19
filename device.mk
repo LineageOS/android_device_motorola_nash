@@ -244,6 +244,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageActions
 
+# Lineage hardware
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.nash
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
