@@ -844,17 +844,6 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service vendor.cnd /vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group system
-
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
@@ -870,19 +859,6 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
 service vendor.tftp_server /vendor/bin/tftp_server
     class core
     user root
-
-on property:vendor.wc_transport.start_hci=true
-    start vendor.start_hci_filter
-
-on property:vendor.wc_transport.start_hci=false
-    stop vendor.start_hci_filter
-
-service vendor.start_hci_filter /vendor/bin/wcnss_filter
-    class late_start
-    user root
-    group bluetooth diag system wakelock log
-    disabled
-    writepid /dev/cpuset/system-background/tasks
 
 service btsnoop /system/bin/btsnoop
     user bluetooth
@@ -904,35 +880,6 @@ service vendor.ftmd /vendor/bin/ftmdaemon
     group bluetooth net_bt_admin misc diag net_bt
     disabled
     oneshot
-
-service vendor.port-bridge /vendor/bin/port-bridge
-    class main
-    user radio
-    group radio system inet
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.netmgrd /vendor/bin/netmgrd
-    class main
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.ipacm-diag /vendor/bin/ipacm-diag
-    class main
-    user radio
-    socket ipacm_log_file dgram 660 radio radio
-    group radio diag
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.ipacm /vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-
-service vendor.qti /vendor/bin/qti
-    class main
-    user radio
-    group radio net_raw diag usb net_admin
-    writepid /dev/cpuset/system-background/tasks
 
 service vendor.sensors /vendor/bin/sscrpcd
     class core
@@ -1123,6 +1070,11 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
     group root system radio
     oneshot
 
+service qcom-c_main-sh /vendor/bin/init.class_main.sh
+    class main
+    user root
+    oneshot
+
 service vendor.sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
     user root
@@ -1164,14 +1116,6 @@ service vendor.wigig_hostapd /vendor/bin/hostapd -dd /data/vendor/wifi/wigig_hos
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
-
-service ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    socket rild2 stream 660 root radio
-    socket rild-debug2 stream 660 radio system
-    user radio
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2950 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service ssr_diag /vendor/bin/ssr_diag
     class late_start
@@ -1259,42 +1203,6 @@ service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     class core
     user root
     oneshot
-
-service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
-    disabled
-    writepid /dev/cpuset/system-background/tasks
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-    class main
-    user system
-    group radio diag inet log
-    disabled
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-    class main
-    user system
-    group radio diag inet log wakelock
-    disabled
-    writepid /dev/cpuset/system-background/tasks
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start vendor.ims_rtp_daemon
-    start vendor.imsrcsservice
 
 service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
     class main
@@ -1384,7 +1292,8 @@ service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-servi
     class hal
     user system
     group system input wakelock
-    capabilities BLOCK_SUSPEND SYS_NICE
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10
 
 on property:sys.sysctl.swappiness=*
     write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}
