@@ -15,7 +15,7 @@ TARGET_BOOTANIMATION_HALF_RES := true
 
 
 # Device identifiers
-BUILD_FINGERPRINT := motorola/nash/nash:8.0.0/OPXS27.109-34-10/5:user/release-keys
+BUILD_FINGERPRINT := motorola/nash/nash:9/PPX29.159-23/113ea:user/release-keys
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := nash
 PRODUCT_MANUFACTURER := Motorola
