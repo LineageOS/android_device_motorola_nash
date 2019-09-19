@@ -158,9 +158,6 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8998
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Lineage hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
-
 # NFC
 BOARD_NFC_CHIPSET := pn553
 
