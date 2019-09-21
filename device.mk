@@ -403,6 +403,7 @@ PRODUCT_PACKAGES += \
     init.nash.rc \
     init.power.rc \
     init.qcom.early_boot.sh \
+    init.class_main.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
