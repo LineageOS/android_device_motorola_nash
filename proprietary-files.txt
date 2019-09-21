@@ -567,7 +567,7 @@ vendor/radio/qcril_database/upgrade/6_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
 # Radio - IMS
--product/priv-app/ims/ims.apk|e33e718bb02facea862ab56384c4e300a1826dbf
+-product/priv-app/ims/ims.apk|636fa5d1a0fbde6df1e26f7ad66734de82f9ef62
 lib64/libdiag_system.so
 product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
 product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
