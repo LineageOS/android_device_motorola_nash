@@ -321,6 +321,11 @@ vendor/lib64/librpmb.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 
+# DSP
+vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+vendor/lib/rfsa/adsp/libvpp_frc.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
