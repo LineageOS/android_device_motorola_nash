@@ -1,5 +1,5 @@
 # Audio (Prebuilt Audio HAL)
-vendor/lib/hw/audio.primary.msm8998.so
+vendor/lib/hw/audio.primary.msm8998.so|046e78cf733f94936e82473f18b495240ba3850a
 vendor/lib/libmotaudioutils.so
 vendor/lib/libtinyalsa.so
 vendor/lib/libtinycompress.so
