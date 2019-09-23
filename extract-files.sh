@@ -67,19 +67,9 @@ function blob_fixup() {
         sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
         ;;
 
-    # Correct qcrilhook library location
-    vendor/etc/permissions/qcrilhook.xml)
-        sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "${2}"
-        ;;
-
-    # Correct QtiTelephonyServicelibrary location
-    vendor/etc/permissions/telephonyservice.xml)
-        sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "${2}"
-        ;;
-
-    # Correct android.hidl.manager@1.0-java jar name
-    vendor/etc/permissions/qti_libpermissions.xml)
-        sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "${2}"
+    # Update blobs from Q firmware
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
         ;;
 
     esac

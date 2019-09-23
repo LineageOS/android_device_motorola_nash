@@ -204,7 +204,8 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common
+    ims-ext-common \
+    ims_ext_common.xml
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -343,7 +344,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     device/motorola/nash/configs/privapp-permissions-com.motorola.modservice.xml:system/etc/permissions/privapp-permissions-com.motorola.modservice.xml \
     device/motorola/nash/configs/privapp-permissions-com.motorola.projectormod.xml:system/etc/permissions/privapp-permissions-com.motorola.projectormod.xml \
-    device/motorola/nash/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
+    device/motorola/nash/configs/privapp-permissions-wfd.xml:system/etc/permissions/privapp-permissions-wfd.xml \
+    device/motorola/nash/configs/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml
 
 # Power
 PRODUCT_PACKAGES += \
@@ -359,6 +361,10 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     librmnetctl \
     libprotobuf-cpp-full
 
@@ -372,6 +378,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.nash.rc \
     init.power.rc \
+    init.class_main.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
