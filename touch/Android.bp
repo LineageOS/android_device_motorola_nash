@@ -25,7 +25,6 @@ cc_binary {
     shared_libs: [
         "libbase",
         "libhidlbase",
-        "libhidltransport",
         "libutils",
         "com.fingerprints.extension@1.0",
         "vendor.lineage.touch@1.0",
