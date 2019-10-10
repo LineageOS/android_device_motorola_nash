@@ -420,8 +420,6 @@ vendor/lib64/libperipheral_client.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
-etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
-etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -438,7 +436,6 @@ vendor/lib/libqmi_client_qmux.so
 -vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libquipc_os_api.so
 vendor/lib64/libdiag.so
 -vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -454,7 +451,6 @@ vendor/lib64/libqmi_client_qmux.so
 -vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-vendor/lib64/libquipc_os_api.so
 
 # Radio
 -product/app/datastatusnotification/datastatusnotification.apk
