@@ -2,7 +2,6 @@ allow priv_app bt_firmware_file:filesystem getattr;
 allow priv_app firmware_file:filesystem getattr;
 allow priv_app fsg_firmware_file:filesystem getattr;
 allow priv_app device:dir { open read };
-allow priv_app rfs_system_file:dir getattr;
 allow priv_app greybus_raw_device:chr_file rw_file_perms;
 allow priv_app greybus_raw_device:dir rw_dir_perms;
 allow priv_app input_device:chr_file getattr;
