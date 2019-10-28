@@ -363,7 +363,7 @@ vendor/lib64/libdualcameraddm.so
 vendor/lib/libS5k2l7Pdaf.so
 vendor/lib/libS5k2l7PdafCamif.so
 vendor/lib/libmm-qcamera.so
-vendor/lib/libmot_gpu_mapper.so
+vendor/lib/libmot_gpu_mapper.so|1de4a9e6b7780ed532259b17a5c7fa021cc23559
 
 # Camera - Firmware
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
