@@ -1,12 +1,9 @@
 r_dir_file(hal_camera_default, persist_camera_file)
 allow hal_camera_default vl53l1_device:chr_file rw_file_perms;
 allow hal_camera_default mnt_vendor_file:file rw_file_perms;
-allow hal_camera_default hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
 allow hal_camera_default sysfs_healthd:dir r_dir_perms;
 allow hal_camera_default sysfs_healthd:file r_file_perms;
 
-allow hal_camera_default persist_camera_prop:file r_file_perms;
-allow hal_camera_default persist_camera_prop:sock_file r_file_perms;
 allow hal_camera_default persist_camera_prop:property_service set;
 
 binder_call(hal_camera_default, hal_configstore_default)
@@ -16,7 +13,5 @@ typeattribute hal_camera_default data_between_core_and_vendor_violators;
 
 allow hal_camera_default camera_data_file:dir create_dir_perms;
 allow hal_camera_default camera_data_file:file create_file_perms;
-
-allow hal_camera_default hal_graphics_allocator_hwservice:hwservice_manager find;
 
 get_prop(hal_camera_default, moto_boot_prop)
