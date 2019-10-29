@@ -5,5 +5,4 @@ allow rild fwk_sensor_hwservice:hwservice_manager find;
 allow rild system_server:binder { call transfer };
 allow rild vendor_default_prop:property_service set;
 allow rild proc:file r_file_perms;
-allow rild system_file:file execute_no_trans;
 get_prop(rild, moto_boot_prop)
