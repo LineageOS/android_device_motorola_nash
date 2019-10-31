@@ -4,3 +4,12 @@ vendor.powerhal.audio u:object_r:power_prop:s0
 ro.gpu.available_frequencies u:object_r:gpu_prop:s0
 persist.vendor.camera.debug.logfile u:object_r:persist_camera_prop:s0
 vendor.ril.radio.             u:object_r:vendor_radio_prop:s0
+
+ro.boot.adb_early          u:object_r:moto_boot_prop:s0
+ro.boot.secure_hardware    u:object_r:moto_boot_prop:s0
+ro.boot.radio              u:object_r:moto_boot_prop:s0
+ro.boot.device             u:object_r:moto_boot_prop:s0
+ro.boot.dualsim            u:object_r:moto_boot_prop:s0
+ro.vendor.hw.dualsim       u:object_r:moto_boot_prop:s0
+ro.vendor.hw.device        u:object_r:moto_boot_prop:s0
+ro.vendor.hw.radio         u:object_r:moto_boot_prop:s0
