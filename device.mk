@@ -21,6 +21,7 @@
 DEVICE_PACKAGE_OVERLAYS += device/motorola/nash/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += device/motorola/nash/overlay/lineage-sdk
 
 # A/B updater
 AB_OTA_PARTITIONS += \
