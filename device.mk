@@ -538,5 +538,5 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_wcn.conf
 
 # Wi-Fi Display
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+#    WfdCommon
