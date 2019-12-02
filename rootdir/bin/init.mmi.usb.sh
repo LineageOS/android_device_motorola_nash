@@ -34,7 +34,7 @@
 #
 
 target=`getprop ro.board.platform`
-usb_action=`getprop usb.mmi-usb-sh.action`
+usb_action=`getprop vendor.usb.mmi-usb-sh.action`
 echo "mmi-usb-sh: action = \"$usb_action\""
 sys_usb_config=`getprop vendor.usb.config`
 
@@ -101,6 +101,9 @@ case "$target" in
                  qcom_adb_usb_config="diag,serial_smd,rmnet_ipa,adb"
                  bpt_usb_config="diag,serial_smd,rmnet_bam_ipa"
                  bpt_adb_usb_config="diag,serial_smd,rmnet_bam_ipa,adb"
+                 setprop vendor.usb.rndis.func.name "rndis_bam"
+                 setprop vendor.usb.rmnet.inst.name "rmnet"
+                 setprop vendor.usb.dpl.inst.name "dpl"
             ;;
             *)
                  qcom_usb_config="diag,serial_smd,rmnet_qti_bam"
@@ -141,7 +144,7 @@ case "$target" in
     ;;
     "msm8998")
         #Set RPS Mask for Tethering to CPU2
-        setprop vendor.usb.rps_mask 30
+        setprop vendor.usb.rps_mask 70
         setprop vendor.rmnet_vnd.rps_mask 0d
         qcom_usb_config="diag,serial_cdev,rmnet"
         qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
@@ -150,6 +153,7 @@ case "$target" in
         setprop vendor.usb.controller "a800000.dwc3"
         setprop vendor.usb.rndis.func.name "gsi"
         setprop vendor.usb.rmnet.func.name "gsi"
+	setprop vendor.usb.hcd_mask 80
     ;;
     "sdm660")
         #Set RPS Mask for Tethering to CPU2
@@ -181,6 +185,48 @@ case "$target" in
         setprop vendor.usb.rndis.func.name "gsi"
         setprop vendor.usb.rmnet.func.name "gsi"
     ;;
+    "sm6150")
+        qcom_usb_config="diag,serial_cdev,rmnet"
+        qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+	setprop vendor.usb.hcd_mask 80
+	setprop vendor.usb.rps_mask 40
+    ;;
+    "trinket")
+        qcom_usb_config="diag,serial_cdev,rmnet"
+        qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "4e00000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+    ;;
+    "kona")
+        qcom_usb_config="diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet"
+        qcom_adb_usb_config="diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        echo "none" > /config/usb_gadget/g1/UDC
+        echo "a600000.dwc3" > /config/usb_gadget/g1/UDC
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+     ;;
+    "lito")
+        qcom_usb_config="diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet"
+        qcom_adb_usb_config="diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        echo "none" > /config/usb_gadget/g1/UDC
+        echo "a600000.dwc3" > /config/usb_gadget/g1/UDC
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+     ;;
 esac
 
 ## This is needed to switch to the qcom rndis driver.
@@ -346,11 +392,11 @@ case "$bootmode" in
             echo 0 > /sys/class/android_usb/android0/secure
             echo "Enabling enumeration after bootup, count =  $count !"
             new_persist_usb_config=`getprop persist.vendor.usb.config`
-            if [ "$sys_usb_config" != "$new_persist_usb_config" ]; then
-                setprop vendor.usb.config $new_persist_usb_config
-            fi
-            if [ "$new_persist_usb_config" == "" ]; then
+            if [[ "$new_persist_usb_config" != *adb* ]]; then
+                setprop persist.vendor.usb.config "adb"
                 setprop vendor.usb.config "adb"
+            else
+                setprop vendor.usb.config $new_persist_usb_config
             fi
             exit 0
         fi
