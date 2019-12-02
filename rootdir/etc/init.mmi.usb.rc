@@ -52,6 +52,16 @@ on init
     mkdir /config/usb_gadget/g1/functions/ncm.0
     mkdir /config/usb_gadget/g1/functions/rmnet_bam.rmnet
     mkdir /config/usb_gadget/g1/functions/rndis_bam.rndis
+    mkdir /config/usb_gadget/g1/functions/diag.diag_mdm
+    mkdir /config/usb_gadget/g1/functions/diag.diag_mdm2
+    mkdir /config/usb_gadget/g1/functions/cser.dun.2
+    mkdir /config/usb_gadget/g1/functions/qdss.qdss_mdm
+    mkdir /config/usb_gadget/g1/functions/rndis.rndis
+    mkdir /config/usb_gadget/g1/functions/rmnet_bam.dpl
+    mkdir /config/usb_gadget/g1/functions/rmnet_bam.rmnet_bam_dmux
+    mkdir /config/usb_gadget/g1/functions/rmnet_bam.dpl_bam_dmux
+    mkdir /config/usb_gadget/g1/functions/ccid.ccid
+    mkdir /config/usb_gadget/g1/functions/uac2.0
     mkdir /config/usb_gadget/g1/configs/b.1 0770 shell shell
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
     write /config/usb_gadget/g1/os_desc/b_vendor_code 0x1
@@ -69,7 +79,28 @@ on firmware_mounts_complete
 
 on load_persist_props_action
     setprop vendor.usb.config  ${sys.usb.config}
+    setprop persist.vendor.mot.usb.config  ${persist.sys.usb.config:-" "}
+    setprop persist.sys.usb.config  " "
     setprop persist.vendor.usb.config  ${persist.sys.usb.config}
+
+on property:ro.boot.console=ttyGS0 && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/UDC "none"
+    mkdir /config/usb_gadget/g1/functions/acm.0
+    # "f0" is used here so that we won't take anything from f1 ~ f9
+    symlink /config/usb_gadget/g1/functions/acm.0 /config/usb_gadget/g1/configs/b.1/f0
+    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+
+on property:ro.vendor.bootreason=watchdog
+    setprop persist.vendor.usb.config  ${persist.vendor.mot.usb.config}
+    setprop persist.sys.usb.config  ${persist.vendor.mot.usb.config}
+
+on property:ro.vendor.bootreason=pmic_watchdog
+    setprop persist.vendor.usb.config  ${persist.vendor.mot.usb.config}
+    setprop persist.sys.usb.config  ${persist.vendor.mot.usb.config}
+
+on property:ro.vendor.bootreason=kernel_panic
+    setprop persist.vendor.usb.config  ${persist.vendor.mot.usb.config}
+    setprop persist.sys.usb.config  ${persist.vendor.mot.usb.config}
 
 on property:sys.boot_completed=*
     setprop vendor.boot_completed ${sys.boot_completed}
@@ -378,10 +409,55 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x22b8
     write /config/usb_gadget/g1/idProduct 0x2E81
 
-# Set RPS Mask for USB tethering
-on property:sys.usb.tethering=true
-    write /sys/class/net/rndis0/queues/rx-0/rps_cpus ${vendor.usb.rps_mask}
-    write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${vendor.usb.rps_mask}
+on property:sys.usb.config=diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet && property:sys.usb.configfs=1
+   write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_diag_mdm,qdss_qdss_mdm_dun_dun_mdm_dpl_rmnet"
+   rm /config/usb_gadget/g1/configs/b.1/f1
+   rm /config/usb_gadget/g1/configs/b.1/f2
+   rm /config/usb_gadget/g1/configs/b.1/f3
+   rm /config/usb_gadget/g1/configs/b.1/f4
+   rm /config/usb_gadget/g1/configs/b.1/f5
+   rm /config/usb_gadget/g1/configs/b.1/f6
+   rm /config/usb_gadget/g1/configs/b.1/f7
+   rm /config/usb_gadget/g1/configs/b.1/f8
+   rm /config/usb_gadget/g1/configs/b.1/f9
+   write /config/usb_gadget/g1/idVendor 0x05C6
+   write /config/usb_gadget/g1/idProduct 0x90DD
+   symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
+   symlink /config/usb_gadget/g1/functions/diag.diag_mdm /config/usb_gadget/g1/configs/b.1/f2
+   symlink /config/usb_gadget/g1/functions/qdss.qdss /config/usb_gadget/g1/configs/b.1/f3
+   symlink /config/usb_gadget/g1/functions/qdss.qdss_mdm /config/usb_gadget/g1/configs/b.1/f4
+   symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f5
+   symlink /config/usb_gadget/g1/functions/cser.dun.2 /config/usb_gadget/g1/configs/b.1/f6
+   symlink /config/usb_gadget/g1/functions/${vendor.usb.rmnet.func.name}.${vendor.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f7
+   symlink /config/usb_gadget/g1/functions/${vendor.usb.rmnet.func.name}.${vendor.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f8
+   write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+   setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.tethering=false
-    write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${vendor.rmnet_vnd.rps_mask}
+on property:sys.usb.config=diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet,adb && property:sys.usb.configfs=1
+   start adbd
+
+on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,dpl,rmnet,adb && property:sys.usb.configfs=1
+   write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_diag_mdm,qdss_qdss_mdm_dun_dun_mdm_dpl_rmnet_adb"
+   rm /config/usb_gadget/g1/configs/b.1/f1
+   rm /config/usb_gadget/g1/configs/b.1/f2
+   rm /config/usb_gadget/g1/configs/b.1/f3
+   rm /config/usb_gadget/g1/configs/b.1/f4
+   rm /config/usb_gadget/g1/configs/b.1/f5
+   rm /config/usb_gadget/g1/configs/b.1/f6
+   rm /config/usb_gadget/g1/configs/b.1/f7
+   rm /config/usb_gadget/g1/configs/b.1/f8
+   rm /config/usb_gadget/g1/configs/b.1/f9
+   write /config/usb_gadget/g1/idVendor 0x05C6
+   write /config/usb_gadget/g1/idProduct 0x90DE
+   symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
+   symlink /config/usb_gadget/g1/functions/diag.diag_mdm /config/usb_gadget/g1/configs/b.1/f2
+   symlink /config/usb_gadget/g1/functions/qdss.qdss /config/usb_gadget/g1/configs/b.1/f3
+   symlink /config/usb_gadget/g1/functions/qdss.qdss_mdm /config/usb_gadget/g1/configs/b.1/f4
+   symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f5
+   symlink /config/usb_gadget/g1/functions/cser.dun.2 /config/usb_gadget/g1/configs/b.1/f6
+   symlink /config/usb_gadget/g1/functions/${vendor.usb.rmnet.func.name}.${vendor.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f7
+   symlink /config/usb_gadget/g1/functions/${vendor.usb.rmnet.func.name}.${vendor.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f8
+   symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f9
+   write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+   setprop sys.usb.state ${sys.usb.config}
+
