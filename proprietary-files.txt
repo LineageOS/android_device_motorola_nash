@@ -233,8 +233,8 @@ vendor/lib64/vendor.qti.gnss@3.0-service.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 
 # Graphics
--vendor/lib/libsdm-disp-vndapis.so|f81628ddf7fff00f5e316956ed3b50941932c7de
--vendor/lib64/libsdm-disp-vndapis.so|8ac59a32a2601a8a4b0d3b097ed02f1279f3c6b7
+-vendor/lib/libsdm-disp-vndapis.so
+-vendor/lib64/libsdm-disp-vndapis.so
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -243,27 +243,28 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/hw/vulkan.msm8998.so
+vendor/lib/hw/vulkan.sdm660.so:vendor/lib/hw/vulkan.msm8998.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libOpenCL.so
+vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
-vendor/lib/libC2D2.so
 vendor/lib/libc2d30_bltlib.so
-vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
 vendor/lib/libqseed3.so
-vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/libsdm-color.so|8e083bb2a20ecf76bf96e303134cbaa9ce46be81
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/libsdedrm.so
+vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
-vendor/lib/libsdmextension.so|3104df6a013e53b972227ed132aa683ec7303746
-vendor/lib/libsdedrm.so|14659302ccd3df6929debd931a1a7258739ca144
+vendor/lib/libsdmextension.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
@@ -271,32 +272,33 @@ vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/hw/vulkan.msm8998.so
+vendor/lib64/hw/vulkan.sdm660.so:vendor/lib64/hw/vulkan.msm8998.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
-vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
 vendor/lib64/libqseed3.so
-vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
-vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libsdm-color.so|1a9b68e5f2f09d37c2fa83907a6a70c7adb081f5
+vendor/lib64/librs_adreno_sha1.so
+vendor/lib64/libsdedrm.so
+vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
-vendor/lib64/libsdedrm.so|dfc54b03ea50147b7143966a5c1a4df2710d2205
+vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Graphics - HDR
-vendor/lib/libhdr_tm.so|17705b090e4e8b487a39071b2f46a45324d611a6
-vendor/lib64/libhdr_tm.so|a44d285a08aa30ef90e791c646b9c12a697a30b2
+vendor/lib/libhdr_tm.so
+vendor/lib64/libhdr_tm.so
 
 # Graphics - Firmwares
 vendor/firmware/a225_pfp.fw
@@ -316,6 +318,9 @@ vendor/firmware/a530v1_pm4.fw
 vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/a630_gmu.bin
+vendor/firmware/a630_sqe.fw
 
 # IPA
 vendor/bin/ipacm-diag
