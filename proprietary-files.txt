@@ -153,11 +153,17 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
-vendor/lib/rfsa/adsp/libvpp_frc.so
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+vendor/lib/rfsa/adsp/tas2560_TI.bin|4f4e98934eac788768423c8fd4ec81c02ae9ce2b
 
 # DSP - SCVE
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveBlobDescriptor_stub.so
 vendor/lib/libscveCommon.so
@@ -167,8 +173,10 @@ vendor/lib/libscveObjectSegmentation.so
 vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libscvePanorama_lite.so
 vendor/lib/libscvePanorama.so
+vendor/lib/libscvePanorama_lite.so
+vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
+vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
 vendor/lib64/libscveCommon.so
@@ -178,8 +186,10 @@ vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/libscvePanorama.so
+vendor/lib64/libscvePanorama_lite.so
+vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # GPS
 vendor/bin/garden_app
