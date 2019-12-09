@@ -345,6 +345,7 @@ vendor/lib/libApeSwDec.so
 vendor/lib/libFlacSwDec.so
 -vendor/lib/libgpustats.so
 vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -354,18 +355,17 @@ vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxG711Dec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVpp.so
+vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libvpphvx.so
-vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
 -vendor/lib64/libgpustats.so
 vendor/lib64/libI420colorconvert.so
+vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
@@ -374,12 +374,9 @@ vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libOmxApeDec.so
 vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvpplibrary.so
 
 # NFC
 vendor/lib64/libpn553_fw.so
@@ -754,7 +751,6 @@ vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|f3add191d48d9285e
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|d06f24d7f59afd7a972336e3f89e49347f440d2a
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|93487a83a35f0fa3fe37445edd3ff22fcc52e4fc
 vendor/lib/libmmosal_proprietary.so|7b4070890dbc94bf59821f88abe617f8f208bd94
-vendor/lib/libOmxVideoDSMode.so|e553e97cd36c23549d74231758fa061ea3bbd74b
 vendor/lib/libwfdcommonutils_proprietary.so|66d4c70ba23f7f2b7891fed6b4a5750d8bec3ba7
 vendor/lib/libwfdhaldsmanager.so|39479c2aaac7353dd123f977e3ec9122303aa0a1
 vendor/lib/libwfdhdcpcp.so|fdc871821a96c2768b880a7eb7f611632756f10c
