@@ -7,5 +7,7 @@ liblistenjni.so
 liblistensoundmodel2.so
 libOpenCL.so
 libnpu.so
-libfastcvopt.so
-libmcf-qc-fd-offline.so
+libhta_controller.so
+libhta_hexagon_runtime.so
+unnhal-acc-hta.so
+libadspd.so
