@@ -10,6 +10,15 @@ ro.boot.secure_hardware    u:object_r:moto_boot_prop:s0
 ro.boot.radio              u:object_r:moto_boot_prop:s0
 ro.boot.device             u:object_r:moto_boot_prop:s0
 ro.boot.dualsim            u:object_r:moto_boot_prop:s0
+ro.boot.hardware.sku       u:object_r:moto_boot_prop:s0
+ro.boot.carrier            u:object_r:moto_boot_prop:s0
+ro.boot.fsg-id             u:object_r:moto_boot_prop:s0
+ro.boot.hwrev              u:object_r:moto_boot_prop:s0
 ro.vendor.hw.dualsim       u:object_r:moto_boot_prop:s0
 ro.vendor.hw.device        u:object_r:moto_boot_prop:s0
 ro.vendor.hw.radio         u:object_r:moto_boot_prop:s0
+ro.vendor.hw.hwrev         u:object_r:moto_boot_prop:s0
+ro.vendor.boot.radio       u:object_r:moto_boot_prop:s0
+ro.vendor.boot.hwrev       u:object_r:moto_boot_prop:s0
+ro.vendor.carrier          u:object_r:moto_boot_prop:s0
+ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
