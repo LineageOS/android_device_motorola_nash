@@ -36,6 +36,7 @@ on init
     setprop ro.vendor.boot.radio ${ro.boot.radio}
     setprop ro.vendor.fsg-id ${ro.boot.fsg-id}
     setprop ro.vendor.boot.hwrev ${ro.boot.hwrev}
+    setprop ro.vendor.zygote ${ro.zygote}
     setprop ro.vendor.hw.fps true
     setprop ro.vendor.hw.imager 12MP
     setprop ro.product.manufacturer Motorola
