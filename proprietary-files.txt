@@ -390,6 +390,7 @@ vendor/lib64/libpn553_fw.so
 
 # Offmode charging
 vendor/bin/charge_only_mode
+vendor/bin/hvdcp_opti
 
 # Perf
 lib/libqti_performance.so
