@@ -270,7 +270,7 @@ PRODUCT_COPY_FILES += \
 
 # ModService
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/whitelist_modservice.xml:system/etc/sysconfig/whitelist_modservice.xml
+    device/motorola/nash/configs/whitelist_modservice.xml:$(TARGET_COPY_OUT_SYSTEM)etc/sysconfig/whitelist_modservice.xml
 
 # Network
 PRODUCT_PACKAGES += \
@@ -351,9 +351,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Priv-App Permissions
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/privapp-permissions-com.motorola.modservice.xml:system/etc/permissions/privapp-permissions-com.motorola.modservice.xml \
-    device/motorola/nash/configs/privapp-permissions-com.motorola.projectormod.xml:system/etc/permissions/privapp-permissions-com.motorola.projectormod.xml \
-    device/motorola/nash/configs/privapp-permissions-wfd.xml:system/etc/permissions/privapp-permissions-wfd.xml \
+    device/motorola/nash/configs/privapp-permissions-com.motorola.modservice.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-com.motorola.modservice.xml \
+    device/motorola/nash/configs/privapp-permissions-com.motorola.projectormod.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-com.motorola.projectormod.xml \
+    device/motorola/nash/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-wfd.xml \
     device/motorola/nash/configs/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml
 
 # Power
@@ -362,7 +362,7 @@ PRODUCT_PACKAGES += \
 
 # QCOM
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+    device/motorola/nash/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)etc/sysconfig/qti_whitelist.xml
 
 # QMI
 PRODUCT_PACKAGES += \
