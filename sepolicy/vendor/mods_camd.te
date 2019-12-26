@@ -16,9 +16,6 @@ allow mods_camd mods_camd_device:chr_file {getattr ioctl open read write };
 allow mods_camd sysfs_greybus:file rw_file_perms;
 allow mods_camd sysfs_greybus:dir r_dir_perms;
 
-allow mods_camd sysfs_v4l2_openmode:file rw_file_perms;
-allow mods_camd sysfs_v4l2_openmode:dir r_dir_perms;
-
 allow mods_camd cameraserver:fd use;
 allow mods_camd gpu_device:chr_file { ioctl open read write };
 allow mods_camd init:unix_stream_socket connectto;
