@@ -56,30 +56,48 @@
 /sys/devices/virtual/vibrator/drv2624(/.*)?                   u:object_r:sysfs_vibrator:s0
 /sys/class/vibrator(/.*)?                                     u:object_r:sysfs_vibrator:s0
 
+# Charger
+/(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
+
+# Persist mdm
+/(mnt/vendor)/persist/mdm(/.*)?                                         u:object_r:persist_mdm_file:s0
+
+# Battery and healthd
+/(mnt/vendor)/persist/battery(/.*)?                               u:object_r:persist_battery_file:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/battery(/.*)?      u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/dc(/.*)?           u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/main(/.*)?         u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/pc_port(/.*)?      u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb(/.*)?          u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usbeb(/.*)?        u:object_r:sysfs_healthd:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/wireless(/.*)?     u:object_r:sysfs_healthd:s0
+
 # Greybus (Mods)
+/data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
+/dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
 /sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
 /sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
 /sys/class/power_supply/usb/usb_priority                    u:object_r:sysfs_greybus:s0
-/sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
+/sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap(/.*)?                         u:object_r:sysfs_greybus:s0
-/sys/devices/soc/0\.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
-/sys/module/qpnp_smbcharger_mmi/parameters(/.*)?            u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_codec\.0(/.*)?                    u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
-/sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
 /sys/devices/soc/soc:muc(/.*)?                              u:object_r:sysfs_greybus:s0
+/sys/devices/soc/0\.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
 /sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces(/.*)? u:object_r:sysfs_greybus:s0
 /sys/devices/soc/6a00000.*/power_supply/usb/usb_priority    u:object_r:sysfs_greybus:s0
-/data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
-/dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
 /sys/module/uvcvideo/parameters/quirks                      u:object_r:sysfs_greybus:s0
+/sys/module/qpnp_smbcharger_mmi/parameters(/.*)?            u:object_r:sysfs_greybus:s0
+/sys/module/qpnp_smbcharger_mmi(/.*)?                       u:object_r:sysfs_batt_mods:s0
+
 /sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply/gb_ptp(/.*)?         u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/power_supply/gb_battery(/.*)?     u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap/greybus1/1-3/1-3.1/state      u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_ap/greybus1(/.*)?                u:object_r:sysfs_greybus:s0
-/sys/class/power_supply/gb_ptp                              u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/hwmon/hwmon41/subsystem(/.*)?          u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/hwmon/hwmon41/subsystem                u:object_r:sysfs_greybus:s0
+/sys/class/power_supply/gb_ptp                              u:object_r:sysfs_greybus:s0
 
 /dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
 /sys/devices/soc/(.+)hsusb(.+)/uevent                             u:object_r:sysfs_mods_camd:s0
@@ -89,7 +107,6 @@
 /sys/devices/soc/(.+)msm-cam/video4linux/video([0-9])+/name       u:object_r:sysfs_mods_camd:s0
 /sys/devices/soc/(.+)cci/(.+)/video4linux/video([0-9])+/name      u:object_r:sysfs_mods_camd:s0
 /sys/devices/soc/(.+)hsusb(.+)/video4linux/video([0-9])+/name     u:object_r:sysfs_mods_camd:s0
-
 /sys/module/usb3813_hub/parameters/ignore_typec                   u:object_r:sysfs_mods_camd:s0
 
 /dev/v4l-subdev[0-9]*	                                            u:object_r:video_device:s0
@@ -101,17 +118,3 @@
 /sys/devices/virtual/video4linux/video([0-9])+/name               u:object_r:sysfs_mods_camd:s0
 /sys/devices/virtual/video4linux/video([0-9])+/uevent             u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux/video([0-9])+/open_mode          u:object_r:sysfs_v4l2_openmode:s0
-/sys/module/qpnp_smbcharger_mmi(/.*)?                             u:object_r:sysfs_batt_mods:s0
-
-/(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
-
-/(mnt/vendor)/persist/battery(/.*)?                               u:object_r:persist_battery_file:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/battery(/.*)?      u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/dc(/.*)?           u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/main(/.*)?         u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/pc_port(/.*)?      u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb(/.*)?          u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usbeb(/.*)?        u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/wireless(/.*)?     u:object_r:sysfs_healthd:s0
-
-/(mnt/vendor)/persist/mdm(/.*)?                                         u:object_r:persist_mdm_file:s0
