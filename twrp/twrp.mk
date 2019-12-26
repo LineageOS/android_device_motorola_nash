@@ -1,6 +1,6 @@
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/a800000.ssusb/a800000.dwc3/gadget/lun%d/file"
-TARGET_RECOVERY_FSTAB := device/motorola/nash/twrp/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp/twrp.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USES_LOGD := true

@@ -15,7 +15,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Device
-$(call inherit-product, device/motorola/nash/device.mk)
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Boot Animtion
 TARGET_BOOTANIMATION_HALF_RES := true
