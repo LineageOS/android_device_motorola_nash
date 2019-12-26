@@ -1,0 +1,4 @@
+allow healthd sysfs_greybus:dir r_dir_perms;
+allow healthd sysfs_greybus:file rw_file_perms;
+allow healthd sysfs_mods_camd:dir r_dir_perms;
+allow healthd sysfs_mods_camd:file rw_file_perms;

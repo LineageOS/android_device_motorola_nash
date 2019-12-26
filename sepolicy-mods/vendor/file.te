@@ -1,0 +1,4 @@
+# Greybus
+type sysfs_greybus, fs_type, sysfs_type, mlstrustedobject;
+type gbfirmware_file, file_type, core_data_file_type, data_file_type, mlstrustedobject;
+type sysfs_mods_camd, fs_type, sysfs_type, mlstrustedobject;

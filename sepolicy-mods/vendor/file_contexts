@@ -1,0 +1,30 @@
+/(vendor|system/vendor)/bin/init\.gbmods\.sh                u:object_r:init-gbmods-sh_exec:s0
+/(vendor|system/vendor)/bin/mods_camd                       u:object_r:mods_exec:s0
+
+# Greybus (Mods)
+/data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
+/dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
+/sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
+/sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
+/sys/module/uvcvideo/parameters/quirks                      u:object_r:sysfs_greybus:s0
+
+/dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
+/sys/devices/soc/(.+)hsusb(.+)/uevent                             u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/type                  u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/online                u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)fd/video4linux/video([0-9])+/name            u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)msm-cam/video4linux/video([0-9])+/name       u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)cci/(.+)/video4linux/video([0-9])+/name      u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)hsusb(.+)/video4linux/video([0-9])+/name     u:object_r:sysfs_mods_camd:s0
+/sys/module/usb3813_hub/parameters/ignore_typec                   u:object_r:sysfs_mods_camd:s0
+
+/dev/v4l-subdev[0-9]*	                                          u:object_r:video_device:s0
+
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/name		u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/uevent		u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/open_mode	u:object_r:sysfs_mods_camd:s0
+
+/sys/devices/virtual/video4linux/video([0-9])+/name			u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/video([0-9])+/uevent			u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/video([0-9])+/open_mode		u:object_r:sysfs_mods_camd:s0

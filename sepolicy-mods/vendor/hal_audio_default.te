@@ -1,0 +1,2 @@
+allow hal_audio_default sysfs_greybus:dir { search };
+allow hal_audio_default sysfs_greybus:file { getattr open read };

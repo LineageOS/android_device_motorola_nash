@@ -1,4 +1,2 @@
 type vl53l1_device, dev_type;
 type ab_block_device, dev_type;
-type greybus_raw_device, dev_type, mlstrustedobject;
-type mods_camd_device, dev_type, mlstrustedobject;
