@@ -340,8 +340,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Priv-App Permissions
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/privapp-permissions-com.motorola.modservice.xml:system/etc/permissions/privapp-permissions-com.motorola.modservice.xml \
-    device/motorola/nash/configs/privapp-permissions-com.motorola.projectormod.xml:system/etc/permissions/privapp-permissions-com.motorola.projectormod.xml \
     device/motorola/nash/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
 # Power
