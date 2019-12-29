@@ -64,6 +64,8 @@ vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 
 # Camera
+vendor/bin/vl53l1_daemon
+vendor/lib64/libvl53l1_daemon.so
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
 etc/zaf/zaf_imx386.json:vendor/etc/zaf/zaf_imx386.json
 etc/zaf/zaf_imx386_mono.json:vendor/etc/zaf/zaf_imx386_mono.json
@@ -96,6 +98,7 @@ lib/lib_mot_app6_metadata.so:vendor/lib/lib_mot_app6_metadata.so
 vendor/lib/lib_mot_led_calibration.so
 vendor/lib/libmot_afd.so
 vendor/lib/lib_motsensorlistener.so
+vendor/lib/libmcf-qc-fd-offline.so
 
 # Camera - Chromatix
 vendor/lib/libchromatix_imx386_4k_video_3a.so
