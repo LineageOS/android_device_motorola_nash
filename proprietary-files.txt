@@ -40,6 +40,11 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
 
+# Audio - Soundfx
+vendor/lib/soundfx/libspeakerbundle.so
+vendor/lib/libeqservicebridge.so
+vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/btnvtool
