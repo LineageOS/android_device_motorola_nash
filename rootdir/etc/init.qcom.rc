@@ -744,7 +744,6 @@ on post-fs-data
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
-    mkdir /data/misc/seemp 0700 system system
 
     setprop vold.post_fs_data_done 1
 
