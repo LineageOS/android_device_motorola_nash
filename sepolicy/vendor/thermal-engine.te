@@ -4,3 +4,7 @@ allow thermal-engine sysfs_healthd:file rw_file_perms;
 dontaudit thermal-engine proc_loadavg:file { getattr open read };
 dontaudit thermal-engine proc_stat:file { getattr open read };
 get_prop(thermal-engine, moto_boot_prop)
+allow thermal-engine { proc_stat proc_loadavg }:file r_file_perms;
+
+r_dir_file(thermal-engine sysfs_hwmon)
+r_dir_file(thermal-engine sysfs_socinfo)
