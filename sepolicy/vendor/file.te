@@ -11,6 +11,7 @@ type sysfs_scsi_devices_other, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 type fingerprint_data_file, core_data_file_type, data_file_type, file_type;
 type fingerprint_socket, core_data_file_type, data_file_type, file_type;
+type sysfs_hwmon, sysfs_type, fs_type;
 type sysfs_sensor, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
 
