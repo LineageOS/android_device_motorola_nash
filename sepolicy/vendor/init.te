@@ -7,4 +7,4 @@ allow init sysfs_scsi_devices_other:file relabelfrom;
 allow init fsg_firmware_file:filesystem  { relabelfrom  mount };
 allow init vendor_file:file execute;
 #TODO: This should not be needed and needs to be cleaned.
-allow { fsg_firmware_file  }self:filesystem associate;
+allow fsg_firmware_file self:filesystem associate;
