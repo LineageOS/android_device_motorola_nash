@@ -18,7 +18,7 @@
 /sys/devices/soc/caa0000\.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices/soc/caa4000\.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/soc/ca0c000\.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
-/persist/camera(/.*)?                                         u:object_r:persist_camera_file:s0
+/(mnt/vendor)/persist/camera(/.*)?                                         u:object_r:persist_camera_file:s0
 /sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 
