@@ -78,6 +78,8 @@ vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 
 # Camera
+-system/priv-app/MotCamera2/MotCamera2.apk
+system/etc/permissions/privapp-permissions-com.motorola.camera2.xml
 vendor/bin/vl53l1_daemon
 vendor/lib64/libvl53l1_daemon.so
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
