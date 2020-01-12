@@ -3,7 +3,8 @@
     <libraries>
         <library name="proxy" path="libeffectproxy.so"/>
         <library name="mmieffects" path="libmmieffectswrapper.so"/>
-        <library name="mot_speaker_helper" path="libspeakerbundle.so"/>
+        <!-- TO FIX: This breaks A2DP/BT Audio -->
+        <!--library name="mot_speaker_helper" path="libspeakerbundle.so"/-->
         <library name="bundle" path="libbundlewrapper.so"/>
         <library name="reverb" path="libreverbwrapper.so"/>
         <library name="visualizer" path="libvisualizer.so"/>
