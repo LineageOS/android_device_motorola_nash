@@ -79,7 +79,7 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so
 
 # Camera
 etc/permissions/privapp-permissions-com.motorola.camera2.xml
--priv-app/MotCamera2/MotCamera2.apk
+-priv-app/MotCamera2/MotCamera2.apk;PRESIGNED
 vendor/bin/vl53l1_daemon
 vendor/lib64/libvl53l1_daemon.so
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
