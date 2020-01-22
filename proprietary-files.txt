@@ -78,6 +78,7 @@ vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 
 # Camera
+-app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 etc/permissions/privapp-permissions-com.motorola.camera2.xml
 -priv-app/MotCamera2/MotCamera2.apk;PRESIGNED
 vendor/bin/vl53l1_daemon

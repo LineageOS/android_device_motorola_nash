@@ -126,6 +126,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
 
+# Dex-pre-opt exclusions
+$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
