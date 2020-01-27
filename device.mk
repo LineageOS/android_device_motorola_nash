@@ -52,10 +52,12 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.0-service \
     audiod \
     audio.a2dp.default \
+    audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
     libaacwrapper \
     libaudio-resampler \
+    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \

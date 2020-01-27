@@ -680,25 +680,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>motorola.hardware.audio.eqservice</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IEQServiceHIDL</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IEQServiceHIDL/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>motorola.hardware.health</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMotHealth</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.lineage.livedisplay</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -734,6 +715,15 @@
         <version>1.0</version>
         <interface>
             <name>IKeyDisabler</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>motorola.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMotHealth</name>
             <instance>default</instance>
         </interface>
     </hal>
