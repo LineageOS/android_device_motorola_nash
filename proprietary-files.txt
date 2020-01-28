@@ -162,7 +162,6 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/tas2560_TI.bin|4f4e98934eac788768423c8fd4ec81c02ae9ce2b
 
 # DSP - SCVE
 product/lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
