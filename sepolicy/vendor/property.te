@@ -1,5 +1,2 @@
-type post_boot_prop, property_type;
 type power_prop, property_type;
-type gpu_prop, property_type;
-type persist_camera_prop, property_type;
 type moto_boot_prop, property_type;
