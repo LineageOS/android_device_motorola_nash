@@ -488,7 +488,7 @@ vendor/lib64/libqmi_encdec.so
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
+product/framework/qti-telephony-common.jar|1ea7ad0dc92185239d6524473ee574f1cf2d68e6
 product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
@@ -606,7 +606,7 @@ vendor/radio/qcril_database/upgrade/6_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
 # Radio - IMS
--product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|54c9f8f49d567082f7d23cee40a54515162dbf90
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
