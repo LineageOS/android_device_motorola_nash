@@ -4,8 +4,6 @@ allow hal_camera_default mnt_vendor_file:file rw_file_perms;
 allow hal_camera_default sysfs_healthd:dir r_dir_perms;
 allow hal_camera_default sysfs_healthd:file r_file_perms;
 
-allow hal_camera_default persist_camera_prop:property_service set;
-
 binder_call(hal_camera_default, hal_configstore_default)
 binder_call(hal_camera_default, hal_graphics_allocator_default)
 
