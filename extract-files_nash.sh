@@ -97,11 +97,6 @@ function blob_fixup() {
         sed -i "s/system input/system uhid input/" "${2}"
         ;;
 
-    # Load libmot_gpu_mapper shim (file is pinned to prevent adding the same dependency multiple times if vendor blobs are regenerated)
-    # vendor/lib/libmot_gpu_mapper.so)
-        # patchelf --add-needed libgpu_mapper_shim.so "${2}"
-        # ;;
-
     esac
 }
 
