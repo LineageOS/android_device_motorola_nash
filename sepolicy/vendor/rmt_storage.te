@@ -15,3 +15,4 @@ allow rmt_storage mnt_vendor_file:dir search;
 allow rmt_storage persist_rfs_file:file { getattr open read write };
 
 get_prop(rmt_storage, moto_boot_prop)
+allow rmt_storage sysfs_data:file r_file_perms;

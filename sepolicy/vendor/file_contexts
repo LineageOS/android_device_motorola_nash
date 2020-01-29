@@ -40,9 +40,9 @@
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
 
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
-/data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
-/data/fpc/socket                                              u:object_r:fingerprint_socket:s0
-/data/.fps(/.*)?                                              u:object_r:fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0
+/data/vendor/fpc/socket                                       u:object_r:fingerprint_socket:s0
+/data/vendor/.fps(/.*)?                                       u:object_r:fingerprint_data_file:s0
 
 # Input devices
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0

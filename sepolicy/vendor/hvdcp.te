@@ -1,0 +1,4 @@
+allow hvdcp sysfs_batteryinfo:dir r_dir_perms;
+allow hvdcp sysfs_batteryinfo:file r_file_perms;
+allow hvdcp sysfs_healthd:dir r_dir_perms;
+allow hvdcp sysfs_healthd:file r_file_perms;
