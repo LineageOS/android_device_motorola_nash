@@ -8,3 +8,7 @@ allow init fsg_firmware_file:filesystem  { relabelfrom  mount };
 allow init vendor_file:file execute;
 #TODO: This should not be needed and needs to be cleaned.
 allow fsg_firmware_file self:filesystem associate;
+
+allow init bt_firmware_file:filesystem getattr;
+allow init firmware_file:filesystem getattr;
+allow init fsg_firmware_file:filesystem getattr;
