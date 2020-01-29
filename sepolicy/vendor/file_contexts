@@ -45,8 +45,8 @@
 /data/vendor/.fps(/.*)?                                       u:object_r:fingerprint_data_file:s0
 
 # Input devices
-/(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
-/(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
+/(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:vendor_idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:vendor_keylayout_file:s0
 
 /(vendor|system/vendor)/bin/wlan_carrier_bin.sh            u:object_r:init_wifi_exec:s0
 
