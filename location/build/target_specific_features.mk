@@ -1,7 +1,6 @@
 GNSS_CFLAGS := \
     -Werror \
     -Wno-error=unused-parameter \
-    -Wno-error=format \
     -Wno-error=macro-redefined \
     -Wno-error=reorder \
     -Wno-error=missing-braces \
@@ -15,3 +14,5 @@ GNSS_CFLAGS := \
     -Wno-error=tautological-compare \
     -Wno-error=switch \
     -Wno-error=date-time
+
+LOCAL_SANITIZE := integer_overflow
