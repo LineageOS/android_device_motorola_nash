@@ -1030,10 +1030,6 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
 
-on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
-
 #service vendor.drmdiag /vendor/bin/drmdiagapp
 #    class late_start
 #     user root
