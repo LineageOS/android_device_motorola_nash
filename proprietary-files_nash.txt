@@ -1,3 +1,11 @@
+# Audio (Prebuilt Audio HAL)
+vendor/lib/hw/audio.primary.msm8998.so
+vendor/lib/libmotaudioutils.so
+vendor/lib/libtinyalsa.so
+vendor/lib/libtinycompress.so
+vendor/lib/libtinycompress_vendor.so
+vendor/lib/libunshorten.so
+
 # Audio - ACDB
 vendor/etc/acdbdata/Bluetooth_cal.acdb
 vendor/etc/acdbdata/General_cal.acdb
@@ -6,6 +14,12 @@ vendor/etc/acdbdata/Handset_cal.acdb
 vendor/etc/acdbdata/Hdmi_cal.acdb
 vendor/etc/acdbdata/Headset_cal.acdb
 vendor/etc/acdbdata/Speaker_cal.acdb
+
+# Audio - Soundfx
+vendor/lib/soundfx/libspeakerbundle.so
+vendor/lib/soundfx/libmmieffectswrapper.so
+vendor/lib/libeqservicebridge.so
+vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
 
 # Camera
 -app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
