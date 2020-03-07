@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "426835ee_82edb675",
+        "filename": "properties.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-03-07T18:04:40Z",
+      "side": 1,
+      "message": "isn\u0027t this set by SuW?",
+      "revId": "49228aac5f575616a7184febeb2a1e0aea9c0bc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
