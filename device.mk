@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Vendor Properties
--include $(LOCAL_PATH)/vendor_prop.mk
+# Properties
+-include $(LOCAL_PATH)/properties.mk
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
