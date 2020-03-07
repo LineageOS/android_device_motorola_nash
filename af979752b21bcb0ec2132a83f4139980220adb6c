@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4894a483_1153d02e",
+        "filename": "properties.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-03-07T21:25:29Z",
+      "side": 0,
+      "message": "uh, didn\u0027t our NFC crash on loop without this? maybe the 17.1 HAL is a little different?",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 138,
+        "endChar": 19
+      },
+      "revId": "af979752b21bcb0ec2132a83f4139980220adb6c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e1773c5_6d02b801",
+        "filename": "properties.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-03-07T21:25:29Z",
+      "side": 0,
+      "message": "we don\u0027t need these?",
+      "range": {
+        "startLine": 191,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 37
+      },
+      "revId": "af979752b21bcb0ec2132a83f4139980220adb6c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
