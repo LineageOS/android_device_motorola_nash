@@ -34,6 +34,24 @@
       "revId": "49228aac5f575616a7184febeb2a1e0aea9c0bc3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce137dcc_36583478",
+        "filename": "properties.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-03-08T21:20:03Z",
+      "side": 1,
+      "message": "Including the important upstream here: Coral (https://github.com/LineageOS/android_device_google_coral/blob/1d0f0d0638e95ce0ab96e4613a063aa2f7c2c0ba/product.prop)",
+      "parentUuid": "38b8ba9c_53ddbb46",
+      "revId": "49228aac5f575616a7184febeb2a1e0aea9c0bc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
