@@ -33,3 +33,6 @@ allow hal_fingerprint_fpc self:netlink_socket create_socket_perms_no_ioctl;
 
 allow hal_fingerprint_fpc fingerprintd_data_file:dir rw_dir_perms;
 allow hal_fingerprint_fpc fingerprintd_data_file:file create_file_perms;
+allow hal_fingerprint_fpc tee_device:chr_file getattr;
+
+get_prop(hal_fingerprint_fpc, vendor_fp_prop)
