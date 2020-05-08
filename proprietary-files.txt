@@ -1,3 +1,5 @@
+### All blobs from this list, unless pinned and noted as otherwise,
+##  are from lake_retail 10 QPWS30.61-21-3
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
@@ -493,6 +495,7 @@ vendor/lib64/libqmi_encdec.so
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/qcrilhook.jar
+# From jasmine QKQ1.190910.002.V11.0.4.0.QDIMIXM
 product/framework/qti-telephony-common.jar|96154b2576114dd566bbc99a2d9af612de8849df
 product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
@@ -611,6 +614,7 @@ vendor/radio/qcril_database/upgrade/6_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
 # Radio - IMS
+# From jasmine QKQ1.190910.002.V11.0.4.0.QDIMIXM
 -product/priv-app/ims/ims.apk|75854565f032706bd2c91bef682f1ab71a1db870
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
