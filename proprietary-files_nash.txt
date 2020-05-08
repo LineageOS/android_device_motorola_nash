@@ -1,3 +1,7 @@
+### All blobs from this list, are from nash_retail PPX29.159-24,
+## unless pinned, in which case it is either marked as from nash_retail
+## OPXS27.109-34-21, or edited in some way, see `git log` for more info
+## on those.
 # Audio (Prebuilt Audio HAL)
 vendor/lib/hw/audio.primary.msm8998.so|046e78cf733f94936e82473f18b495240ba3850a
 vendor/lib/libmotaudioutils.so
