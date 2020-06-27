@@ -83,7 +83,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl \
-    libbt-vendor
+    libbt-vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2560
