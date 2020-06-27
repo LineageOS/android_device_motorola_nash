@@ -94,4 +94,8 @@ void vendor_load_properties()
     property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+
+    // Setting carrier prop
+    std::string carrier = GetProperty("ro.boot.carrier", "unknown");
+    property_set("ro.carrier", carrier);
 }
