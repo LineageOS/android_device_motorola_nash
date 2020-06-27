@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2501926a_16950248",
+        "filename": "init/init_nash.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-06-27T21:18:36Z",
+      "side": 1,
+      "message": "if we are doing this why are we inheriting dalvik configs at all?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 1
+      },
+      "revId": "a671dd769907f8432e4cb1baafbbbf8b8ea7ab7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
