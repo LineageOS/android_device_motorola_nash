@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02e5d0f2_f8bcf911",
+        "filename": "init/init_nash.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-06-27T21:18:52Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 4
+      },
+      "revId": "5d2a81351f779e6e0abfa2ab43ee8d6dc9453d29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
