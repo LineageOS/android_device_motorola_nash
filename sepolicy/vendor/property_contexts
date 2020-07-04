@@ -30,3 +30,5 @@ ro.vendor.carrier          u:object_r:moto_boot_prop:s0
 ro.vendor.boot.cid         u:object_r:moto_boot_prop:s0
 ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
 ro.vendor.zygote           u:object_r:moto_boot_prop:s0
+
+gpu.stats.debug.level      u:object_r:vendor_display_prop:s0
