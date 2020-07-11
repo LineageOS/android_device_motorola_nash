@@ -109,10 +109,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1
 
-# Dex Pre-Opt
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cp_system_other_odex=1
-
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.hwc_set_default_colormode=true \
