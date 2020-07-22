@@ -1,0 +1,22 @@
+type init_mods, domain;
+type init_mods_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init_mods)
+
+allow init_mods sysfs_greybus:dir r_dir_perms;
+allow init_mods sysfs_greybus:{ file lnk_file } rw_file_perms;
+allow init_mods vendor_file:file execute_no_trans;
+allow init_mods vendor_shell_exec:file r_file_perms;
+allow init_mods vendor_toolbox_exec:file rx_file_perms;
+
+# execute grep
+allow init_mods vendor_file:file execute_no_trans;
+
+# Allow insmod
+allow init_mods kernel:key search;
+allow init_mods self:capability sys_module;
+allow init_mods vendor_file:dir r_dir_perms;
+allow init_mods vendor_file:system module_load;
+
+set_prop(init_mods, ctl_default_prop)
+

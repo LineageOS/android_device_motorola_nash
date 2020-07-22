@@ -1,0 +1,11 @@
+# ModService
+typeattribute mods_app coredomain;
+
+app_domain(mods_app)
+net_domain(mods_app)
+
+allow mods_app {
+    app_api_service
+    system_api_service
+}:service_manager find;
+

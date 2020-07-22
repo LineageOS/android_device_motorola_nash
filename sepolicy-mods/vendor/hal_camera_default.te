@@ -1,0 +1,2 @@
+allow hal_camera_default sysfs_mods_camd:dir r_dir_perms;
+allow hal_camera_default sysfs_mods_camd:file r_file_perms;

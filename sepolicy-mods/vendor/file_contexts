@@ -1,5 +1,6 @@
-/(vendor|system/vendor)/bin/init\.gbmods\.sh                u:object_r:init-gbmods-sh_exec:s0
-/(vendor|system/vendor)/bin/mods_camd                       u:object_r:mods_exec:s0
+/(vendor|system/vendor)/bin/init\.gbmods\.sh                u:object_r:init_mods_exec:s0
+/(vendor|system/vendor)/bin/mods_camd                       u:object_r:mods_camd_exec:s0
+/(vendor|system/vendor)/lib(64)?/libmodmanager\.so          u:object_r:same_process_hal_file:s0
 
 # Greybus (Mods)
 /data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
