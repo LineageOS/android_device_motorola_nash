@@ -84,6 +84,10 @@ on init
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+    # Change ownership for Pocketmode feature
+    chown system system /sys/devices/soc/soc:fpc_fpc1020/proximity_state
+    chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/proximity_state
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice

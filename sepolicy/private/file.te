@@ -1,0 +1,2 @@
+# Fingerprint
+type sysfs_fps_proximity, sysfs_type, fs_type;
