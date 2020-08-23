@@ -8,6 +8,7 @@
 /sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
 /sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
+/sys/module/dwc3_msm/parameters/usb_priority                u:object_r:sysfs_greybus:s0
 /sys/module/uvcvideo/parameters/quirks                      u:object_r:sysfs_greybus:s0
 
 /dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
