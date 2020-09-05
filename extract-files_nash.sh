@@ -34,14 +34,6 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-function blob_fixup() {
-    case "${1}" in
-    vendor/lib/hw/audio.primary.msm8998.so)
-        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
-        ;;
-    esac
-}
-
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 SECTION=
@@ -103,6 +95,11 @@ function blob_fixup() {
     # Add uhid group for fingerprint service
     vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
         sed -i "s/system input/system uhid input/" "${2}"
+        ;;
+
+    # Patch libcutils dep into audio HAL
+    vendor/lib/hw/audio.primary.msm8998.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
         ;;
 
     esac
