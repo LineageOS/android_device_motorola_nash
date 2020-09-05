@@ -2,3 +2,5 @@ get_prop(system_app, persist_camera_prop);
 
 # Allow PocketMode to work
 allow system_app sysfs_fps_proximity:file rw_file_perms;
+
+binder_call(system_app, storaged)
