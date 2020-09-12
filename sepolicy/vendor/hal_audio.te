@@ -1,0 +1,2 @@
+allow hal_audio cutback_socket:sock_file write;
+allow hal_audio fwk_sensor_hwservice:hwservice_manager find;

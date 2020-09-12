@@ -14,3 +14,10 @@ get_prop(rild, vendor_radio_prop)
 
 binder_call(rild, qtidataservices_app)
 get_prop(rild, vendor_pd_locater_dbg_prop)
+
+allow rild cutback_data_file:dir { ioctl read write getattr lock add_name remove_name search open };
+allow rild cutback_data_file:file { ioctl read write getattr lock append map open };
+allow rild cutback_data_file:sock_file { create write unlink };
+allow rild cutback_socket:sock_file { ioctl read write create getattr setattr lock append map unlink rename open };
+
+allow rild input_device:chr_file { ioctl open read };

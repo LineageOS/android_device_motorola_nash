@@ -19,6 +19,11 @@ type sysfs_wifi, sysfs_type, fs_type;
 # charge_only_mode
 type chargeonly_data_file, file_type, data_file_type;
 
+# Cutback
+type cutback_data_file, file_type, data_file_type;
+type cutback_socket, file_type;
+type audio_cutback_data_file, file_type, data_file_type;
+
 # Healthd
 type sysfs_healthd, fs_type, sysfs_type, mlstrustedobject;
 
