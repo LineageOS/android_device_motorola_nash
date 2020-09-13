@@ -450,6 +450,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcutils_shim \
     libqsapshim
 
 # Soong
