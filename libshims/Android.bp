@@ -18,4 +18,22 @@ cc_library_shared {
         "libcamera_metadata",
     ],
     include_dirs: ["system/media/private/camera/include"],
+
+cc_library {
+    name: "libmemset_shim",
+    vendor: true,
+    target: {
+        android_arm: {
+            srcs: ["memset32.S"],
+            sanitize: {
+                misc_undefined: ["integer"],
+            },
+        },
+        android_arm64: {
+            srcs: ["android_memset.S"],
+            sanitize: {
+                misc_undefined: ["integer"],
+            },
+        },
+    },
 }

@@ -56,6 +56,10 @@ function blob_fixup() {
         product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
             sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
             ;;
+        # memset shim
+        vendor/bin/charge_only_mode)
+            "${PATCHELF}" --add-needed "libmemset_shim.so" "${2}"
+            ;;
         # Load wrapped shim
         vendor/lib64/libmdmcutback.so)
             sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
