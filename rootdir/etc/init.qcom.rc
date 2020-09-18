@@ -149,7 +149,7 @@ on post-fs
     mkdir /mnt/vendor/persist/factory/wlan 0755 oem_5004 oem_5004
     mkdir /mnt/vendor/persist/factory/regulatory 0755 oem_5004 system
     mkdir /mnt/vendor/persist/public 0755 oem_5004 oem_5004
-    mkdir /mnt/vendor/persist/public/atvc 0770 oem_5012 shell
+    mkdir /mnt/vendor/persist/public/atvc 0770 oem_5012 root
     mkdir /mnt/vendor/persist/public/battd 0755 oem_5000 oem_5004
     mkdir /mnt/vendor/persist/public/att_dm 0775 radio oem_5004
     mkdir /mnt/vendor/persist/public/hiddenmenu 0775 radio oem_5004
@@ -161,7 +161,7 @@ on post-fs
     mkdir /mnt/vendor/persist/bt 0755 oem_5004 bluetooth
     mkdir /mnt/vendor/persist/wmdrm 0775 oem_5003 oem_5003
     mkdir /mnt/vendor/persist/public/usc_dm 0775 radio radio
-    mkdir /mnt/vendor/persist/sds 0700 vold vold
+    mkdir /mnt/vendor/persist/sds 0700 root root
     mkdir /mnt/vendor/persist/rfs/msm/mpss/mot_rfs 0771 oem_2903 system
 
     # This dir is used to store any OMA(both DM and CP) files in persist partition
@@ -956,7 +956,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     oneshot
 
 service vendor.wigignpt /vendor/bin/wigignpt
-    interface vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner default
     class hal
     socket wigig/wigignpt stream 660 system wifi
     user system
