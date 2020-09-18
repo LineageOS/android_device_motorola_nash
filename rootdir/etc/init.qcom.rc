@@ -956,7 +956,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     oneshot
 
 service vendor.wigignpt /vendor/bin/wigignpt
-    interface vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner default
     class hal
     socket wigig/wigignpt stream 660 system wifi
     user system
