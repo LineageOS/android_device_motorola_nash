@@ -462,6 +462,9 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
