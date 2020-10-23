@@ -1,0 +1,2 @@
+# MotSpeakerHelperProximity
+binder_call(system_server, hal_audio_default)
