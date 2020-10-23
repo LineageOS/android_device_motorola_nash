@@ -1,2 +1,9 @@
 allow hal_audio_default sysfs_greybus:dir { search };
 allow hal_audio_default sysfs_greybus:file { getattr open read };
+
+# MotSpeakerHelperProximity
+allow hal_audio_default fwk_sensor_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, system_server)
+
+# Speaker calibration
+r_dir_file(hal_audio_default, mnt_vendor_file)
