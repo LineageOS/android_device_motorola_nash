@@ -6,6 +6,12 @@
 /dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
 /sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
 /sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
+/sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_ap(/.*)?                         u:object_r:sysfs_greybus:s0
+/sys/devices/soc/0.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc(/.*)?                              u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:mod_uart/uart_stats                    u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
 /sys/module/uvcvideo/parameters/quirks                      u:object_r:sysfs_greybus:s0
 
