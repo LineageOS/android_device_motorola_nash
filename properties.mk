@@ -311,3 +311,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# Zygote
+PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10
