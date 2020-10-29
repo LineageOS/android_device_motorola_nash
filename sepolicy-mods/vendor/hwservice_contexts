@@ -1,2 +1,3 @@
 com.motorola.mod::IModManager                               u:object_r:hal_modmanager_hwservice:s0
+motorola.hardware.vibrator::IMotVibrator                    u:object_r:hal_motvibrator_hwservice:s0
 
