@@ -28,6 +28,8 @@ vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
 # Camera
 -app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 etc/permissions/privapp-permissions-com.motorola.camera2.xml
+etc/permissions/com.motorola.motosignature.xml
+-framework/com.motorola.motosignature.jar
 -priv-app/MotCamera2/MotCamera2.apk;PRESIGNED
 vendor/bin/vl53l1_daemon
 vendor/lib64/libvl53l1_daemon.so
