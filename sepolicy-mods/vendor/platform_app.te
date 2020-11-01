@@ -6,8 +6,6 @@ allow platform_app mods_app:unix_stream_socket connectto;
 allow platform_app sysfs_vibrator:file rw_file_perms;
 allow platform_app sysfs_usb_supply:dir search;
 allow platform_app sysfs_vibrator:dir { search r_dir_perms };
-allow platform_app greybus_raw_device:chr_file rw_file_perms;
-allow platform_app greybus_raw_device:dir rw_dir_perms;
 allow platform_app input_device:chr_file getattr;
 allow platform_app input_device:dir search;
 allow platform_app self:netlink_kobject_uevent_socket { bind create read setopt };
