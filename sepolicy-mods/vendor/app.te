@@ -1,0 +1,2 @@
+# Give appdomain access to /dev/gbraw*
+allow appdomain greybus_raw_device:chr_file { getattr read write };
