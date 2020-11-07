@@ -30,7 +30,7 @@ vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
 etc/permissions/privapp-permissions-com.motorola.camera2.xml
 etc/permissions/com.motorola.motosignature.xml
 -framework/com.motorola.motosignature.jar
--priv-app/MotCamera2/MotCamera2.apk;PRESIGNED
+-priv-app/MotCamera2/MotCamera2.apk;PRESIGNED|d247e06512e7c0f1ffe9c8ba836a62520ee63492
 vendor/bin/vl53l1_daemon
 vendor/lib64/libvl53l1_daemon.so
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
