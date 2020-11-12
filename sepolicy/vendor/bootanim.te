@@ -1,0 +1,2 @@
+allow bootanim sysfs_kgsl:dir search;
+get_prop(bootanim, userspace_reboot_exported_prop)
