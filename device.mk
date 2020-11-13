@@ -99,7 +99,8 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     libbson.vendor \
     libxml2 \
-    libcamera_metadata_helper
+    libcamera_metadata_helper \
+    vendor.qti.hardware.camera.device@1.0:64
 
 # Cgroup and task_profiles
 PRODUCT_COPY_FILES += \
