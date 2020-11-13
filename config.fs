@@ -4,15 +4,12 @@ value:2901
 [AID_VENDOR_QDSS]
 value:2902
 
-[AID_VENDOR_QCOM_DIAG]
-value:2950
-
 [AID_VENDOR_RFS]
-value:2951
+value:2903
 
 [AID_VENDOR_RFS_SHARED]
-value:2952
- 
+value:2904
+
 [AID_VENDOR_ADPL_ODL]
 value:2905
 
