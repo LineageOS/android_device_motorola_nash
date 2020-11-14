@@ -1,6 +1,6 @@
 runtime_resource_overlay {
     name: "TetheringConfigOverlay",
-    theme: "TetheringConfigOverlay",
+    resource_dirs: ["res"],
     sdk_version: "current",
-    product_specific: true
+    proprietary: true
 }
