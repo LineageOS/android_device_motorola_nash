@@ -1,1 +1,2 @@
 r_dir_file(kernel, debugfs_wlan)
+allow kernel self:socket create;
