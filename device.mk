@@ -157,12 +157,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-# VR
-PRODUCT_PACKAGES += \
-    android.hardware.vr@1.0-impl \
-    android.hardware.vr@1.0-service \
-    vr.msm8998
-
 # Inherit from motorola msm8998-common
 TARGET_MOTO_PLATFORM := msm8998
 $(call inherit-product, device/motorola/msm8998-common/common.mk)
