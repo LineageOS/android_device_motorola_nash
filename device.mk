@@ -46,11 +46,8 @@ PRODUCT_AAPT_PREF_CONFIG := 560dpi
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
-    android.hardware.audio.effect@2.0-service \
     android.hardware.audio.service \
     android.hardware.soundtrigger@2.2-impl \
-    android.hardware.soundtrigger@2.2-service \
-    audiod \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -132,18 +129,14 @@ $(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8998 \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
-    libgenlock \
-    liboverlay \
     libqdMetaData.system \
     libvulkan \
     libtinyxml
@@ -203,7 +196,6 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -220,11 +212,6 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libipanat \
     liboffloadhal
-
-# IPv6 tethering
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -284,8 +271,6 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     SecureElement \
     NfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
     Tag
 
 PRODUCT_COPY_FILES += \
@@ -336,7 +321,6 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -467,10 +451,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
-# TextClassifier
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-service.nash
@@ -522,10 +502,8 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 # Update this list with what each blob is actually for
-# libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
 # libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
-    libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
     vndk_package
@@ -539,21 +517,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    dhcpcd.conf \
     hostapd \
     hostapd_cli \
-    libnl_2 \
     libnl \
     libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     libwpa_client \
     wificond \
-    wifilogd \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wpa_supplicant_wcn.conf
 
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
