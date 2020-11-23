@@ -72,6 +72,14 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libcutils_shim.so" "$LIBCUTILS_SHIM"
             done
             ;;
+        # Move telephony related packages to /system_ext
+        system_ext/etc/permissions/telephonyservice.xml)
+            sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
+            ;;
+        # Move telephony related packages to /system_ext
+        system_ext/etc/permissions/qcrilhook.xml)
+            sed -i 's|/product/framework/qcrilhook.jar|/system_ext/framework/qcrilhook.jar|g' "${2}"
+            ;;
     esac
 }
 
