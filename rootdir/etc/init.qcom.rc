@@ -1363,6 +1363,7 @@ on property:vendor.gpu.available_frequencies=*
 
 # Override the AOSP sensor HAL service definition to add input group access
 service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+    override
     class hal
     user system
     group system input uhid wakelock
