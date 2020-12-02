@@ -3,3 +3,6 @@ com.fingerprints.extension::IFingerprintCalibration                             
 com.fingerprints.extension::IFingerprintEngineering                               u:object_r:fpc_extension_service:s0
 com.fingerprints.extension::IFingerprintNavigation                                u:object_r:fpc_extension_service:s0
 com.fingerprints.extension::IFingerprintSensorTest                                u:object_r:fpc_extension_service:s0
+
+vendor.nxp.nxpese::INxpEse                                                        u:object_r:nxpese_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                                        u:object_r:nxpnfc_hwservice:s0
