@@ -101,8 +101,8 @@ public class SensorHelper {
 
     public void registerListener(Sensor sensor, SensorEventListener listener) {
         if (!mSensorManager.registerListener(listener, sensor,
-            SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000)) {
-            throw new RuntimeException("Failed to registerListener for sensor " + sensor);
+                SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000)) {
+            Log.e(TAG, "Failed to registerListener for sensor " + sensor);
         }
     }
 
@@ -113,7 +113,7 @@ public class SensorHelper {
     /* TriggerSensor */
     public void requestTriggerSensor(Sensor sensor, TriggerEventListener listener) {
         if (!mSensorManager.requestTriggerSensor(listener, sensor)) {
-            throw new RuntimeException("Failed to requestTriggerSensor for sensor " + sensor);
+            Log.e(TAG, "Failed to requestTriggerSensor for sensor " + sensor);
         }
     }
 
