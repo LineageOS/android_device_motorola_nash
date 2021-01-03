@@ -247,10 +247,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.nash
 
-# LineageActions
-PRODUCT_PACKAGES += \
-    LineageActions
-
 # Lineage hardware
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.nash
@@ -272,6 +268,10 @@ PRODUCT_COPY_FILES += \
 # ModService
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/whitelist_modservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/whitelist_modservice.xml
+
+# MotoActions
+PRODUCT_PACKAGES += \
+    MotoActions
 
 # Network
 PRODUCT_PACKAGES += \

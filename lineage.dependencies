@@ -8,6 +8,10 @@
     "target_path": "external/bson"
   },
   {
+    "repository": "android_hardware_motorola",
+    "target_path": "hardware/motorola"
+  },
+  {
     "repository": "android_system_qcom",
     "target_path": "system/qcom"
   }
