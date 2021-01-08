@@ -535,10 +535,6 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     vndk_package
 
-# Weaver
-PRODUCT_PACKAGES += \
-    android.hardware.weaver@1.0
-
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
