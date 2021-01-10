@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7cd245ab_ef51a7f5",
+        "filename": "rro_overlays/WifiOverlay/res/values/config.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-10T19:25:12Z",
+      "side": 1,
+      "message": "not in og change",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 89
+      },
+      "revId": "3ff9c266ce54c0d0ba3f70a98eeb19ca018dfb70",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
