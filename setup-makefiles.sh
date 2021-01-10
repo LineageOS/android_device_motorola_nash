@@ -33,5 +33,22 @@ write_headers
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 write_makefiles "${MY_DIR}/proprietary-files_nash.txt" true
 
+echo "include \$(CLEAR_VARS)" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_MODULE := MotCamera2" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_MODULE_OWNER := motorola" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_SRC_FILES := proprietary/priv-app/MotCamera2/MotCamera2.apk" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_CERTIFICATE := PRESIGNED" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_MODULE_TAGS := optional" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_MODULE_CLASS := APPS" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_DEX_PREOPT := false" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_MODULE_SUFFIX := .apk" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_PRIVILEGED_MODULE := true" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_REPLACE_PREBUILT_APK_INSTALLED := \$(LOCAL_PATH)/\$(LOCAL_SRC_FILES)" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "LOCAL_NO_STANDARD_LIBRARIES := true" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+echo "include \$(BUILD_PREBUILT)" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+printf "\n" >> "${ANDROID_ROOT}/vendor/motorola/nash/Android.mk"
+sed -i '/MotCamera2/,+10d' "${ANDROID_ROOT}/vendor/motorola/nash/Android.bp"
+
+
 # Finish
 write_footers
