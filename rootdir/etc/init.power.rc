@@ -257,7 +257,6 @@ on charger
     trigger early-fs
     trigger fs
     trigger post-fs
-    trigger late-fs
     trigger post-fs-data
     trigger moto-charger
     class_stop main
