@@ -257,7 +257,26 @@ on charger
     trigger early-fs
     trigger fs
     trigger post-fs
-    trigger late-fs
+
+    # Ensure that tracefs has the correct permissions.
+    # This does not work correctly if it is called in post-fs.
+    chmod 0755 /sys/kernel/tracing
+    chmod 0755 /sys/kernel/debug/tracing
+
+    # HALs required before storage encryption can get unlocked (FBE/FDE)
+    class_start early_hal
+    
+    # Enable boot time fs tuning (ro like system is on sde/f, rw like userdata is on sdb)
+    write /sys/block/sdb/queue/iostats 0
+    write /sys/block/sdb/queue/nr_requests 256
+    write /sys/block/sdb/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/sdf/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/iostats 0
+    write /sys/block/sde/queue/nr_requests 256
+    write /sys/block/sda/queue/read_ahead_kb 2048
+
     trigger post-fs-data
     trigger moto-charger
     class_stop main
