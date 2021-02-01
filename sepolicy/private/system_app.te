@@ -5,3 +5,6 @@ allow system_app sysfs_fps_proximity:file rw_file_perms;
 
 binder_call(system_app, storaged)
 binder_call(system_app, system_suspend)
+
+add_hwservice(system_app, default_android_hwservice)
+add_hwservice(system_app, hidl_base_hwservice)
