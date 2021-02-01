@@ -1,0 +1,2 @@
+allow ueventd mba_debug_dev:blk_file r_file_perms;
+
