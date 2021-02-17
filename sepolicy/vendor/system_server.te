@@ -8,3 +8,8 @@ binder_call(system_server,rild);
 get_prop(system_server, exported_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
+
+allow system_server zygote:process { getpgid };
+allow system_server app_zygote:process { getpgid };
+allow system_server sysfs_kgsl:lnk_file { read };
+allow system_server media_rw_data_file:dir { setattr };
