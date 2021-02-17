@@ -244,6 +244,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.dev_ori=true \
     ro.vendor.sensors.sta_detect=true \
     ro.vendor.sensors.mot_detect=true
+    ro.vendor.sensors.smd=false
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
