@@ -19,7 +19,7 @@
      Also prevents ModService from hanging up in the
      background. -->
 <config>
-    <allow-in-power-save package="package:com.motorola.modservice" />
-    <allow-in-power-save package="package:com.motorola.modservice.fmwkwrapper" />
-    <allow-in-power-save package="package:com.motorola.projectormod" />
+    <allow-in-power-save package="com.motorola.modservice" />
+    <allow-in-power-save package="com.motorola.modservice.fmwkwrapper" />
+    <allow-in-power-save package="com.motorola.projectormod" />
 </config>
