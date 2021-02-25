@@ -261,6 +261,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions
 
+# Motorola Health
+PRODUCT_PACKAGES += \
+    motorola.hardware.health@1.0.vendor
+
 # Network
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0

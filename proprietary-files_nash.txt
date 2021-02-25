@@ -376,7 +376,6 @@ vendor/lib64/com.fingerprints.extension@1.0.so
 # Moto Health
 vendor/bin/hw/motorola.hardware.health@1.0-service
 vendor/etc/init/motorola.hardware.health@1.0-service.rc
-vendor/lib64/motorola.hardware.health@1.0.so
 
 # Moto Mods
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|52c72bfeae28e2a0b1e96b4336bc6c01ee95bdea
