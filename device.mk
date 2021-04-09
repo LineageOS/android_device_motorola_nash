@@ -14,8 +14,16 @@
 # limitations under the License.
 #
 
+<<<<<<< HEAD
 # Properties
 -include $(LOCAL_PATH)/properties.mk
+=======
+# Inherit from jf-common
+$(call inherit-product, device/samsung/jf-common/jf-common.mk)
+
+# Also get non-open-source specific aspects
+$(call inherit-product, vendor/samsung/jfltespr/jfltespr-vendor.mk)
+>>>>>>> 9c846cfd3... jfltespr: Don't let builds complete without vendor tree
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
