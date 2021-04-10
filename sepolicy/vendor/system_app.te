@@ -15,3 +15,5 @@ dontaudit system_app {
   apex_service
   system_suspend_control_service
 }:service_manager find;
+
+binder_call(system_app, hal_power_default)
