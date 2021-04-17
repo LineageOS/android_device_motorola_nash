@@ -35,9 +35,9 @@ PRODUCT_AAPT_PREF_CONFIG := 560dpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@5.0-impl \
-    android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio@4.0-impl \
     android.hardware.audio.service \
+    android.hardware.audio.effect@4.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
     audio.r_submix.default \
