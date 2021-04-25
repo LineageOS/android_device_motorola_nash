@@ -6,4 +6,4 @@ init_daemon_domain(perfd)
 allow perfd sysfs_msm_perf:dir r_dir_perms;
 allow perfd sysfs_msm_perf:file rw_file_perms;
 
-get_prop(perfd, freq_prop)
+get_prop(perfd, vendor_freq_prop)
