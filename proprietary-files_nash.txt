@@ -27,7 +27,7 @@ vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
 
 # Camera
 -app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
-etc/permissions/privapp-permissions-com.motorola.camera2.xml
+etc/permissions/privapp-permissions-com.motorola.camera2.xml|b3e4990688f06856233397f25a42cfd83d505850
 etc/permissions/com.motorola.motosignature.xml
 -framework/com.motorola.motosignature.jar
 -priv-app/MotCamera2/MotCamera2.apk;PRESIGNED|260df16116b0e9f5144114454533bcda35f669e7
@@ -386,7 +386,7 @@ etc/permissions/com.motorola.mod.xml
 etc/permissions/com.motorola.mod_config.xml
 etc/permissions/com.motorola.mod_v2.xml
 etc/permissions/com.motorola.moto.permissions.xml
-etc/permissions/privapp-permissions-com.motorola.modservice.xml|
+etc/permissions/privapp-permissions-com.motorola.modservice.xml|69ebb12342c2fd286ba03d8de93d8c6da1e054b4
 etc/permissions/privapp-permissions-com.motorola.projectormod.xml
 etc/sysconfig/hiddenapi-whitelist-com.motorola.camera2.xml
 etc/sysconfig/hiddenapi-whitelist-com.motorola.modservice.xml
