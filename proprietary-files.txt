@@ -1,5 +1,5 @@
 ### All blobs from this list, unless pinned and noted as otherwise,
-##  are from lake_retail 10 QPWS30.61-21-3
+##  are from lake_retail 10 QPWS30.61-21-18-7 fac4a release-keys
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
