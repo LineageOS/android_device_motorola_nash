@@ -1,4 +1,4 @@
-### All blobs from this list, are from nash_retail PPX29.159-24,
+### All blobs from this list, are from nash_retail PPX29.159-24 e78f1 release-keys,
 ## unless pinned, in which case it is either marked as from nash_retail
 ## OPXS27.109-34-21, or edited in some way, see `git log` for more info
 ## on those.
