@@ -29,7 +29,7 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed libcamera_client.so libcamera_metadata_helper.so "${2}"
             ;;
         # Correct mods gid
-        etc/permissions/com.motorola.mod.xml)
+        system/etc/permissions/com.motorola.mod.xml)
             sed -i "s|vendor_mod|oem_5020|g" "${2}"
             ;;
         # Add uhid group for fingerprint service
@@ -41,7 +41,7 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
         # Fix missing symbol _ZN7android8hardware7details17gBnConstructorMapE
-        lib64/motorola.hardware.vibrator@1.0.so)
+        system/lib64/motorola.hardware.vibrator@1.0.so)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/lib64/com.fingerprints.extension@1.0.so)
