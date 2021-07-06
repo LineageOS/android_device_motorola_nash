@@ -1,2 +1,3 @@
 allow bootanim sysfs_kgsl:dir search;
 get_prop(bootanim, userspace_reboot_exported_prop)
+allow bootanim system_data_file:dir { read };
