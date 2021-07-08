@@ -12,3 +12,13 @@ allow fsg_firmware_file self:filesystem associate;
 allow init bt_firmware_file:filesystem getattr;
 allow init firmware_file:filesystem getattr;
 allow init fsg_firmware_file:filesystem getattr;
+
+allow init vendor_data_file:file lock;
+allow init hal_audio_default:binder call;
+allow init platform_app:binder call;
+allow init hal_perf_default:binder call;
+allow init sysfs_healthd:file setattr;
+allow init hal_graphics_composer_default:binder call;
+allow init same_process_hal_file:file execute;
+allow init servicemanager:binder { call transfer };
+allow init sysfs_healthd:file setattr;
