@@ -24,9 +24,10 @@ TARGET_BOOTANIMATION_HALF_RES := true
 BUILD_FINGERPRINT := motorola/nash_retail/nash:9/PPX29.159-24/e78f1:user/release-keys
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := nash
-PRODUCT_MANUFACTURER := Motorola
-PRODUCT_MODEL := Moto Z2
+PRODUCT_MANUFACTURER := motorola
+PRODUCT_MODEL := Moto Z (2)
 PRODUCT_NAME := lineage_nash
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=nash
+        PRODUCT_NAME=nash_retail \
+        PRIVATE_BUILD_DESC="nash-user 9 PPX29.159-24 e78f1 release-keys"
