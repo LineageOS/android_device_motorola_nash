@@ -152,7 +152,6 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 # Wifi
 # Read by other flags later, so ignore alphabetization.
 BOARD_WLAN_DEVICE := qcwcn
-BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
