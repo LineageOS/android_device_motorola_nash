@@ -1,0 +1,43 @@
+From 9e5559da1c6f90a61a90c97235c9b2de0cdff49a Mon Sep 17 00:00:00 2001
+From: Ihor Ivanov <toulmee@gmail.com>
+Date: Sun, 26 Sep 2021 20:12:54 +0300
+Subject: [PATCH] camera2: Add methods for backward compatibility
+
+libmcf-jni.so library (which is proprietary blob required
+for MotCamera2) looks for methods with these exact signatures,
+but signatures of these methods was changed in Android 11.
+
+This change returns these methods that makes MotCamera2
+fully-functional on Android 11.
+
+Change-Id: Ib9a701f6d8ebb783c52666e34e7539faba5cb99f
+---
+ .../hardware/camera2/impl/CameraMetadataNative.java  | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/core/java/android/hardware/camera2/impl/CameraMetadataNative.java b/core/java/android/hardware/camera2/impl/CameraMetadataNative.java
+index 9d4ab0b08e9..db3919ae6a3 100644
+--- a/core/java/android/hardware/camera2/impl/CameraMetadataNative.java
++++ b/core/java/android/hardware/camera2/impl/CameraMetadataNative.java
+@@ -1866,6 +1866,18 @@ public class CameraMetadataNative implements Parcelable {
+         nativeWriteValues(tag, src, mMetadataPtr);
+     }
+ 
++    public synchronized byte[] nativeReadValues(int tag) {
++        return nativeReadValues(tag, mMetadataPtr);
++    }
++
++    public synchronized int nativeGetTypeFromTagLocal(int tag) {
++        return nativeGetTypeFromTagLocal(mMetadataPtr, tag);
++    }
++
++    public synchronized int nativeGetTagFromKeyLocal(String keyname) {
++        return nativeGetTagFromKeyLocal(mMetadataPtr, keyname);
++    }
++
+     /**
+      * <p>Returns a byte[] of data corresponding to this tag. Use a wrapped bytebuffer to unserialize
+      * the data properly.</p>
+-- 
+2.30.2
+
