@@ -33,5 +33,7 @@ write_headers
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 write_makefiles "${MY_DIR}/proprietary-files_nash.txt" true
 
+sed -i '/name: "MotCamera2",/a \\toverrides: ["Camera2"],' "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/Android.bp"
+
 # Finish
 write_footers
