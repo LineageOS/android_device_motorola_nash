@@ -1,6 +1,0 @@
-runtime_resource_overlay {
-    name: "TetheringConfigOverlay",
-    resource_dirs: ["res"],
-    sdk_version: "current",
-    proprietary: true
-}
