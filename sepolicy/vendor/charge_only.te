@@ -38,7 +38,3 @@ allow charge_only input_device:dir r_dir_perms;
 allow charge_only input_device:chr_file r_file_perms;
 allow charge_only tty_device:chr_file rw_file_perms;
 allow charge_only proc_sysrq:file rw_file_perms;
-
-# charger needs to tell init to continue the boot
-# process when running in charger mode.
-set_prop(charge_only, system_prop)
