@@ -1,0 +1,15 @@
+allow qti_init_shell { sysfs_input sysfs_sensor }:file { rw_file_perms setattr };
+allow qti_init_shell persist_camera_file:file r_file_perms;
+allow qti_init_shell kmsg_device:chr_file { open write };
+allow qti_init_shell sysfs:file { rw_file_perms setattr };
+allow qti_init_shell vendor_radio_data_file:dir rw_dir_perms;
+allow qti_init_shell vendor_radio_data_file:file create_file_perms;
+
+get_prop(qti_init_shell, moto_boot_prop)
+get_prop(qti_init_shell, vendor_radio_prop)
+
+# Silence qemu.hw.mainkeys denial that we don't need
+dontaudit qti_init_shell default_prop:property_service set;
+
+# Silence DAC denials
+dontaudit qti_init_shell self:capability { dac_override dac_read_search };

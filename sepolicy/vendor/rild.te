@@ -3,7 +3,6 @@ allow rild persist_mdm_file:dir search;
 allow rild persist_mdm_file:file rw_file_perms;
 allow rild fwk_sensor_hwservice:hwservice_manager find;
 allow rild system_server:binder { call transfer };
-allow rild vendor_default_prop:property_service set;
 allow rild proc:file r_file_perms;
 allow rild input_device:dir { open read };
 allow rild vendor_radio_data_file:dir rw_dir_perms;
