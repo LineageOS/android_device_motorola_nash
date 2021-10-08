@@ -101,6 +101,11 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libcamera_metadata_helper
 
+# Cgroup and task_profiles
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
