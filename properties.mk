@@ -109,8 +109,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
+# Color Mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.display.enable_default_color_mode=1
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.hwc_set_default_colormode=true \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
