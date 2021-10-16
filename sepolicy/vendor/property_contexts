@@ -32,3 +32,22 @@ ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
 ro.vendor.zygote           u:object_r:moto_boot_prop:s0
 
 gpu.stats.debug.level      u:object_r:vendor_display_prop:s0
+
+# Camera
+camera. u:object_r:camera_prop:s0
+cameradaemon. u:object_r:camera_prop:s0
+cpp.set.clock u:object_r:camera_prop:s0
+disable.cpp.power.collapse u:object_r:camera_prop:s0
+persist.aec.luma_target u:object_r:camera_prop:s0
+persist.bokeh. u:object_r:camera_prop:s0
+persist.cam. u:object_r:camera_prop:s0
+persist.camera. u:object_r:camera_prop:s0
+persist.enable.max.pending.buf u:object_r:camera_prop:s0
+persist.partial.skip u:object_r:camera_prop:s0
+ro.camera. u:object_r:camera_prop:s0
+ro.product.nopefacturer u:object_r:camera_prop:s0
+
+# Radio
+ro.build.motfactory u:object_r:vendor_radio_prop:s0
+ro.build.vendorprefix u:object_r:vendor_radio_prop:s0
+ro.fsg-id u:object_r:vendor_radio_prop:s0
