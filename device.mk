@@ -416,7 +416,6 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcutils_shim \
     libmemset_shim \
     libqsapshim
 
