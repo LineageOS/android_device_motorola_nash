@@ -29,5 +29,5 @@ PRODUCT_MODEL := Moto Z (2)
 PRODUCT_NAME := lineage_nash
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=nash_retail \
+        PRODUCT_NAME=nash \
         PRIVATE_BUILD_DESC="nash-user 9 PPX29.159-24 e78f1 release-keys"
