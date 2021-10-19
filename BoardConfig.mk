@@ -132,7 +132,7 @@ CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Vendor Security Patch Level
-VENDOR_SECURITY_PATCH := 2021-08-01
+VENDOR_SECURITY_PATCH := 2019-07-01
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
