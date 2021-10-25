@@ -254,6 +254,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=Qualcomm \
     ro.soc.model=MSM8998
 
+# Skia
+# (b/183612348): Enable skia reduceOpsTaskSplitting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    renderthread.skia.reduceopstasksplitting=true
+
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
