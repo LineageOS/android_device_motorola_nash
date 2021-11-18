@@ -1,9 +1,10 @@
-allow vendor_qti_init_shell { sysfs_input sysfs_sensor }:file { rw_file_perms setattr };
+allow vendor_qti_init_shell sysfs_sensor:file { rw_file_perms setattr };
 allow vendor_qti_init_shell persist_camera_file:file r_file_perms;
 allow vendor_qti_init_shell kmsg_device:chr_file { open write };
 allow vendor_qti_init_shell sysfs:file { rw_file_perms setattr };
 allow vendor_qti_init_shell vendor_radio_data_file:dir rw_dir_perms;
 allow vendor_qti_init_shell vendor_radio_data_file:file create_file_perms;
+allow vendor_qti_init_shell system_data_file:file { getattr read };
 
 get_prop(vendor_qti_init_shell, moto_boot_prop)
 get_prop(vendor_qti_init_shell, vendor_radio_prop)

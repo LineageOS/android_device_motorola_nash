@@ -1,1 +1,5 @@
 allow hal_graphics_composer_default sysfs_graphics:file r_file_perms;
+dontaudit hal_graphics_composer_default diag_device:chr_file rw_file_perms;
+allow hal_graphics_composer_default init:unix_stream_socket connectto;
+allow hal_graphics_composer_default property_socket:sock_file write;
+allow hal_graphics_composer_default vendor_display_prop:property_service set;
