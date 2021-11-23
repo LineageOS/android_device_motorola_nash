@@ -1018,18 +1018,6 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
 
-#service vendor.drmdiag /vendor/bin/drmdiagapp
-#    class late_start
-#     user root
-#     disabled
-#     oneshot
-
-#on property:drmdiag.load=1
-#    start vendor.drmdiag
-
-#on property:drmdiag.load=0
-#    stop vendor.drmdiag
-
 service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
@@ -1109,17 +1097,6 @@ service vendor.ssr_diag /system/vendor/bin/ssr_diag
     user system
     group system
     disabled
-
-service hvdcp /system/bin/hvdcp
-    class core
-    user root
-    disabled
-
-on property:persist.usb.hvdcp.detect=true
-    start hvdcp
-
-on property:persist.usb.hvdcp.detect=false
-    stop hvdcp
 
 service vendor.vm_bms /vendor/bin/vm_bms
     user root
