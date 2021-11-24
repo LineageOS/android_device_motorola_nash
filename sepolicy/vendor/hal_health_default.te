@@ -17,3 +17,5 @@ allow hal_health_default sysfs_greybus:dir search;
 allow hal_health_default sysfs_greybus:file rw_file_perms;
 allow hal_health_default sysfs_healthd:dir r_dir_perms;
 allow hal_health_default sysfs_healthd:file rw_file_perms;
+
+dontaudit hal_health_default system_prop:file read;
