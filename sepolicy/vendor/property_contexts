@@ -46,6 +46,7 @@ persist.enable.max.pending.buf u:object_r:camera_prop:s0
 persist.partial.skip u:object_r:camera_prop:s0
 ro.camera. u:object_r:camera_prop:s0
 ro.product.nopefacturer u:object_r:camera_prop:s0
+vendor.camera.skip_unconfigure.packagelist u:object_r:camera_prop:s0
 
 # Radio
 ro.build.motfactory u:object_r:vendor_radio_prop:s0
