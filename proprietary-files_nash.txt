@@ -524,12 +524,10 @@ vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|caf41edb56703651fabd8d
 
 # Sensors
 vendor/bin/sensors.qti
-vendor/lib/hw/activity_recognition.msm8998.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.msm8998.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensor_calibrate.so
