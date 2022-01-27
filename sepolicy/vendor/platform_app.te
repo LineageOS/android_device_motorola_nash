@@ -3,5 +3,5 @@ allow platform_app sysfs_kgsl:file { getattr open read };
 allow platform_app sysfs_healthd:dir { search r_dir_perms };
 allow platform_app sysfs_healthd:file rw_file_perms;
 allow platform_app sysfs_kgsl:lnk_file read;
-allow platform_app retaildemo_prop:file { open read };
+allow platform_app retaildemo_prop:file { open read getattr };
 get_prop(platform_app, moto_boot_prop)
