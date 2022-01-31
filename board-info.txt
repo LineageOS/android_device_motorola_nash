@@ -1,0 +1,1 @@
+require board=msm8998|nash|nash_retail
