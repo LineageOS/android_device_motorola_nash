@@ -119,7 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=0 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    debug.sf.disable_backpressure=1 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196610 \
     ro.hardware.egl=adreno \
