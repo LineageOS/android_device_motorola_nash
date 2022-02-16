@@ -42,6 +42,7 @@ TARGET_SCREEN_DENSITY := 560
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/nash_manifest.xml
 
 # Kernel
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1da4000.ufshc
 TARGET_KERNEL_CONFIG := lineageos_nash_defconfig
 
 # Partitions
