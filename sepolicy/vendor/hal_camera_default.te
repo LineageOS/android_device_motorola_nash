@@ -15,5 +15,6 @@ allow hal_camera_default camera_data_file:file create_file_perms;
 get_prop(hal_camera_default, moto_boot_prop)
 get_prop(hal_camera_default, bootanim_system_prop)
 get_prop(hal_camera_default, camera_prop)
+get_prop(hal_camera_default, boot_status_prop)
 dontaudit hal_camera_default persist_debug_prop:file read;
 dontaudit hal_camera_default radio_prop:file read;
