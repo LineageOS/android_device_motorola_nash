@@ -1,0 +1,1 @@
+dontaudit gmscore_app camera_prop:file read;
