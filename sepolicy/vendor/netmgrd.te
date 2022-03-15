@@ -1,3 +1,5 @@
 allow netmgrd property_socket:sock_file write;
 
 allow netmgrd diag_device:chr_file {open read write };
+
+get_prop(netmgrd, vendor_radio_prop)
