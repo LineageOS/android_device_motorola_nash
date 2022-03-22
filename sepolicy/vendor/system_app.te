@@ -20,3 +20,4 @@ binder_call(system_app, hal_power_default)
 
 allow system_app hal_power_default:binder call;
 allow system_app proc_vmallocinfo:file { getattr open read };
+allow system_app sysfs_fingerprint:file rw_file_perms;
