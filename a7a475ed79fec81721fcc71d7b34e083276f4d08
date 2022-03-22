@@ -16,6 +16,24 @@
       "message": "https://android.googlesource.com/device/google/sunfish/+/54c03725d644f2e13b432b2519a45290b17eb44e\nIts enabled globally",
       "revId": "a7a475ed79fec81721fcc71d7b34e083276f4d08",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88f38a4a_91c905c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-03-22T20:35:55Z",
+      "side": 1,
+      "message": "if it really were, as per s build system reqs, it would error out, no?\n\nWhich it does not.",
+      "parentUuid": "224d4088_1f32d31f",
+      "revId": "a7a475ed79fec81721fcc71d7b34e083276f4d08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
