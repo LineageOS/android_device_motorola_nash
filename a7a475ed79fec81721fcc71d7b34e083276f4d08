@@ -34,6 +34,24 @@
       "parentUuid": "224d4088_1f32d31f",
       "revId": "a7a475ed79fec81721fcc71d7b34e083276f4d08",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae492bde_dce30445",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14734
+      },
+      "writtenOn": "2022-03-23T14:02:43Z",
+      "side": 1,
+      "message": "https://android.googlesource.com/platform/frameworks/base/+/108be5bcfad8fdd6474cc88b15f9a21419667189%5E%21/#F1",
+      "parentUuid": "88f38a4a_91c905c7",
+      "revId": "a7a475ed79fec81721fcc71d7b34e083276f4d08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
