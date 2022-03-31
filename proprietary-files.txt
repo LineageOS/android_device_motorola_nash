@@ -25,16 +25,16 @@ vendor/lib/libeqservicebridge.so
 vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
 
 # Camera
--app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
+app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 etc/permissions/com.motorola.motosignature.xml
 etc/permissions/privapp-permissions-com.motorola.camera2.xml|b3e4990688f06856233397f25a42cfd83d505850
 etc/zaf/zaf_imx386.json:vendor/etc/zaf/zaf_imx386.json
 etc/zaf/zaf_imx386_mono.json:vendor/etc/zaf/zaf_imx386_mono.json
 etc/zaf/zaf_mot_s5k2l7sa.json:vendor/etc/zaf/zaf_mot_s5k2l7sa.json
--framework/com.motorola.motosignature.jar
+framework/com.motorola.motosignature.jar
 lib/lib_mot_app6_metadata.so:vendor/lib/lib_mot_app6_metadata.so
 lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
--priv-app/MotCamera2/MotCamera2.apk
+priv-app/MotCamera2/MotCamera2.apk
 vendor/bin/vl53l1_daemon
 vendor/lib/hw/camera.msm8998.so|ad3df43cd644e97fb373ce27dd05d07544d7b6c4|af37a533ba1f4203b7e1b4db1ec9cc3ad47dea75
 vendor/lib/hw/libSonyDefocus.so
@@ -495,9 +495,9 @@ etc/sysconfig/hiddenapi-whitelist-com.motorola.projectormod.xml
 lib64/libmodhw.so
 lib64/libvibratorhw.so
 lib64/motorola.hardware.vibrator@1.0.so
--priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|52c72bfeae28e2a0b1e96b4336bc6c01ee95bdea
--priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk|a5b97c14a102bcf06988e9044013829c89636161
--priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk
+priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|52c72bfeae28e2a0b1e96b4336bc6c01ee95bdea
+priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk|a5b97c14a102bcf06988e9044013829c89636161
+priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk
 vendor/bin/mods_camd
 vendor/lib/com.motorola.mod@1.0_vendor.so
 vendor/lib/libmodmanager.so
