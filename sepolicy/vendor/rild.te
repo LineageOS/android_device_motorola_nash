@@ -10,6 +10,7 @@ allow rild vendor_radio_data_file:file rw_file_perms;
 allow rild vendor_radio_data_file:sock_file create_file_perms;
 get_prop(rild, moto_boot_prop)
 get_prop(rild, vendor_radio_prop)
+get_prop(rild, wifi_hal_prop)
 
 binder_call(rild, qtidataservices_app)
 get_prop(rild, vendor_pd_locater_dbg_prop)
