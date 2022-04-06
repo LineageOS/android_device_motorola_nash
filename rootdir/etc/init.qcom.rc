@@ -94,7 +94,7 @@ on fs
     symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
     symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
 
-    mount_all /vendor/etc/fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom
 
     # for android.hardware.health@2.0-service.nash cycle count backup
     mkdir /persist/battery 0700 system system
@@ -105,23 +105,6 @@ on fs
     mkdir /mnt/vendor/persist/bms 0700 root system
     # Reloading context for NPI uses /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
-
-on late-fs
-    # Start services for bootanim
-    start servicemanager
-    start surfaceflinger
-    start bootanim
-
-    start vendor.configstore-hal
-    start vendor.gralloc-2-0
-
-    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
-    # In such case, init won't responce the property_set from hwservicemanager and then
-    # cause services for bootanim not running.
-    wait_for_prop hwservicemanager.ready true
-
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
