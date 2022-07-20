@@ -91,12 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    bt.max.hfpclient.connections=1 \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-    vendor.qcom.bluetooth.soc=cherokee \
-    ro.bluetooth.a4wp=false
-
-PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.asha.central.enabled=true \
     bluetooth.profile.a2dp.source.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true \
@@ -117,8 +111,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.pbap.server.enabled=true \
     bluetooth.profile.sap.server.enabled=true \
     bluetooth.profile.tbs.server.enabled=true \
-    bluetooth.profile.vc.server.enabled=true
-
+    bluetooth.profile.vc.server.enabled=true \
+    bt.max.hfpclient.connections=1 \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
+    vendor.qcom.bluetooth.soc=cherokee \
+    ro.bluetooth.a4wp=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
