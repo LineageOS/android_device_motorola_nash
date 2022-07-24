@@ -2,10 +2,6 @@
 # Properties for nash
 #
 
-# Adoptable Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.crypto.volume.options=aes-256-xts
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
