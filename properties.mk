@@ -300,7 +300,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config.extra=none
+    persist.sys.usb.config.extra=none \
+    vendor.usb.rmnet.func.name=rmnet_bam \
+    vendor.usb.rmnet.inst.name=rmnet \
+    vendor.usb.rndis.func.name=rndis_bam
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
