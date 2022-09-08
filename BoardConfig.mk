@@ -46,6 +46,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/nash_manifest.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_nash_defconfig
+TARGET_KERNEL_LLVM_BINUTILS := false
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
