@@ -15,3 +15,5 @@ allow thermal-engine sysfs_devfreq:dir r_dir_perms;
 allow thermal-engine sysfs_devfreq:file rw_file_perms;
 r_dir_file(thermal-engine sysfs_socinfo)
 dontaudit thermal-engine sysfs:file read;
+
+get_prop(thermal-engine, vendor_radio_prop)
