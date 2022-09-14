@@ -26,7 +26,7 @@
     <item name="bluetooth.controller.idle">1.714</item>
     <item name="bluetooth.controller.rx">48.149</item>
     <item name="bluetooth.controller.tx">136.899</item>
-    <item name="bluetooth.controller.voltage">402.242</item>
+    <item name="bluetooth.controller.voltage">3300</item>
     <array name="cpu.clusters.cores">
         <value>4</value>
         <value>4</value>
