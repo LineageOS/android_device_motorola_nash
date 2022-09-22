@@ -243,6 +243,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
 
+# Rescue party
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.sys.disable_rescue=true
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.dev_ori=false \
