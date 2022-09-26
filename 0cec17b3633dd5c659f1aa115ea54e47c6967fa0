@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c22200d6_8f90b8e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-09-26T19:50:11Z",
+      "side": 1,
+      "message": "yeah, they changed the defaults for GSI, it was enabled true in 19.1",
+      "revId": "0cec17b3633dd5c659f1aa115ea54e47c6967fa0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
