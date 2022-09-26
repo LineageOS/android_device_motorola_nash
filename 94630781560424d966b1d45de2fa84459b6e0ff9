@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec0fcc03_dfa969b5",
+        "filename": "overlay/frameworks/base/core/res/res/xml/power_profile.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-09-26T19:33:55Z",
+      "side": 1,
+      "message": "line-endings, it is what it is",
+      "revId": "94630781560424d966b1d45de2fa84459b6e0ff9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
