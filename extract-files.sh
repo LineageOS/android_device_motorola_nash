@@ -64,7 +64,7 @@ function blob_fixup() {
             ;;
         # Load wrapped shim
         vendor/lib64/libmdmcutback.so)
-            sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
+             "${PATCHELF}" --replace-needed "libqsap_sdk.so" "libqsap_shim.so" "${2}"
             ;;
         # Fix missing symbols
         vendor/lib64/libril-qc-hal-qmi.so)
