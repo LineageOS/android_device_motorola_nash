@@ -300,13 +300,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config.extra=none \
-    vendor.usb.dpl.inst.name=dpl \
-    vendor.usb.qdss.inst.name=qdss_sw \
-    vendor.usb.rmnet.func.name=gsi \
-    vendor.usb.rmnet.inst.name=rmnet \
-    vendor.usb.rndis.func.name=gsi \
-    vendor.usb.use_gadget_hal=0
+    persist.sys.usb.config.extra=none
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
