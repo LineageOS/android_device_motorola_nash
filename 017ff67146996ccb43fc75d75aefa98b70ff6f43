@@ -16,6 +16,23 @@
       "message": "ugh, I hate this but we may need to.\n\ngrebes module gets exec format errors when LLVM_IAS is on. fun.",
       "revId": "017ff67146996ccb43fc75d75aefa98b70ff6f43",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8990b62_f3aec6b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-10-04T16:26:53Z",
+      "side": 1,
+      "message": "hate this, but greybus module gets mangled beyond repair on build with LLVM - defs a \"revert-me-later\"",
+      "revId": "017ff67146996ccb43fc75d75aefa98b70ff6f43",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
