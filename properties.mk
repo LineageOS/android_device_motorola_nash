@@ -178,6 +178,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase.yt=android-motorola
 
 # Radio
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.telephony.block_binder_thread_on_incoming_calls=false
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
@@ -220,7 +223,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.net.doxlat=true \
     persist.vendor.qc.sub.rdump.on=1 \
     persist.vendor.qc.sub.rdump.max=3 \
-    ro.telephony.block_binder_thread_on_incoming_calls=false \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=10,10 \
     ro.vendor.telephony.default_network=10,10 \
