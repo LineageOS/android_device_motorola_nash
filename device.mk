@@ -439,7 +439,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libgui_shim \
     libgui_shim_vendor \
-    libcutils_shim \
+    libcutils_shim.vendor \
     libmemset_shim \
     libqsap_shim
 
