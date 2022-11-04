@@ -253,7 +253,8 @@ PRODUCT_COPY_FILES += \
 
 # MotoActions
 PRODUCT_PACKAGES += \
-    MotoActions
+    MotoActions \
+    MotoCommonOverlay
 
 # Motorola Health
 PRODUCT_PACKAGES += \
