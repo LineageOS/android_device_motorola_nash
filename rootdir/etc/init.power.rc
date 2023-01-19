@@ -237,9 +237,6 @@ on property:sys.boot_completed=1
     write /proc/sys/kernel/sched_restrict_cluster_spill 1
     write /proc/sys/kernel/sched_prefer_sync_wakee_to_waker 1
 
-    # Set BFQ I/O scheduler
-    setprop sys.io.scheduler "bfq"
-
     # UFS health
     chmod 755 /sys/kernel/debug/ufshcd0
     chown 644 /sys/kernel/debug/ufshcd0/err_state
