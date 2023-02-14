@@ -62,7 +62,6 @@ TARGET_BOARD_PLATFORM := msm8998
 
 # Camera
 MALLOC_SVELTE_FOR_LIBC32 := true
-USE_CAMERA_STUB := true
 
 # Display
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
