@@ -410,6 +410,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor
 
 # Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
 
@@ -452,7 +453,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-service.nash
@@ -464,13 +464,6 @@ PRODUCT_PACKAGES += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-
-# TWRP
-ifeq ($(WITH_TWRP),true)
-$(call inherit-product, $(LOCAL_PATH)/twrp/twrp.mk)
-else
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-endif
 
 # Update Engine
 PRODUCT_PACKAGES += \
@@ -528,4 +521,4 @@ PRODUCT_PACKAGES += \
     wificond \
     WifiOverlay \
     wpa_supplicant \
-    wpa_supplicant.conf \
+    wpa_supplicant.conf
