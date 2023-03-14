@@ -14,10 +14,6 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# AptX
-lib64/libaptXHD_encoder.so
-lib64/libaptX_encoder.so
-
 # Audio
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
