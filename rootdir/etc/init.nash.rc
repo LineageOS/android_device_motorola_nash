@@ -24,30 +24,43 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-import /vendor/etc/init/hw/init.${ro.boot.hardware.sku}.rc
 
 on init
-    setprop ro.vendor.fsg-id ${ro.boot.fsg-id}
-    setprop ro.vendor.hw.dualsim ${ro.boot.dualsim}
-    setprop ro.vendor.hw.device ${ro.boot.device}
-    setprop ro.vendor.hw.radio ${ro.boot.radio}
-    setprop ro.vendor.hw.hwrev ${ro.boot.hwrev}
-    setprop ro.vendor.hw.revision ${ro.boot.revision}
-    setprop ro.vendor.carrier ${ro.boot.carrier}
-    setprop ro.vendor.boot.cid ${ro.boot.cid}
-    setprop ro.vendor.boot.radio ${ro.boot.radio}
-    setprop ro.vendor.boot.hwrev ${ro.boot.hwrev}
-    setprop ro.vendor.boot.powerup_reason ${ro.boot.powerup_reason}
-    setprop ro.vendor.boot.bl_state ${ro.boot.bl_state}
-    setprop ro.vendor.boot.serialno ${ro.boot.serialno}
-    setprop ro.vendor.zygote ${ro.zygote}
-    setprop ro.vendor.hw.fps true
+    # Laser focus sensor
+    chmod 0660 /sys/devices/virtual/laser/stmvl53l1/enable_sar
+    chown root system /sys/devices/virtual/laser/stmvl53l1/enable_sar
+
     setprop ro.vendor.hw.imager 12MP
 
-# Translate MMI property in order to keep consistent with QCOM
-on property:ro.vendor.hw.dualsim=true
-    setprop persist.radio.multisim.config dsds
+on fs
+    # for android.hardware.health@2.0-service.nash cycle count backup
+    mkdir /persist/battery 0700 system system
 
-on property:ro.vendor.hw.dualsim=false
-    setprop persist.radio.multisim.config ""
+on post-fs-data
+    # Greybus firmware directory
+    mkdir /data/gbfirmware 0770 oem_5020 oem_5020
 
+    # Start Loading mods kernel modules
+    start vendor.gbmodinstall
+
+on moto-charger
+    setprop ro.board.platform msm8998
+
+service vendor.gbmodinstall /vendor/bin/init.gbmods.sh
+    user root
+    oneshot
+    disabled
+
+service vendor.mods_camd /vendor/bin/mods_camd
+    class late_start
+    user camera
+    group camera system inet input graphics
+    disabled
+    rlimit 14 4 4
+    ioprio rt 4
+
+service vendor.vl53l1_daemon /vendor/bin/vl53l1_daemon
+    class late_start
+    user root
+    group root
+    socket vl53l1_daemon stream 660 root system

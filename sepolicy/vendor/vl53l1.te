@@ -1,9 +1,0 @@
-type vl53l1, domain;
-type vl53l1_exec, exec_type, vendor_file_type, file_type;
-
-init_daemon_domain(vl53l1)
-
-allow vl53l1 self:netlink_socket { create bind };
-allow vl53l1 sysfs_sensor:dir r_dir_perms;
-allow vl53l1 self:netlink_socket { read write };
-allow vl53l1 sysfs_sensor:file { open read };
