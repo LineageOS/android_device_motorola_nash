@@ -6,78 +6,65 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-set -e
-
-DEVICE=nash
-VENDOR=motorola
-
-# Load extract_utils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
-
-ANDROID_ROOT="${MY_DIR}/../../.."
-
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
-if [ ! -f "${HELPER}" ]; then
-    echo "Unable to find helper script at ${HELPER}"
-    exit 1
-fi
-source "${HELPER}"
-
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
-
-KANG=
-SECTION=
-
-while [ "$1" != "" ]; do
-    case "$1" in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-        -k | --kang)            KANG="--kang"
-                                ;;
-        -s | --section )        shift
-                                SECTION="$1"
-                                CLEAN_VENDOR=false
-                                ;;
-        * )                     SRC="$1"
-                                ;;
-    esac
-    shift
-done
-
-if [ -z "${SRC}" ]; then
-    SRC=adb
-fi
-
 function blob_fixup() {
     case "${1}" in
-        # Fix xml version
-        product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-            sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
-            ;;
-        # memset shim
-        vendor/bin/charge_only_mode)
-            for  LIBMEMSET_SHIM in $(grep -L "libmemset_shim.so" "${2}"); do
-                "${PATCHELF}" --add-needed "libmemset_shim.so" "$LIBMEMSET_SHIM"
+        # Fix missing symbols
+        product/lib64/lib-imscamera.so | product/lib64/lib-imsvideocodec.so | product/lib/lib-imscamera.so | product/lib/lib-imsvideocodec.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
             done
             ;;
-        # Load wrapped shim
-        vendor/lib64/libmdmcutback.so)
-             "${PATCHELF}" --replace-needed "libqsap_sdk.so" "libqsap_shim.so" "${2}"
+        # Load libSonyDefocus from vendor
+        vendor/lib/libmmcamera_imx386.so)
+            sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "${2}"
+            ;;
+        # Load ZAF configs from vendor
+        vendor/lib/libzaf_core.so)
+            sed -i "s|/system/etc/zaf|/vendor/etc/zaf|g" "${2}"
+            ;;
+        # Load camera configs from vendor
+        vendor/lib/libmmcamera2_sensor_modules.so)
+            sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+            ;;
+        # Drod unused dependency
+        vendor/lib/libmmcamera_vstab_module.so)
+            "${PATCHELF}" --remove-needed libandroid.so "${2}"
             ;;
         # Fix missing symbols
-        vendor/lib64/libril-qc-hal-qmi.so)
-            for  LIBCUTILS_SHIM in $(grep -L "libcutils_shim.so" "${2}"); do
-                "${PATCHELF}" --add-needed "libcutils_shim.so" "$LIBCUTILS_SHIM"
+        vendor/lib/libmot_gpu_mapper.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim_vendor.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim_vendor.so" "${LIBGUI_SHIM}"
             done
+            ;;
+        # Load camera metadata shim
+        vendor/lib/hw/camera.msm8998.so)
+            "${PATCHELF}" --replace-needed libcamera_client.so libcamera_metadata_helper.so "${2}"
+            ;;
+        # Correct mods gid
+        etc/permissions/com.motorola.mod.xml)
+            sed -i "s|vendor_mod|oem_5020|g" "${2}"
+            ;;
+        # Add uhid group for fingerprint service
+        vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
+            sed -i "s/system input/system uhid input/" "${2}"
+            ;;
+        # Patch libcutils dep into audio HAL
+        vendor/lib/hw/audio.primary.msm8998.so)
+            "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
     esac
 }
 
-# Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+# If we're being sourced by the common script that we called,
+# stop right here. No need to go down the rabbit hole.
+if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
+    return
+fi
 
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
+set -e
 
-"${MY_DIR}/setup-makefiles.sh"
+export DEVICE=nash
+export DEVICE_COMMON=msm8998-common
+export VENDOR=motorola
+
+"./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
