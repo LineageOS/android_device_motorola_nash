@@ -5,6 +5,7 @@ persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
+ro.config.vc_call_vol_steps=8
 vendor.audio.feature.fm.enable=false
 vendor.audio.feature.incall_music.enable=true
 vendor.audio.offload.gapless.enabled=true
