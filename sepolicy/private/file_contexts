@@ -1,2 +1,0 @@
-# Fingerprint
-/sys/devices/soc/soc:fpc_fpc1020/proximity_state                        u:object_r:sysfs_fps_proximity:s0
