@@ -1,6 +1,0 @@
-package com.fingerprints.extension@1.0;
-
-interface IFingerprintNavigation {
-    setNavigation(bool enabled);
-    isEnabled() generates (bool isEnabled);
-};

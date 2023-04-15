@@ -1,0 +1,38 @@
+<manifest version="1.0" type="device" target-level="3">
+    <hal format="hidl">
+        <name>android.hardware.vr</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IVr</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.motorola.mod</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+             <name>IModManager</name>
+             <instance>default</instance>
+         </interface>
+    </hal>
+    <hal format="hidl">
+        <name>motorola.hardware.audio.eqservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IEQServiceHIDL</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>motorola.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMotHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>
