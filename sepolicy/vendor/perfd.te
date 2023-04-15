@@ -1,9 +1,0 @@
-type perfd, domain;
-type perfd_exec, exec_type, vendor_file_type, file_type;
-
-init_daemon_domain(perfd)
-
-allow perfd sysfs_msm_perf:dir r_dir_perms;
-allow perfd sysfs_msm_perf:file rw_file_perms;
-
-get_prop(perfd, vendor_freq_prop)
