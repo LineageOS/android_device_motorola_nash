@@ -1,2 +1,0 @@
-unix_socket_connect(mediacodec, perfd, perfd)
-get_prop(mediacodec, vendor_display_prop)
