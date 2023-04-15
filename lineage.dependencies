@@ -1,14 +1,6 @@
 [
   {
-    "repository": "android_kernel_motorola_msm8998",
-    "target_path": "kernel/motorola/msm8998"
-  },
-  {
-    "repository": "android_external_bson",
-    "target_path": "external/bson"
-  },
-  {
-    "repository": "android_hardware_motorola",
-    "target_path": "hardware/motorola"
+    "repository": "android_device_motorola_msm8998-common",
+    "target_path": "device/motorola/msm8998-common"
   }
 ]
