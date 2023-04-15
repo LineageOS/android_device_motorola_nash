@@ -4,22 +4,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
-# Vendor blobs
-$(call inherit-product, vendor/motorola/nash/nash-vendor.mk)
-
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
-# Disable APEX compression
-# Keep this after including updatable_apex.mk
-PRODUCT_COMPRESSED_APEX := false
-
 # Device
 $(call inherit-product, device/motorola/nash/device.mk)
-
-# Boot Animtion
-TARGET_BOOTANIMATION_HALF_RES := true
-
 
 # Device identifiers
 BUILD_FINGERPRINT := motorola/nash_retail/nash:9/PPX29.159-24/e78f1:user/release-keys
