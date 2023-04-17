@@ -1,9 +1,8 @@
-## All blobs from this list, are from nash_retail PPX29.159-24 e78f1 release-keys,
-## unless pinned, in which case it is either marked as from nash_retail
-## 'OPXS27.109-34-21', or edited in some way, see `git log` for more info on those
+## All proprietary files from this list, unless pinned and noted otherwise,
+## are from nash_retail (PPX29.159-24).
 
 # Audio (Prebuilt Audio HAL)
-vendor/lib/hw/audio.primary.msm8998.so|046e78cf733f94936e82473f18b495240ba3850a
+vendor/lib/hw/audio.primary.msm8998.so|1007e06b43156783d796457b3b46be5a09b6ae9e|c1d66f4f89ec1d0e6744eff1e5336a8ec705b379
 vendor/lib/libmotaudioutils.so
 vendor/lib/libtinyalsa.so
 vendor/lib/libtinycompress.so
@@ -37,7 +36,7 @@ lib/lib_mot_app6_metadata.so:vendor/lib/lib_mot_app6_metadata.so
 lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
 -priv-app/MotCamera2/MotCamera2.apk;OVERRIDES=Aperture
 vendor/bin/vl53l1_daemon
-vendor/lib/hw/camera.msm8998.so
+vendor/lib/hw/camera.msm8998.so|ad3df43cd644e97fb373ce27dd05d07544d7b6c4|af37a533ba1f4203b7e1b4db1ec9cc3ad47dea75
 vendor/lib/hw/libSonyDefocus.so
 vendor/lib/lib_mot_led_calibration.so
 vendor/lib/lib_motsensorlistener.so
@@ -63,7 +62,7 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libremosaic_daemon.so
 vendor/lib/libvideobokeh.so
 vendor/lib/libzaf_algs.so
-vendor/lib/libzaf_core.so
+vendor/lib/libzaf_core.so|c11fc474d8dd9cd8c1ac807996a97716edee3928|ad0a86dca245fd4b5caa634a758b5930f2ebdedf
 vendor/lib64/libvideobokeh.so
 vendor/lib64/libvl53l1_daemon.so
 
@@ -219,7 +218,7 @@ vendor/lib/libmmcamera2_mct_shimlayer.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so|58c3f33190f3d2ab32a867a24b1d87bc9b061457
 vendor/lib/libmmcamera2_q3a_core.so
-vendor/lib/libmmcamera2_sensor_modules.so
+vendor/lib/libmmcamera2_sensor_modules.so|42dfd372f80fb6caa4ca45537d4915bb590f94f6|15813cc7baec1303e5014f6c8df5244ada2c5897
 vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_lib.so
 vendor/lib/libmmcamera2_stats_modules.so
@@ -238,7 +237,7 @@ vendor/lib/libmmcamera_hvx_add_constant.so
 vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
-vendor/lib/libmmcamera_imx386.so
+vendor/lib/libmmcamera_imx386.so|17869c4b4583a830cde4acf19d3fb7fbd599f2fa|7e20ad146d925263db21d9fc6619ea81e2451d9f
 vendor/lib/libmmcamera_imx386_mono.so
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_isp_abf48.so
@@ -310,7 +309,7 @@ vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_ubifocus_lib.so
-vendor/lib/libmmcamera_vstab_module.so
+vendor/lib/libmmcamera_vstab_module.so|6c20d8910a0fc4be36ef80d8e7c78a016213d86e|9494f35f05620f4f27449c7dd45277bbba37dcda
 vendor/lib64/libmmcamera2_frame_algorithm.so
 vendor/lib64/libmmcamera2_is.so
 vendor/lib64/libmmcamera2_stats_algorithm.so
@@ -472,7 +471,7 @@ vendor/lib64/hw/keystore.msm8998.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|ef9ce2e575f6836d9e2b42fd4e54cb7de436e3e3|7574aa1db5fc0a8343cdd8910e62994d650fbe59
 vendor/lib64/com.fingerprints.extension@1.0.so
 
 # Moto Health
@@ -483,7 +482,7 @@ vendor/etc/init/motorola.hardware.health@1.0-service.rc
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 etc/permissions/com.motorola.aov.xml
 etc/permissions/com.motorola.mod.protocols.xml
-etc/permissions/com.motorola.mod.xml
+etc/permissions/com.motorola.mod.xml|15240c6ff5e2068f94f67c0287db8a07a40f5f87|b25e55275b7ecc5f4d46db52c6148fe7c75ff60b
 etc/permissions/com.motorola.mod_config.xml
 etc/permissions/com.motorola.mod_v2.xml
 etc/permissions/com.motorola.moto.permissions.xml
@@ -549,4 +548,4 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/sensors.tof.so
 
 # Thermal
-vendor/etc/thermal-engine.conf|04a67cd64dee5d9718fd2b1f0dd96e3531165313
+etc/thermal-engine-nash.conf:vendor/etc/thermal-engine.conf
