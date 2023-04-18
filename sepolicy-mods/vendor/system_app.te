@@ -1,4 +1,0 @@
-get_prop(system_app, batt_prop)
-set_prop(system_app, batt_prop)
-
-allow system_app hidl_base_hwservice:hwservice_manager add;
