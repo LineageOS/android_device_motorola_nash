@@ -17,6 +17,7 @@
 # Must set these before including common config
 TARGET_BOARD_PLATFORM := msm8998
 TARGET_BOOTLOADER_BOARD_NAME := Nash
+TARGET_SUPPORTS_MOTO_MODS := true
 
 # Inherit from motorola msm8998-common
 include device/motorola/msm8998-common/BoardConfigCommon.mk
@@ -56,8 +57,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-mods/vendor
-PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-mods/private
 
 # inherit from the proprietary version
 include vendor/motorola/nash/BoardConfigVendor.mk
