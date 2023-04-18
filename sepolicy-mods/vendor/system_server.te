@@ -1,3 +1,0 @@
-# MotSpeakerHelperProximity
-binder_call(system_server, hal_audio_default)
-get_prop(system_server, batt_prop)
