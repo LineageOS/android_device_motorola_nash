@@ -8,12 +8,6 @@
 
 function blob_fixup() {
     case "${1}" in
-        # Fix missing symbols
-        product/lib64/lib-imscamera.so | product/lib64/lib-imsvideocodec.so | product/lib/lib-imscamera.so | product/lib/lib-imsvideocodec.so)
-            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
-                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
-            done
-            ;;
         # Load libSonyDefocus from vendor
         vendor/lib/libmmcamera_imx386.so)
             sed -i "s|/system/lib/hw/|/vendor/lib/hw/|g" "${2}"
@@ -26,15 +20,9 @@ function blob_fixup() {
         vendor/lib/libmmcamera2_sensor_modules.so)
             sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
             ;;
-        # Drod unused dependency
+        # Drop unused dependency
         vendor/lib/libmmcamera_vstab_module.so)
             "${PATCHELF}" --remove-needed libandroid.so "${2}"
-            ;;
-        # Fix missing symbols
-        vendor/lib/libmot_gpu_mapper.so)
-            for LIBGUI_SHIM in $(grep -L "libgui_shim_vendor.so" "${2}"); do
-                "${PATCHELF}" --add-needed "libgui_shim_vendor.so" "${LIBGUI_SHIM}"
-            done
             ;;
         # Load camera metadata shim
         vendor/lib/hw/camera.msm8998.so)
