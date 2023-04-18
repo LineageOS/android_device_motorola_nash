@@ -1,4 +1,0 @@
-type mods_service,                 service_manager_type;
-type mot_app_service,              service_manager_type;
-type mot_panel_service,            service_manager_type;
-type mot_system_service,           service_manager_type;
