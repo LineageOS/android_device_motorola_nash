@@ -403,10 +403,6 @@ vendor/lib/libmodmanager.so
 vendor/lib64/com.motorola.mod@1.0_vendor.so
 vendor/lib64/libmodmanager.so
 
-# Moto Permissions
-etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
-etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
-
 # NFC
 vendor/lib64/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
