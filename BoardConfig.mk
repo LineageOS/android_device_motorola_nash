@@ -35,9 +35,6 @@ AB_OTA_UPDATER := true
 # Audio
 TARGET_EXCLUDES_AUDIOFX := true
 
-# Camera
-MALLOC_SVELTE_FOR_LIBC32 := true
-
 # Display
 TARGET_SCREEN_DENSITY := 560
 
