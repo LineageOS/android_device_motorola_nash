@@ -60,12 +60,6 @@ PRODUCT_PACKAGES += \
     bootctrl.qcom.recovery
 
 # Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
-    $(LOCAL_PATH)/configs/camera/imx386_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx386_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/imx386_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx386_mono_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/mot_ov5695_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov5695_chromatix.xml
-
 PRODUCT_PACKAGES += \
     libcamera_metadata_helper
 
