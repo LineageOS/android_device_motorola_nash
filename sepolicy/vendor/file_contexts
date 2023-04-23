@@ -1,1 +1,3 @@
+/dev/laser                                                    u:object_r:laser_device:s0
+
 /(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
