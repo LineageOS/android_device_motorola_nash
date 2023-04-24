@@ -66,15 +66,6 @@ vendor/lib/libzaf_core.so|c11fc474d8dd9cd8c1ac807996a97716edee3928|ad0a86dca245f
 vendor/lib64/libvideobokeh.so
 vendor/lib64/libvl53l1_daemon.so
 
-# Camera - from Oreo
-vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
-vendor/lib/libmmcamera_chromaflash_lib.so|c52a741a2f38b5581d9ece2e4827f28dc973249d
-vendor/lib/libmmcamera_dummyalgo.so|7792ae493f63a95a148b81d32246afa44328d538
-vendor/lib/libmmcamera_trueportrait_lib.so|22af6adde254c7405eed1d97fd7eea9836e4a99c
-vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
-vendor/lib/libseemore.so|e5fa2e335cc8e1c9e173b2b9794f208143c2fe3b
-vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
-
 # Camera - Chromatix
 vendor/lib/libchromatix_imx386_4k_video_3a.so
 vendor/lib/libchromatix_imx386_common.so
