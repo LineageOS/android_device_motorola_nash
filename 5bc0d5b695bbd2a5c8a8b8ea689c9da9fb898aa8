@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8a2e47a_506b57c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-04-28T06:38:07Z",
+      "side": 1,
+      "message": "kill em, other moto devices ain\u0027t shipping them either",
+      "revId": "5bc0d5b695bbd2a5c8a8b8ea689c9da9fb898aa8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
