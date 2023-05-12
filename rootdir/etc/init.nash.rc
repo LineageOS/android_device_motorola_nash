@@ -25,6 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    setprop ro.boot.product.hardware.sku qcril
+
 on init
     # Laser focus sensor
     chmod 0660 /sys/devices/virtual/laser/stmvl53l1/enable_sar
