@@ -139,7 +139,6 @@ PRODUCT_PACKAGES += \
     init.nash.rc
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/motorola/msm8998-common/rootdir/etc/fstab.qcom
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.nash.rc:root/init.recovery.nash.rc
 
