@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.nash",
+    name: "libgptutils.motorola_nash",
     vendor: true,
     recovery_available: true,
     shared_libs: [
