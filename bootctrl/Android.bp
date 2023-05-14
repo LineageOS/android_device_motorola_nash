@@ -15,14 +15,14 @@
 //
 
 filegroup {
-    name: "bootctrl_hal_src",
+    name: "bootctrl_nash_hal_src",
     srcs: [
         "boot_control.cpp",
     ],
 }
 
 cc_defaults {
-    name: "bootctrl_hal_defaults",
+    name: "bootctrl_nash_hal_defaults",
     proprietary: true,
     recovery_available: true,
     header_libs: [
@@ -41,13 +41,13 @@ cc_defaults {
         "-Werror",
     ],
     srcs: [
-        ":bootctrl_hal_src",
+        ":bootctrl_nash_hal_src",
     ],
 
 }
 
 cc_library {
-    name: "bootctrl.qcom",
-    defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.nash"],
+    name: "bootctrl.msm8998",
+    defaults: ["bootctrl_nash_hal_defaults"],
+    static_libs: ["libgptutils.motorola_nash"],
 }
