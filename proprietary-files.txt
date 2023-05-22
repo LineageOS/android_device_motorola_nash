@@ -512,19 +512,6 @@ etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola
 # NFC
 vendor/lib64/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
-# Perf
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/powerhint.xml
-
 # Postprocessing
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
