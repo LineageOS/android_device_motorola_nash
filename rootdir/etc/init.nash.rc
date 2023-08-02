@@ -32,6 +32,12 @@ on init
 
     setprop ro.vendor.hw.imager 12MP
 
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
+    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
+
 on post-fs-data
     # Greybus firmware directory
     mkdir /data/gbfirmware 0770 oem_5020 oem_5020
