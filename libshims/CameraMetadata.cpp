@@ -270,7 +270,7 @@ status_t CameraMetadata::update(uint32_t tag,
         return res;
     }
     // string.size() doesn't count the null termination character.
-    return updateImpl(tag, (const void*)string.string(), string.size() + 1);
+    return updateImpl(tag, (const void*)string.c_str(), string.size() + 1);
 }
 
 status_t CameraMetadata::update(const camera_metadata_ro_entry &entry) {
