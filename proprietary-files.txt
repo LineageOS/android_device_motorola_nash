@@ -413,8 +413,8 @@ etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola
 vendor/lib64/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
 # Postprocessing
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|f7f8f483359bbc8bdde0ae326b7ec86317e9a9bc
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|f7f8f483359bbc8bdde0ae326b7ec86317e9a9bc
 
 # Sensors
 vendor/bin/sensors.qti
