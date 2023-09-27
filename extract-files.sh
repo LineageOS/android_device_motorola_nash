@@ -40,6 +40,13 @@ function blob_fixup() {
         vendor/lib/hw/audio.primary.msm8998.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
+        # Fix missing symbol _ZN7android8hardware7details17gBnConstructorMapE
+        lib64/motorola.hardware.vibrator@1.0.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
+        vendor/lib64/com.fingerprints.extension@1.0.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
     esac
 }
 
