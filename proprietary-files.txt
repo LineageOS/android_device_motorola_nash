@@ -65,13 +65,13 @@ vendor/lib64/libvideobokeh.so
 vendor/lib64/libvl53l1_daemon.so
 
 # Camera (from Oreo)
-vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
+vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d|8da6ba08dd23993eb248e566e365884c15d03c1b
 vendor/lib/libmmcamera_chromaflash_lib.so|c52a741a2f38b5581d9ece2e4827f28dc973249d
 vendor/lib/libmmcamera_dummyalgo.so|7792ae493f63a95a148b81d32246afa44328d538
 vendor/lib/libmmcamera_trueportrait_lib.so|22af6adde254c7405eed1d97fd7eea9836e4a99c
-vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
-vendor/lib/libseemore.so|e5fa2e335cc8e1c9e173b2b9794f208143c2fe3b
-vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
+vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46|f6898fd52dc9caa7626fd959a2df9faba5dbd529
+vendor/lib/libseemore.so|e5fa2e335cc8e1c9e173b2b9794f208143c2fe3b|46efc66fbf18693635e151b0b4eb22c6c6d360f2
+vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed|36b90ab4196e71972d716149785142b4b9623536
 
 # Camera - Chromatix
 vendor/lib/libchromatix_imx386_4k_video_3a.so
@@ -334,9 +334,11 @@ vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 # Camera - Postprocessing
 vendor/lib/libS5k2l7Pdaf.so
 vendor/lib/libS5k2l7PdafCamif.so
-vendor/lib/libdualcameraddm.so
 vendor/lib/libmm-qcamera.so
-vendor/lib64/libdualcameraddm.so
+
+# Camera - libstdc++ -  Postprocessing
+vendor/lib/libdualcameraddm.so|751af4f60368e75b9f38a05d9976ef721bd72590|afddc84e2766885a7ee5c43d50aa8b04ae913fad
+vendor/lib64/libdualcameraddm.so|bcbd77868ad296e3c238c61c2a189c3fe3c11a21|5c05c8b47a00540e4607696395e3a1f7272cf0c2
 
 # DSP
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
