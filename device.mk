@@ -166,7 +166,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
 PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/oem
-$(call inherit-product, build/target/product/verity.mk)
 
 # VNDK
 PRODUCT_SHIPPING_API_LEVEL := 25
