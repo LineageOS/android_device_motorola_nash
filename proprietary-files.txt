@@ -397,8 +397,8 @@ system/lib64/libmodhw.so
 system/lib64/libvibratorhw.so
 system/lib64/motorola.hardware.vibrator@1.0.so
 system/priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|52c72bfeae28e2a0b1e96b4336bc6c01ee95bdea
-system/priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk|a5b97c14a102bcf06988e9044013829c89636161
-system/priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk
+system/priv-app/ModService/ModService.apk|a5b97c14a102bcf06988e9044013829c89636161
+system/priv-app/ProjectorApp/ProjectorApp.apk
 vendor/bin/mods_camd
 vendor/lib/com.motorola.mod@1.0_vendor.so
 vendor/lib/libmodmanager.so
