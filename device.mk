@@ -93,7 +93,7 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.qcom.oem
+    fstab.qcom
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
