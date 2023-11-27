@@ -130,10 +130,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
-# OPA
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.opa.eligible_device=true
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.mmi.laser.sh \
