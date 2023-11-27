@@ -64,7 +64,7 @@ vendor/lib/libzaf_core.so|c11fc474d8dd9cd8c1ac807996a97716edee3928|ad0a86dca245f
 vendor/lib64/libvideobokeh.so
 vendor/lib64/libvl53l1_daemon.so
 
-# Camera - from Oreo
+# Camera (from Oreo)
 vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
 vendor/lib/libmmcamera_chromaflash_lib.so|c52a741a2f38b5581d9ece2e4827f28dc973249d
 vendor/lib/libmmcamera_dummyalgo.so|7792ae493f63a95a148b81d32246afa44328d538
@@ -203,6 +203,19 @@ vendor/lib/libchromatix_mot_s5k4h8_video_full.so
 vendor/lib/libchromatix_mot_s5k4h8_zsl_preview_3a.so
 vendor/lib/libchromatix_mot_s5k4h8_zsl_video_3a.so
 
+# Camera - Firmware
+system/etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+system/etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+system/etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+system/etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+system/etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+system/etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+system/etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+system/etc/firmware/cpp_firmware_v1_5_1.fw:vendor/firmware/cpp_firmware_v1_5_1.fw
+system/etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+system/etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+system/etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
+
 # Camera - mmcamera
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
@@ -325,19 +338,6 @@ vendor/lib/libdualcameraddm.so
 vendor/lib/libmm-qcamera.so
 vendor/lib64/libdualcameraddm.so
 
-# Camera - Firmware
-system/etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
-system/etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
-system/etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
-system/etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
-system/etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
-system/etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
-system/etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
-system/etc/firmware/cpp_firmware_v1_5_1.fw:vendor/firmware/cpp_firmware_v1_5_1.fw
-system/etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
-system/etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
-system/etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
-
 # DSP
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
@@ -359,6 +359,11 @@ vendor/lib64/librpmb.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 
+# Fingerprint
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|ef9ce2e575f6836d9e2b42fd4e54cb7de436e3e3|7574aa1db5fc0a8343cdd8910e62994d650fbe59
+vendor/lib64/com.fingerprints.extension@1.0.so
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
@@ -370,11 +375,6 @@ vendor/lib64/hw/vulkan.sdm660.so:vendor/lib64/hw/vulkan.msm8998.so|30707b62f541e
 # Keystore
 vendor/lib/hw/keystore.msm8998.so
 vendor/lib64/hw/keystore.msm8998.so
-
-# Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|ef9ce2e575f6836d9e2b42fd4e54cb7de436e3e3|7574aa1db5fc0a8343cdd8910e62994d650fbe59
-vendor/lib64/com.fingerprints.extension@1.0.so
 
 # Moto Health
 vendor/bin/hw/motorola.hardware.health@1.0-service
