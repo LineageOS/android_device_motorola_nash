@@ -25,12 +25,12 @@ include device/motorola/msm8998-common/BoardConfigCommon.mk
 DEVICE_PATH := device/motorola/nash
 
 # A/B updater
+AB_OTA_UPDATER := true
+
 AB_OTA_PARTITIONS += \
     boot \
     system \
     vendor
-
-AB_OTA_UPDATER := true
 
 # Assertations
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
