@@ -437,4 +437,4 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/sensors.tof.so
 
 # Thermal
-system/etc/thermal-engine-nash.conf:vendor/etc/thermal-engine.conf
+system/etc/thermal-engine-nash.conf:vendor/etc/thermal-engine.conf|04a67cd64dee5d9718fd2b1f0dd96e3531165313
