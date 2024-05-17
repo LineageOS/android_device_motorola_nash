@@ -16,6 +16,23 @@
       "message": "i didnt check the other devices, but for nash i would prefer a straight revert: https://review.lineageos.org/c/LineageOS/android_device_motorola_nash/+/392581",
       "revId": "dad08bfd9f6bda9f7e674a99b7ab9a854942dea5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6429c19a_b6d3efdc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2024-05-17T09:43:34Z",
+      "side": 1,
+      "message": "(also, the spdx change is unnecessary here imo)",
+      "revId": "dad08bfd9f6bda9f7e674a99b7ab9a854942dea5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
