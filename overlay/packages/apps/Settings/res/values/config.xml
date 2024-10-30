@@ -24,6 +24,6 @@
     -->
     <integer name="config_fingerprintSensorLocation">1</integer>
 
-    <integer name="config_is_front_facing_fps">true</integer>
+    <bool name="config_is_front_facing_fps">true</bool>
 
 </resources>
