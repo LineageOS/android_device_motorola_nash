@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013,2016, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2013,2016,2020 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -79,8 +79,11 @@ extern "C" {
 #define AB_SLOT_A_SUFFIX                "_a"
 #define AB_SLOT_B_SUFFIX                "_b"
 #define PTN_XBL                         "xbl"
-#define PTN_SWAP_LIST                   PTN_XBL, "rpm", "tz", "hyp", "storsec", "devcfg", "keymaster", "cmnlib", "cmnlib64", "prov", "pmic", "abl", "fsg"
-#define AB_PTN_LIST PTN_SWAP_LIST, "modem", "dsp", "bluetooth", "logo", "boot", "system", "oem", "dto"
+#define PTN_XBL_CFG                     "xbl_config"
+#define PTN_MULTIIMGOEM                 "multiimgoem"
+#define PTN_MULTIIMGQTI                 "multiimgqti"
+#define PTN_SWAP_LIST                   PTN_XBL, PTN_XBL_CFG, PTN_MULTIIMGOEM, PTN_MULTIIMGQTI, "sbl1", "rpm", "tz", "aboot", "abl", "hyp", "lksecapp", "keymaster", "cmnlib", "cmnlib32", "cmnlib64", "pmic", "apdp", "devcfg", "hosd", "keystore", "msadp", "mdtp", "mdtpsecapp", "dsp", "aop", "qupfw", "vbmeta", "dtbo", "imagefv", "ImageFv", "vm-bootsys", "shrm", "cpucp", "uefi", "aop_config", "uefisecapp", "featenabler", "vendor_boot", "recovery", "qweslicstore", "xbl_ramdump", "vbmeta_system"
+#define AB_PTN_LIST PTN_SWAP_LIST, "boot", "system", "vendor", "odm", "modem", "bluetooth"
 #define BOOT_DEV_DIR    "/dev/block/bootdevice/by-name"
 
 /******************************************************************************
