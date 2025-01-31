@@ -1,0 +1,2 @@
+# Display Mirroring Dialog
+persist.sysui.disable_mirroring_confirmation_dialog=true
