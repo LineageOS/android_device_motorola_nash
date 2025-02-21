@@ -89,7 +89,6 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.gbmods.sh \
     init.mmi.laser.sh \
     init.nash.rc
 
