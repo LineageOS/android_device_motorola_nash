@@ -88,9 +88,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml
 
 # Init
-PRODUCT_PACKAGES += \
-    init.mmi.laser.sh \
-    init.nash.rc
+$(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
+        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
+$(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
+        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
 
 # Keymaster
 PRODUCT_PACKAGES += \
