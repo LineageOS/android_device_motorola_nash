@@ -50,10 +50,13 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/bin/charge_only_mode': blob_fixup()
         .add_needed('libmemset_shim.so'),
+    'vendor/bin/hw/motorola.hardware.health@1.0-service': blob_fixup()
+        .add_needed('libbase_shim.so')
+        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
+        .replace_needed('libutils.so', 'libutils-v32.so'),
     'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
         .regex_replace('system input', 'system uhid input'),
     (
-        'vendor/bin/hw/motorola.hardware.health@1.0-service',
         'vendor/lib/com.motorola.mod@1.0_vendor.so',
         'vendor/lib/libeqservicebridge.so',
         'vendor/lib/libmodmanager.so',
