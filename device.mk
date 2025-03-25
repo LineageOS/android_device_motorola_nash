@@ -66,9 +66,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx386_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx386_mono_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_ov5695_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov5695_chromatix.xml
 
-PRODUCT_PACKAGES += \
-    libcamera_metadata_helper
-
 # Dex-pre-opt exclusions
 $(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
 
