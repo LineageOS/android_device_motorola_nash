@@ -382,7 +382,7 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc:vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-nash.rc
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8998.so

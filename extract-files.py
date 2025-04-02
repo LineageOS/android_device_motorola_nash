@@ -54,7 +54,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbase_shim.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
         .replace_needed('libutils.so', 'libutils-v32.so'),
-    'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
+    'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-nash.rc': blob_fixup()
         .regex_replace('system input', 'system uhid input'),
     (
         'vendor/lib/com.motorola.mod@1.0_vendor.so',
