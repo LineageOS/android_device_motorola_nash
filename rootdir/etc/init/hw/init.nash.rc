@@ -35,8 +35,10 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
-    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
+    symlink /dev/block/sdf19 /dev/block/by-name/vendor_b
+    symlink /dev/block/sde19 /dev/block/by-name/vendor_a
+    symlink /dev/block/sdf19 /dev/block/bootdevice/by-name/vendor_b
+    symlink /dev/block/sde19 /dev/block/bootdevice/by-name/vendor_a
 
 on post-fs-data
     # Greybus firmware directory
