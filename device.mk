@@ -53,6 +53,12 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
+# Boot Control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl.recovery \
+    bootctrl.qcom \
+    bootctrl.qcom.recovery
+
 # Camera
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
