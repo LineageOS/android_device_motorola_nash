@@ -12,13 +12,10 @@ from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
 )
-
 from extract_utils.fixups_lib import (
-    lib_fixup_vendorcompat,
+    lib_fixups,
     lib_fixups_user_type,
-    libs_proto_3_9_1,
 )
-
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
@@ -27,14 +24,14 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/nash',
     'device/motorola/msm8998-common',
-    "hardware/qcom-caf/msm8998",
-    "hardware/qcom-caf/wlan",
+    'hardware/qcom-caf/msm8998',
+    'hardware/qcom-caf/wlan',
     'vendor/motorola/msm8998-common',
-    "vendor/qcom/opensource/dataservices",
+    'vendor/qcom/opensource/dataservices',
 ]
 
 lib_fixups: lib_fixups_user_type = {
-    libs_proto_3_9_1: lib_fixup_vendorcompat,
+    **lib_fixups,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -123,9 +120,9 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'nash',
     'motorola',
-    namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
+    namespace_imports=namespace_imports,
 )
 
 if __name__ == '__main__':
